@@ -50,7 +50,11 @@ Play Game @ [Phonetic Word Replicator](https://sidodus.github.io/phonetic_word_r
 
 Coding Excercise By Saheed Odulaja
 > Phonetic Word Replicator Is Developedd By Saheed Odulaja As A JavaScript Coding Exercise.
+
 > Feel Free To Fork This Repository Has There Is Always Room For Improvement :).
+
 > Credits To [Wiktionary](https://wiktionary.org) For Making Availble Their Wiktionary Data.
+
 > Credits To [Wikt2pron](https://github.com/abuccts/wikt2pron) For Making Availble The Parsed Wiktionary Data.
-> Credits To [Google](https://translate.google) For Making the Translation Process Easier
+
+> Credits To [Google](https://translate.google) For Making the Translation Process Easier.
