@@ -503,7 +503,7 @@ const AppCtrlIt = (function (fetchCtrlIt, itemCtrlIt, uiCtrlIt) {
 
                     // Extract Word
                     let iteratedDataFileTitle = iteratedDataFile.title;
-                    console.log(iteratedDataFileTitle)
+//                    console.log(iteratedDataFileTitle)
 
                     // Extract Pronunciation
                     let iteratedDataFilePronunciationIPA = iteratedDataFile.pronunciation[0].IPA;
