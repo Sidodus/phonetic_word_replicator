@@ -33,14 +33,14 @@ Phonetic Word Replicator
 
 <li> <span id="footer-7">Phonetic Word Replicator Is Domesticated in 8 Languages </span>
     <ul>
-        <button type="button" class="btn btn-outline-secondary" style="background-image: url(img/English.jpeg); background-size: cover">English</button>
-        <button type="button" class="btn btn-outline-secondary" style="background-image: url(img/french-flag.jpg); background-size: cover">French</button>
-        <button type="button" class="btn btn-outline-dark" style="background-image: url(img/Chinese.jpg); background-size: cover">Chinese</button>
-        <button type="button" class="btn btn-outline-dark" style="background-image: url(img/Dutch.jpg); background-size: contain">Dutch</button>
-        <button type="button" class="btn btn-outline-success" style="background-image: url(img/German.jpg); background-size: contain">German</button>
-        <button type="button" class="btn btn-outline-secondary" style="background-image: url(img/Hindi.jpg); background-size: contain">Hindi</button>
-        <button type="button" class="btn btn-outline-light" style="background-image: url(img/italian.jpg); background-size: cover">Italia</button>
-        <button type="button" class="btn btn-outline-light" style="background-image: url(img/Spanish.jpg); background-size: contain">Spanish</button>
+        <li>English</li>
+        <li>French</li>
+        <li>Chinese</li>
+        <li>Dutch</li>
+        <li>German</li>
+        <li>Hindi</li>
+        <li>Italia</li>
+        <li>Spanish</li>
         <ol>
             <li> <span  id="footer-8-a" style="color: lightblue">45,675 English Words Included.</span></li>
             <li> <span  id="footer-8-b" style="color: lightblue"> 68,261 Chinese Words Included.</span></li>
