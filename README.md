@@ -46,7 +46,7 @@ Phonetic Word Replicator
     </ul>
 </li>
 
-Play Game @ [Saheed Odulaja](https://sidodus.github.io/phonetic_word_replicator/)
+Play Game @ [Phonetic Word Replicator](https://sidodus.github.io/phonetic_word_replicator/)
 
 Coding Excercise By Saheed Odulaja
 > Phonetic Word Replicator Is Developedd By Saheed Odulaja As A JavaScript Coding Exercise.
