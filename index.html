@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="application-name" content="Phonetic Word Replicator">
+    <meta name="theme-color" content="#4285f4">
+    <meta name="description" content="Phonetic Word Replicator Developedd By Saheed Odulaja As A JavaScript Coding Exercise.">
+    <meta name="robots" content="index,follow">
+    <meta name="generator" content="program">
+    <meta name="subject" content="JavaScript Coding Exercise By Saheed Odulaja">
+    <meta name="rating" content="General">
+
+    <meta property="og:site_name" content="sidodus">
+    <meta property="og:title" content="Saheed Odulaja">
+    <meta property="og:url" content="https://github.com/Sidodus/">
+    <meta property="og:description" content="JavaScript Coding Exercise By Saheed Odulaja">
+    <meta property="og:image" content="img/Saheed-Odulaja-JS-3D-Logo-JS-by-me+-(White).png">
+
+    <meta name="twitter:card" content="Saheed Odulaja">
+    <meta name="twitter:site" content="@SaheedOdulaja">
+    <meta name="twitter:creator" content="@SaheedOdulaja">
+    <meta name="twitter:title" content="Saheed Odulaja">
+    <meta name="twitter:description" content="Phonetic Word Replicator Developedd By Saheed Odulaja As A JavaScript Coding Exercise.">
+    <meta name="twitter:image" content="img/Saheed-Odulaja-JS-3D-Logo-JS-by-me+-(White).png">
+
+    <link rel="me" href="https://github.com/Sidodus/" type="text/html">
+    <link rel="me" href="https://twitter.com/SaheedOdulaja">
+    <link rel="me" href="https://facebook.com/sidodus">
+
+    <link type="text/css" rel="stylesheet" href="bootstrap/src/css/bootstrap.min.css">
+
+    <title>Know Your Phonetic Sound</title>
+</head>
+
+<body class="container-fluid">
+    <div class="row">
+        <!-- Left Side-->
+        <div class="col-sm-3 mt-3">
+            <div class="card bg-dark text-white" style="height: 100%">
+                <div class="card-header">
+                    <h5 id="phonetic-standards-title">Phonetic Standards</h5>
+                </div>
+                <div class="card-body">
+                    <button id="ipa-btn" class="btn btn-primary btn-block">IPA</button>
+                    <button id="x-sampa-btn" class="btn btn-primary btn-block">X-SAMPA</button>
+
+                    <!-- Display Hints-->
+                    <p id="display-hints" class="text-center mt-5"></p>
+
+                    <!-- Hints Button -->
+                    <button type="button" id="hints-btn" class="btn btn-outline-light btn-block mt-5 mb-2">Show Hints</button>
+
+                    <!-- Select Language-->
+                    <p style="margin-top: 9%; margin-bottom: -18%; color: goldenrod"><small id="select-prefered-language">Select Preferred Language</small></p>
+                    <button id="select-language" class="btn btn-outline-secondary btn-block mt-5 mb-2" style="background-image: url(img/English.jpeg); background-size: cover">English</button>
+                </div>
+
+                <div class="card-footer">
+
+                    <div class="row">
+                        <button type="button" id="end-play" class="btn btn-outline-light btn-block">End Play</button>
+
+                        <!-- Button to Open the Modal -->
+                        <button type="button" id="modal-btn" class="btn btn-outline-light btn-block" style="display: none" data-toggle="modal" data-target="#myModal">Click Modal</button>
+
+                        <button type="button" id="win-rate-btn" class="btn btn-outline-primary btn-block">Display Win Rate</button>
+                    </div>
+                    <br>
+                    <button id="history-btn" class="btn btn-primary btn-block">View All Attempted Questions</button>
+<!--                    <button class="btn btn-sm btn-outline-light mt-4" style="align-items: flex-end">APP INFO</button>-->
+                    <br>
+                </div>
+            </div>
+        </div>
+        <!--            Center-->
+        <div class="col-sm-6 mt-3">
+            <div class="card bg-dark text-white">
+                <h4 id="app-title" style="text-align: center; text-transform: uppercase; color: goldenrod; text-decoration: underline" class="mt-3">Phonetic Word Replicator</h4>
+                <div class="card-header mt-2" style="text-align: center; font-size: 1.3em"><span id="know-your"> Know Your </span><span id="sound-type" style="color: goldenrod"> IPA </span><span id="phonetic-sound"> Phonetic Sound! </span><span id="ipa-x-sampa-dictionary" style="color: darkgoldenrod">/ˈdɪkʃ(ə)n(ə)ɹɪ/</span>
+                    <div><span id="know-your-spelling">Know Your Spelling! </span><span id="dictionary" style="color: darkgoldenrod">Dictionary</span></div> <span id="attempted-count" class="badge badge-primary badge-pill" style="position: absolute; top: 20%; right: 3%">1</span>
+                </div>
+
+                <div class="card-body">
+                    <form>
+                        <div class="bg-secondary">
+                            <br>
+                            <br>
+                            <h1 id="vowel-sound" class="card-title" style="text-align: center"></h1>
+
+                            <h5 id="correct-answer" style="color: lightyellow; text-align: center; text-transform: capitalize"></h5>
+                            <h5 id="timer" style="color: lightyellow; text-align: center"></h5>
+
+                            <br>
+                            <br>
+                        </div>
+                        <br>
+                        <div class="input-group-lg" style="text-align: center">
+                            <label id="type-in-the-correct-word" for="input-word" style="color: darkgoldenrod">Type In The Correct Word</label>
+                            <input type="text" id="input-word" class="form-control" style="text-align: center" placeholder="Type In The Correct Word" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <br>
+                    <button id="next-btn" class="btn btn-primary btn-block">NEXT</button>
+                    <button id="try-again-btn" class="btn btn-warning btn-block" style="margin-top: -37.7px; display: none">TRY AGAIN</button>
+                    <button id="last-chance-btn" class="btn btn-danger btn-block" style="margin-top: -37.9px; display: none">LAST CHANCE</button>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <!--            Right Side-->
+        <div class="card col-sm-3 mt-3" style="border: none">
+            <div class="card-body bg-dark" style="overflow: auto; height: 570px; border-radius: 5px">
+                <ul id="current-questions" class="list-group row">
+                    <li class="init-list list-group-item d-flex justify-content-between align-items-center bg-secondary" style="color: white">
+                        <span id="oral-sound-title">/Oral Sound/</span>
+                        <span id="oral-sound-word" class="badge badge-dark badge-pill" style="color: darkgoldenrod">Word</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer class="row mt-3 footer mx-auto mb-3 bg-dark text-white pt-4 pl-4 pr-2" style="display: block">
+        <ul>
+            <li><span id="footer-1">Phonetic Word Replicator (<code style="color: lightblue">/fəˈnɛtɪk wɜːd ɹɛplɪkeɪtə/</code>) Is Built To Be Flexible As It's Not Intended To Track Failure, But Aimed At Improving Students / Users Pronunciation With Spellings.</span>
+                <ol>
+                    <li id="footer-1-a" style="color: lightblue">Users Can End The Game At Any Point As Long As Play Is In Progress.</li>
+                    <li id="footer-1-b" style="color: lightblue">Users Can View All Attempted Questions, Win Rate, And Even Click On An Attempted Word For Detailed Information (Internet Connection Required). All These Can Be Achieved Either Play Is In Progress Or Not.</li>
+                </ol>
+            </li>
+            <li><span id="footer-2">Phonetic Word Replicator Focuses On 2 Phonetic Standards: </span>
+                <ol>
+                    <li><a id="footer-2-a" href="https://en.m.wikipedia.org/wiki/International_Phonetic_Alphabet" target="_blank" style="color: darkgoldenrod">IPA</a></li>
+                    <li><a id="footer-2-b" href="https://en.m.wikipedia.org/wiki/X-SAMPA" target="_blank" style="color: darkgoldenrod">X-SAMPA</a></li>
+                </ol>
+            </li>
+            <li id="footer-3">Users Have Three (3) Attempts Per Question To Get The Right Word.</li>
+            <li id="footer-4">Users Can View All Attempted Questions From History.</li>
+            <li><span id="footer-5">Users Can Get additional Info On All Attempted Questions By Clicking Any Attempted Word From:</span>
+                <ol> <small id="footer-5-a" style="color: lightseagreen"> (Internet Connection Required. Color Coding Explained Below)</small>
+                    <li><span id="footer-5-b" style="color: lightblue">Ending Play Popup.</span></li>
+                    <li><span id="footer-5-c" style="color: lightblue">History.</span></li>
+                    <li><span id="footer-5-d" style="color: lightblue">Current Play Area(on the right side of the screen).</span></li>
+                </ol>
+            </li>
+            <li><span id="footer-6">Attempted Words Background Color Coding:</span>
+                <ol>
+                    <li><span id="footer-6-a" class="badge badge-pill bg-primary text-white">Blue</span> : <span id="footer-6-a-a" style="color: lightblue">Got The Correct Word On 1st Attempt.</span></li>
+                    <li><span id="footer-6-b" class="badge badge-pill bg-warning text-dark">Yellow</span> : <span id="footer-6-b-a" style="color: lightblue">Got The Correct Word On 2nd Attempt.</span></li>
+                    <li><span id="footer-6-c" class="badge badge-pill bg-danger text-white">Red</span> : <span id="footer-6-c-a" style="color: lightblue">Got The Correct Word On 3rd Attempt.</span></li>
+                    <li><span id="footer-6-d" class="badge badge-pill bg-secondary text-white">Grey</span> : <span id="footer-6-d-a" style="color: lightblue">Wrong Answers All Through 3 Attempts.</span></li>
+                </ol>
+            </li>
+            <li> <span id="footer-7">Phonetic Word Replicator Is Domesticated in 8 Languages </span>
+                <ul>
+                    <button class="btn btn-outline-secondary" style="background-image: url(img/English.jpeg); background-size: cover">English</button>
+
+                    <button class="btn btn-outline-secondary" style="background-image: url(img/french-flag.jpg); background-size: cover">French</button>
+
+                    <button class="btn btn-outline-dark" style="background-image: url(img/Chinese.jpg); background-size: cover">Chinese</button>
+
+                    <button class="btn btn-outline-dark" style="background-image: url(img/Dutch.jpg); background-size: contain">Dutch</button>
+
+                    <button class="btn btn-outline-success" style="background-image: url(img/German.jpg); background-size: contain">German</button>
+
+                    <button class="btn btn-outline-secondary" style="background-image: url(img/Hindi.jpg); background-size: contain">Hindi</button>
+
+                    <button class="btn btn-outline-light" style="background-image: url(img/italian.jpg); background-size: cover">Italia</button>
+
+                    <button class="btn btn-outline-light" style="background-image: url(img/Spanish.jpg); background-size: contain">Spanish</button>
+                </ul>
+            </li>
+            <li><span id="footer-8">Users Play Records Are Saved Based On Language Play</span>
+                <ol>
+                    <li> <span  id="footer-8-a" style="color: lightblue">45,675 English Words Included.</span></li>
+                    <li> <span  id="footer-8-b" style="color: lightblue"> 68,261 Chinese Words Included.</span></li>
+                    <li><span id="footer-8-c" style="color: lightblue"> 8,646 Dutch Words Included.</span></li>
+                    <li><span id="footer-8-d" style="color: lightblue"> 41,819 French Words Included.</span></li>
+                    <li><span id="footer-8-e" style="color: lightblue"> 21,418 German Words Included.</span></li>
+                    <li><span id="footer-8-f" style="color: lightblue"> 1,702 Hindi Words Included.</span></li>
+                    <li><span id="footer-8-g" style="color: lightblue"> 4,718 Italian Words Included.</span></li>
+                    <li><span id="footer-8-h" style="color: lightblue"> 6,851 Spanish Words Included.</span></li>
+                </ol>
+            </li>
+            <li><span id="footer-9">Credits To:</span>
+                <ol>
+                    <li><a href="https://wiktionary.org" target="_blank" style="color: darkgoldenrod">Wiktionary</a></li>
+                    <li><a href="https://github.com/abuccts/wikt2pron" target="_blank" style="color: darkgoldenrod">Wikt2pron</a></li>
+                    <li><a href="https://translate.google.com" target="_blank" style="color: darkgoldenrod">Google</a></li>
+                </ol>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+        <div id="add-modal-sm" class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title"></h4>
+                    <!--                        <div>Percentage</div>-->
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <ul id="all-questions" class="list-group">
+                        <li class="init2-list list-group-item d-flex justify-content-between align-items-center bg-secondary" style="color: white">
+                            <span class="init2-sound">/Oral Sound/</span>
+                            <span class="init2-word badge badge-dark badge-pill" style="color: darkgoldenrod">Word</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="close-modal close-button btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--End Of Moddal-->
+
+    <script src="bootstrap/src/js/jquery.min.js"></script>
+    <script src="bootstrap/src/js/popper.min.js"></script>
+    <script src="bootstrap/src/js/bootstrap.min.js"></script>
+    <script src="english.js"></script>
+    <script src="chinese.js"></script>
+    <script src="dutch.js"></script>
+    <script src="french.js"></script>
+    <script src="german.js"></script>
+    <script src="hindi.js"></script>
+    <script src="italian.js"></script>
+    <script src="spanish.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
