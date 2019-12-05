@@ -1,5 +1,5 @@
-Phonetic Word Replicator
-================================
+                                              Phonetic Word Replicator
+                                              ================================
 
 <h1 align="center">
   <a href="https://animejs.com" style="margin-right: 5px"><img src="/img/Phonetic-Word-Replicator(0).png" width="380"/></a>
