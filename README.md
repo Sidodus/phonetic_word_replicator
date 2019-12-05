@@ -32,7 +32,7 @@ Phonetic Word Replicator
 </li>
 
 <li> <span id="footer-7">Phonetic Word Replicator Is Domesticated in 8 Languages </span>
-    <ul>
+    <ol>
         <li>English</li>
         <li>French</li>
         <li>Chinese</li>
@@ -51,7 +51,7 @@ Phonetic Word Replicator
             <li><span id="footer-8-g" style="color: lightblue"> 4,718 Italian Words Included.</span></li>
             <li><span id="footer-8-h" style="color: lightblue"> 6,851 Spanish Words Included.</span></li>
         </ol>
-    </ul>
+    </ol>
 </li>
 
 Play Game @ [Saheed Odulaja](https://sidodus.github.io/)
