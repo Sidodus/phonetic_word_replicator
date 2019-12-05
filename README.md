@@ -1,5 +1,5 @@
 Phonetic Word Replicator
-=======================================================
+================================
 
 <h1 align="center">
   <a href="https://animejs.com" style="margin-right: 5px"><img src="/img/Phonetic-Word-Replicator(0).png" width="380"/></a>
@@ -32,7 +32,6 @@ Phonetic Word Replicator
 </li>
 
 <li> <span id="footer-7">Phonetic Word Replicator Is Domesticated in 8 Languages </span>
-    <ul>
         <ol>
             <li> <span  id="footer-8-a" style="color: lightblue">45,675 English Words Included.</span></li>
             <li> <span  id="footer-8-b" style="color: lightblue"> 68,261 Chinese Words Included.</span></li>
@@ -43,10 +42,9 @@ Phonetic Word Replicator
             <li><span id="footer-8-g" style="color: lightblue"> 4,718 Italian Words Included.</span></li>
             <li><span id="footer-8-h" style="color: lightblue"> 6,851 Spanish Words Included.</span></li>
         </ol>
-    </ul>
 </li>
 
-Play Game @ [Phonetic Word Replicator](https://sidodus.github.io/phonetic_word_replicator/)
+Play Game @ [Saheed Odulaja](https://sidodus.github.io/)
 
 Coding Excercise By Saheed Odulaja
 > Phonetic Word Replicator Is Developedd By Saheed Odulaja As A JavaScript Coding Exercise.
