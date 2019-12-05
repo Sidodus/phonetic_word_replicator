@@ -32,16 +32,6 @@ Phonetic Word Replicator
 </li>
 
 <li> <span id="footer-7">Phonetic Word Replicator Is Domesticated in 8 Languages </span>
-    <ol>
-        <li>English</li>
-        <li>French</li>
-        <li>Chinese</li>
-        <li>Dutch</li>
-        <li>German</li>
-        <li>Hindi</li>
-        <li>Italia</li>
-        <li>Spanish</li>
-        <ol>
             <li> <span  id="footer-8-a" style="color: lightblue">45,675 English Words Included.</span></li>
             <li> <span  id="footer-8-b" style="color: lightblue"> 68,261 Chinese Words Included.</span></li>
             <li><span id="footer-8-c" style="color: lightblue"> 8,646 Dutch Words Included.</span></li>
