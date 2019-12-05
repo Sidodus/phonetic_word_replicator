@@ -14,7 +14,7 @@ Phonetic Word Replicator
     Users Can View All Attempted Questions, Win Rate, And Even Click On An Attempted Word For Detailed Information (Internet Connection Required). All These Can Be Achieved Either Play Is In Progress Or Not.
 </blockquote>
 
-# GAME DETAILS:
+# APPLICATION DETAILS:
 <li><span id="footer-2">Phonetic Word Replicator Focuses On 2 Phonetic Standards: </span>
     <ol>
         <li><a id="footer-2-a" href="https://en.m.wikipedia.org/wiki/International_Phonetic_Alphabet" target="_blank" style="color: darkgoldenrod">IPA</a></li>
