@@ -2,8 +2,8 @@ Phonetic Word Replicator
 ================================
 
 <h1 align="center">
-  <a href="https://animejs.com" style="margin-right: 5px"><img src="/img/Phonetic-Word-Replicator(0).png" width="380"/></a>
-  <a href="https://animejs.com"><img src="/img/Phonetic-Word-Replicator(1).png" width="250"/></a>
+  <a href="/img/Phonetic-Word-Replicator(0).png" style="margin-right: 5px"><img src="/img/Phonetic-Word-Replicator(0).png" width="380"/></a>
+  <a href="/img/Phonetic-Word-Replicator(1).png"><img src="/img/Phonetic-Word-Replicator(1).png" width="250"/></a>
 </h1>
 
 <h4 align="center">Vanilla JavaScript CRUD Appliction | <code>/fəˈnɛtɪk wɜːd ɹɛplɪkeɪtə/</code></h4>
