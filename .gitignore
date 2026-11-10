@@ -59,3 +59,18 @@ typings/
 
 # next.js build output
 .next
+
+# Added in v2.0.0 rewrite ---
+node_modules/
+out/
+*.tsbuildinfo
+next-env.d.ts
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+.zcode/
+.vercel
+.env*.local
+.DS_Store
+Thumbs.db

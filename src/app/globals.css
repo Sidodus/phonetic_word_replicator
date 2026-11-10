@@ -1,0 +1,260 @@
+/* Phonetic Word Replicator v2 theme — dark identity with goldenrod accents,
+ * carried over from the 2019 original. */
+
+:root {
+  --pwr-gold: #daa520;
+  --pwr-gold-dark: #b8860b;
+  --pwr-gold-light: #ffd700;
+  --pwr-bg: #16181d;
+  --pwr-surface: #1e2128;
+  --pwr-surface-raised: #262a33;
+  --pwr-border: #343945;
+}
+
+body {
+  background-color: var(--pwr-bg);
+  color: #e8eaed;
+  min-height: 100vh;
+}
+
+/* Bootstrap dark-mode surface refinements */
+[data-bs-theme="dark"] {
+  --bs-body-bg: var(--pwr-bg);
+  --bs-body-color: #e8eaed;
+  --bs-card-bg: var(--pwr-surface);
+  --bs-border-color: var(--pwr-border);
+}
+
+.text-gold {
+  color: var(--pwr-gold) !important;
+}
+
+.text-gold-light {
+  color: var(--pwr-gold-light) !important;
+}
+
+.bg-surface-raised {
+  background-color: var(--pwr-surface-raised) !important;
+}
+
+.card {
+  border-color: var(--pwr-border);
+}
+
+.btn-gold {
+  --bs-btn-color: #1a1a1a;
+  --bs-btn-bg: var(--pwr-gold);
+  --bs-btn-border-color: var(--pwr-gold);
+  --bs-btn-hover-color: #1a1a1a;
+  --bs-btn-hover-bg: var(--pwr-gold-light);
+  --bs-btn-hover-border-color: var(--pwr-gold-light);
+  --bs-btn-active-color: #1a1a1a;
+  --bs-btn-active-bg: var(--pwr-gold-dark);
+  --bs-btn-active-border-color: var(--pwr-gold-dark);
+  --bs-btn-disabled-color: #1a1a1a;
+  --bs-btn-disabled-bg: var(--pwr-gold);
+  --bs-btn-disabled-border-color: var(--pwr-gold);
+  font-weight: 600;
+}
+
+.btn-outline-gold {
+  --bs-btn-color: var(--pwr-gold);
+  --bs-btn-border-color: var(--pwr-gold);
+  --bs-btn-hover-color: #1a1a1a;
+  --bs-btn-hover-bg: var(--pwr-gold);
+  --bs-btn-hover-border-color: var(--pwr-gold);
+  --bs-btn-active-color: #1a1a1a;
+  --bs-btn-active-bg: var(--pwr-gold);
+  --bs-btn-active-border-color: var(--pwr-gold);
+  font-weight: 500;
+}
+
+/* Phonetic question display */
+.phonetic-display {
+  font-size: clamp(1.6rem, 4vw, 2.9rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--pwr-gold-light);
+  word-break: break-word;
+}
+
+.answer-reveal {
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  color: #f5f5b8;
+  text-transform: capitalize;
+}
+
+.hint-mask {
+  font-size: 1.35rem;
+  letter-spacing: 0.18em;
+  color: #9fd6ff;
+}
+
+/* Mode cards */
+.mode-card {
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease;
+  height: 100%;
+}
+
+.mode-card:hover,
+.mode-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--pwr-gold);
+}
+
+.mode-card.selected {
+  border-color: var(--pwr-gold);
+  box-shadow: 0 0 0 1px var(--pwr-gold);
+}
+
+/* Language flag buttons — reuse of the legacy flag artwork */
+.lang-flag-btn {
+  min-width: 9.5rem;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fff;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.9),
+    0 0 4px rgba(0, 0, 0, 0.7);
+  font-weight: 600;
+  border-color: var(--pwr-border);
+}
+
+.lang-flag-btn.selected {
+  outline: 2px solid var(--pwr-gold);
+  outline-offset: 1px;
+}
+
+/* Attempt dots */
+.attempt-dot {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1.5px solid var(--pwr-border);
+}
+
+.attempt-dot.used-1 {
+  background: #3b71ca;
+  border-color: #3b71ca;
+}
+
+.attempt-dot.used-2 {
+  background: #f0ad4e;
+  border-color: #f0ad4e;
+}
+
+.attempt-dot.used-3 {
+  background: #dc3545;
+  border-color: #dc3545;
+}
+
+/* Session rail */
+.session-rail {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.rail-item {
+  opacity: 0;
+  animation: rail-in 0.25s ease forwards;
+}
+
+@keyframes rail-in {
+  from {
+    opacity: 0;
+    transform: translateX(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .mode-card,
+  .rail-item {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Achievement grid */
+.achievement-tile {
+  text-align: center;
+  padding: 0.75rem 0.25rem;
+  border-radius: 0.5rem;
+  background: var(--pwr-surface-raised);
+  border: 1px solid var(--pwr-border);
+  height: 100%;
+}
+
+.achievement-tile.locked {
+  opacity: 0.45;
+  filter: grayscale(0.9);
+}
+
+.achievement-tile .achievement-icon {
+  font-size: 1.7rem;
+}
+
+/* Speed-mode timer urgency */
+.timer-urgent {
+  color: #ff6b6b !important;
+  font-weight: 700;
+}
+
+/* Daily calendar strip */
+.calendar-day {
+  width: 2.1rem;
+  height: 2.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.4rem;
+  border: 1px solid var(--pwr-border);
+  font-size: 0.72rem;
+  color: #8b93a5;
+}
+
+.calendar-day.done {
+  background: var(--pwr-gold-dark);
+  border-color: var(--pwr-gold);
+  color: #16181d;
+  font-weight: 700;
+}
+
+.calendar-day.today {
+  outline: 2px solid var(--pwr-gold);
+  outline-offset: 1px;
+}
+
+/* Wiktionary history links keep the v1 colour semantics via badge variants. */
+.history-link {
+  text-decoration: none;
+}
+
+.hero-logo {
+  max-width: 240px;
+  height: auto;
+}
+
+.nav-brand-title {
+  color: var(--pwr-gold);
+  font-weight: 700;
+}
+
+footer.site-footer {
+  color: #9aa0aa;
+  font-size: 0.875rem;
+}
+
+footer.site-footer a {
+  color: var(--pwr-gold);
+}
