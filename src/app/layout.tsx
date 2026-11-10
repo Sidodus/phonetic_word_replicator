@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import AppShell from "@/components/AppShell";
+import { withBasePath } from "@/lib/base-path";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sidodus.github.io/phonetic_word_replicator/"),
@@ -16,7 +17,9 @@ export const metadata: Metadata = {
     title: "Phonetic Word Replicator",
     description:
       "Train your ear, master your spelling — one sound at a time. 8 languages, 5 game modes.",
-    images: ["/img/Phonetic-Word-Replicator(0).png"],
+    // Resolved against metadataBase; withBasePath keeps it correct on
+    // sub-path hosts (GitHub Pages project sites).
+    images: [withBasePath("/img/Phonetic-Word-Replicator(0).png")],
   },
 };
 
