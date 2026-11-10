@@ -17,6 +17,7 @@ import { I18nProvider, useI18n } from "@/lib/i18n/provider";
 import { UI_LOCALE_META, type UiLocale } from "@/lib/i18n";
 import { PROFILE_STORAGE_KEY, useProfileStore } from "@/lib/storage/profile";
 import { useHydrated } from "@/lib/storage/useHydrated";
+import { withBasePath } from "@/lib/base-path";
 import SettingsModal from "@/components/stats/SettingsModal";
 
 /** Read the stored UI locale preference without hydrating the whole store. */
@@ -59,7 +60,7 @@ function Shell({ children }: { children: React.ReactNode }) {
         <Container>
           <Navbar.Brand as={Link} href="/" className="d-flex align-items-center gap-2">
             <Image
-              src="/img/Phonetic-Word-Replicator(1).png"
+              src={withBasePath("/img/Phonetic-Word-Replicator(1).png")}
               alt=""
               width={32}
               height={32}

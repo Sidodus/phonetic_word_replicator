@@ -17,7 +17,8 @@ import {
 } from "@/types/game";
 
 /** Base path for static assets (GitHub Pages project sites set this at build). */
-export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+export { BASE_PATH } from "@/lib/base-path";
+import { BASE_PATH } from "@/lib/base-path";
 
 export class PackValidationError extends Error {
   constructor(

@@ -75,6 +75,11 @@ i18n provider renders a spinner until messages load — raw keys never flash.
 
 - `output: "export"` + `trailingSlash: true` — every route is an `index.html` on any host.
 - `/play` reads `useSearchParams` → wrapped in `<Suspense>` for prerendering.
-- GitHub Pages project sites need `NEXT_PUBLIC_BASE_PATH=/phonetic_word_replicator`; the
-  dictionary loader (`lib/game/dictionary.ts` `BASE_PATH`) and asset URLs respect it.
+- **Sub-path hosting (GitHub Pages project sites):** `npm run build:pages` sets
+  `NEXT_PUBLIC_BASE_PATH=/phonetic_word_replicator`, which flows into two layers:
+  1. `next.config.ts` `basePath` — prefixes emitted bundle/CSS URLs and router links.
+  2. `withBasePath()` (`src/lib/base-path.ts`) — prefixes hand-written asset URLs
+     (hero/logo/flag images) and client-side dictionary fetches
+     (`lib/game/dictionary.ts`). The helper is idempotent and leaves external URLs alone.
+  Plain `npm run build` deploys at a domain root (local preview, Vercel) with no prefix.
 - `next/image` optimization is disabled (`images.unoptimized`) as required by static export.

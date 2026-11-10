@@ -186,10 +186,15 @@ Rules:
 - Semver. `2.x` is the current line. **User-visible behavior or stored-data changes bump the
   minor/patch; storage schema or daily-seed changes bump the major.**
 - The static deploy target is GitHub Pages
-  (`https://sidodus.github.io/phonetic_word_replicator/`) → builds there must set
-  `NEXT_PUBLIC_BASE_PATH=/phonetic_word_replicator`. Local/Vercel builds leave it unset.
-- Deploy runbook: commit → push → build with the base path → publish `out/` (Pages settings or
+  (`https://sidodus.github.io/phonetic_word_replicator/`) — a **sub-path host**, so the
+  deploy build must run `npm run build:pages` (sets
+  `NEXT_PUBLIC_BASE_PATH=/phonetic_word_replicator`, which prefixes Next's bundles/links via
+  `basePath` and hand-written asset URLs via `withBasePath()` in `src/lib/base-path.ts`).
+  Plain `npm run build` (root deployment, Vercel/local) leaves it unset.
+- Deploy runbook: commit → push → `npm run build:pages` → publish `out/` (Pages settings or
   Actions). The owner runs releases; agents prepare them.
+- Adding new hard-coded `/…` asset URLs? Always wrap them in `withBasePath()` — the flag
+  images 404'd once because the folder moved without checking the URL prefix.
 
 ## 11. Environment pitfalls (this machine — Windows / Git Bash)
 

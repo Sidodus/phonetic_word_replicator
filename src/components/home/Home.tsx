@@ -23,6 +23,7 @@ import { useProfileStore } from "@/lib/storage/profile";
 import { useHydrated } from "@/lib/storage/useHydrated";
 import { useI18n } from "@/lib/i18n/provider";
 import { loadPackIndex } from "@/lib/game/dictionary";
+import { withBasePath } from "@/lib/base-path";
 
 export interface HomeProps {
   /** Injected in tests; production loads the real index. */
@@ -96,7 +97,7 @@ export default function Home({ packIndex: injectedIndex }: HomeProps) {
         </Col>
         <Col md={5} className="text-center">
           <Image
-            src="/img/Phonetic-Word-Replicator(0).png"
+            src={withBasePath("/img/Phonetic-Word-Replicator(0).png")}
             alt={t("app.name")}
             fluid
             className="hero-logo"
@@ -177,7 +178,7 @@ export default function Home({ packIndex: injectedIndex }: HomeProps) {
               key={code}
               variant="outline-secondary"
               className={`lang-flag-btn ${selectedLanguage === code ? "selected" : ""}`}
-              style={{ backgroundImage: `url(/img/flags/${meta.flag})` }}
+              style={{ backgroundImage: `url(${withBasePath(`/img/flags/${meta.flag}`)})` }}
               onClick={() => setLanguage(code)}
               aria-pressed={selectedLanguage === code}
             >
