@@ -1,0 +1,251 @@
+{
+  "app": {
+    "name": "Phonetischer Wortreplikator",
+    "phonetic": "/fəˈnɛtɪk wɜːd ɹɛplɪkeɪtə/",
+    "tagline": "Schulen Sie Ihr Gehör, meistern Sie Ihre Rechtschreibung – ein Laut nach dem anderen.",
+    "v2": "v2"
+  },
+  "nav": {
+    "home": "Startseite",
+    "play": "Spielen",
+    "stats": "Meine Statistiken",
+    "settings": "Einstellungen"
+  },
+  "standard": {
+    "label": "Phonetischer Standard",
+    "ipa": "IPA",
+    "ipaFull": "Internationales Phonetisches Alphabet",
+    "xsampa": "X-SAMPA",
+    "xsampaFull": "X-SAMPA (ASCII-phonetisches Alphabet)"
+  },
+  "language": {
+    "label": "Spielsprache",
+    "wordsAvailable": "{count} Wörter"
+  },
+  "home": {
+    "heroTitle": "Kennen Sie den phonetischen Laut.",
+    "heroIntro": "Sehen oder hören Sie eine Aussprache und schreiben Sie das Wort, zu dem sie gehört. Drei Versuche pro Wort, farbcodierter Verlauf und Belohnungen, die Sie immer wieder zurückkehren lassen.",
+    "chooseMode": "Wählen Sie Ihre Herausforderung",
+    "chooseLanguage": "Übungssprache",
+    "continueLast": "Machen Sie dort weiter, wo Sie aufgehört haben",
+    "start": "Jetzt spielen",
+    "howToPlay": "So funktioniert es",
+    "rule1": "Sie sehen die phonetische Transkription eines Wortes – schreiben Sie das Wort.",
+    "rule2": "Drei Versuche pro Wort: Blau für den ersten Versuch, Gelb für den zweiten, Rot für den dritten.",
+    "rule3": "Hinweise decken Buchstaben auf, aber je 3 Hinweise kosten so viel wie ein Fehler.",
+    "rule4": "Richtige Antworten bringen XP. Combos, Serien und 16 Erfolge warten auf Sie.",
+    "yourProgress": "Ihr Fortschritt",
+    "wordsTotal": "Wörter in diesem Paket",
+    "notLoaded": "Pakete werden geladen…"
+  },
+  "modes": {
+    "classic": {
+      "name": "Klassische Rechtschreibung",
+      "tagline": "Lesen Sie den phonetischen Laut, tippen Sie das Wort. Die ursprüngliche Herausforderung."
+    },
+    "choice": {
+      "name": "Multiple Choice",
+      "tagline": "Vier Optionen, eine passt zum Laut. Wärmen Sie sich sanft auf."
+    },
+    "listen": {
+      "name": "Hören & Schreiben",
+      "tagline": "Keine Symbole – nur Ihre Ohren. Das Wort wird vorgesprochen."
+    },
+    "speed": {
+      "name": "Speed-Challenge",
+      "tagline": "60 Sekunden. Combos bis x3. Jagen Sie Ihren Rekord."
+    },
+    "daily": {
+      "name": "Tages-Challenge",
+      "tagline": "10 vorgegebene Wörter – dasselbe Rätsel für alle, jeden Tag."
+    }
+  },
+  "play": {
+    "question": "Schreiben Sie das Wort",
+    "attemptsLeft": "{count} Versuch{e} übrig",
+    "typePlaceholder": "Tippen Sie das Wort ein, das Sie hören/sehen…",
+    "choicePrompt": "Welches Wort passt zum Laut?",
+    "submit": "Prüfen",
+    "next": "Nächstes Wort",
+    "skip": "Überspringen",
+    "hint": "Hinweis",
+    "hintPenaltyNote": "Je 3 Hinweise kosten 15 XP",
+    "hintShortWord": "Erster Buchstabe aufgedeckt",
+    "noMoreHints": "Keine weiteren Hinweise für dieses Wort",
+    "correct": "Richtig!",
+    "wrong": "Nicht ganz – versuchen Sie es erneut",
+    "failed": "Die Antwort war:",
+    "skipConfirmTitle": "Dieses Wort überspringen?",
+    "skipConfirmBody": "Das Überspringen zählt in Ihren Statistiken als Fehler.",
+    "listenPrompt": "Hören Sie genau zu und schreiben Sie dann das Wort",
+    "replayAudio": "Wort erneut abspielen",
+    "speechUnavailable": "Die Sprachwiedergabe ist in diesem Browser nicht verfügbar. Versuchen Sie stattdessen den klassischen Modus.",
+    "timeLeft": "{seconds}s",
+    "speedOver": "Die Zeit ist um!",
+    "score": "Punkte",
+    "combo": "Combo",
+    "multiplier": "x{value}",
+    "personalBest": "Bestwert: {score}",
+    "newPersonalBest": "Neuer persönlicher Bestwert!",
+    "endSession": "Sitzung beenden",
+    "summaryTitle": "Sitzungszusammenfassung",
+    "summaryQuestions": "Fragen",
+    "summaryCorrect": "Richtig",
+    "summaryAccuracy": "Genauigkeit",
+    "summaryXp": "XP verdient",
+    "summaryHints": "Verwendete Hinweise",
+    "summaryCombo": "Beste Combo",
+    "playAgain": "Nochmal spielen",
+    "backHome": "Zurück zur Startseite",
+    "attemptedWords": "Bearbeitete Wörter",
+    "emptyInput": "Geben Sie zuerst eine Antwort ein",
+    "loadError": "Das Wörterbuchpaket konnte nicht geladen werden. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+    "retry": "Erneut versuchen",
+    "dailyAlreadyDone": "Die heutige Tages-Challenge ist abgeschlossen – kommen Sie morgen wieder oder spielen Sie zum Üben erneut.",
+    "sessionOf": "Wort {current} von {total}",
+    "standardSwitch": "Als {standard} anzeigen",
+    "perfectSession": "Perfekte Sitzung! Jedes Wort beim ersten Versuch!",
+    "achievementUnlocked": "Erfolg freigeschaltet: {name}"
+  },
+  "stats": {
+    "title": "Meine Statistiken",
+    "level": "Level {level}",
+    "xpTotal": "{xp} XP",
+    "xpToNext": "{remaining} XP bis Level {next}",
+    "maxLevel": "Maximales Level erreicht!",
+    "streak": "Tägliche Serie",
+    "streakDays": "{count} Tag{e}",
+    "longestStreak": "Längste: {count} Tag{e}",
+    "winRates": "Erfolgsquoten",
+    "outcomeFirst": "Richtig im 1. Versuch",
+    "outcomeSecond": "Richtig im 2. Versuch",
+    "outcomeThird": "Richtig im 3. Versuch",
+    "outcomeWrong": "Bei allen Versuchen falsch",
+    "outcomeSkipped": "Übersprungen",
+    "accuracy": "Gesamtgenauigkeit",
+    "firstTryAccuracy": "Genauigkeit beim ersten Versuch",
+    "total": "Fragen insgesamt",
+    "sessions": "Gespielte Sitzungen",
+    "hintsUsed": "Verwendete Hinweise",
+    "bestCombo": "Beste Combo",
+    "speedBest": "Speed-Bestwert",
+    "perLanguage": "Nach Sprache",
+    "achievements": "Erfolge",
+    "achievementsUnlocked": "{unlocked} von {total}",
+    "locked": "Gesperrt",
+    "unlockedOn": "Freigeschaltet am {date}",
+    "dailyCalendar": "Tages-Challenge-Kalender",
+    "dailyEmpty": "Schließen Sie Ihre erste Tages-Challenge ab, um den Kalender zu füllen.",
+    "history": "Verlauf",
+    "historyEmpty": "Noch keine Wörter bearbeitet. Spielen Sie eine Sitzung, um Ihren Verlauf zu starten.",
+    "historyNote": "Klicken Sie auf ein Wort, um es auf Wiktionary nachzuschlagen.",
+    "resetData": "Alle Fortschritte zurücksetzen",
+    "resetConfirmTitle": "Alles zurücksetzen?",
+    "resetConfirmBody": "XP, Statistiken, Verlauf und Erfolge werden dauerhaft gelöscht. Dies kann nicht rückgängig gemacht werden.",
+    "noData": "Spielen Sie Ihre erste Sitzung, um hier Statistiken zu sehen.",
+    "v1Import": "v1-Fortschritt gefunden und importiert.",
+    "v1ImportFound": "Ihren v1-Fortschritt importieren"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "standard": "Phonetischer Standard",
+    "ipaDesc": "Unicode-Symbole – /ˈdɪkʃ(ə)n(ə)ɹɪ/",
+    "xsampaDesc": "Reine ASCII-Notation – /\"dIkS(@)n(@)r\\I/",
+    "matching": "Antwortabgleich",
+    "accentLenient": "Nachsichtig (Akzente ignorieren)",
+    "accentStrict": "Streng (Akzente erforderlich)",
+    "matchingHint": "Im nachsichtigen Modus wird 'cafe' für 'café' akzeptiert. Der strenge Modus verlangt die Akzente.",
+    "sound": "Soundeffekte",
+    "autoPronounce": "Wörter automatisch aussprechen",
+    "uiLanguage": "Sprache der Benutzeroberfläche",
+    "auto": "Automatisch (Browsersprache)",
+    "close": "Schließen"
+  },
+  "achievements": {
+    "first-word": {
+      "name": "Erstes Wort",
+      "description": "Beantworten Sie Ihr erstes Wort richtig."
+    },
+    "words-50": {
+      "name": "Wortsammler",
+      "description": "Beantworten Sie 50 Wörter richtig."
+    },
+    "words-250": {
+      "name": "Wortschatz-Trainer",
+      "description": "Beantworten Sie 250 Wörter richtig."
+    },
+    "words-1000": {
+      "name": "Wortmeister",
+      "description": "Beantworten Sie 1.000 Wörter richtig."
+    },
+    "perfect-session": {
+      "name": "Fehlerfrei",
+      "description": "Schließen Sie eine Sitzung mit 10+ Wörtern ab, in der jedes Wort beim ersten Versuch richtig ist."
+    },
+    "combo-5": {
+      "name": "In Fahrt",
+      "description": "Beantworten Sie 5 Wörter in Folge gleich beim ersten Versuch richtig."
+    },
+    "combo-12": {
+      "name": "Unaufhaltsam",
+      "description": "Beantworten Sie 12 Wörter in Folge gleich beim ersten Versuch richtig."
+    },
+    "speed-150": {
+      "name": "Schnelldenker",
+      "description": "Erzielen Sie 150+ Punkte in einer Speed-Challenge."
+    },
+    "speed-300": {
+      "name": "Blitzschreiber",
+      "description": "Erzielen Sie 300+ Punkte in einer Speed-Challenge."
+    },
+    "streak-3": {
+      "name": "Gewohnheitstier",
+      "description": "Schließen Sie die Tages-Challenge 3 Tage in Folge ab."
+    },
+    "streak-7": {
+      "name": "Wochenheld",
+      "description": "Schließen Sie die Tages-Challenge 7 Tage in Folge ab."
+    },
+    "streak-30": {
+      "name": "Musterschüler",
+      "description": "Schließen Sie die Tages-Challenge 30 Tage in Folge ab."
+    },
+    "polyglot": {
+      "name": "Polyglott",
+      "description": "Spielen Sie mindestens eine Sitzung in allen 8 Sprachen."
+    },
+    "listener": {
+      "name": "Ganz Ohr",
+      "description": "Schließen Sie eine vollständige Sitzung im Modus „Hören & Schreiben“ ab."
+    },
+    "level-10": {
+      "name": "Erfahren",
+      "description": "Erreichen Sie Level 10."
+    },
+    "sharpshooter": {
+      "name": "Scharfschütze",
+      "description": "Halten Sie bei 50+ beantworteten Wörtern eine Genauigkeit von 80%+ beim ersten Versuch."
+    }
+  },
+  "credits": {
+    "title": "Über & Danksagung",
+    "createdBy": "Erstellt von",
+    "author": "Saheed Odulaja",
+    "data": "Wörterbuchdaten",
+    "dataDesc": "Kuratiert aus den Aussprachedaten von Wiktionary (via wikt2pron). Wörter sind für Definitionen mit Wiktionary verlinkt.",
+    "v2Note": "Version 2 – neu aufgebaut auf Basis des Vanilla-JS-Originals von 2019 mit Next.js, TypeScript und React-Bootstrap.",
+    "license": "MIT-lizenziert. Quellcode auf GitHub.",
+    "i18nNote": "Die Benutzeroberfläche wurde von der Community übersetzt – die Übersetzungen in Yorùbá, Igbo und Hausa sind erste Entwürfe und Verbesserungen sind willkommen."
+  },
+  "common": {
+    "loading": "Wird geladen…",
+    "error": "Etwas ist schiefgelaufen",
+    "retry": "Erneut versuchen",
+    "close": "Schließen",
+    "words": "Wörter",
+    "yes": "Ja",
+    "no": "Nein",
+    "ok": "OK",
+    "cancel": "Abbrechen"
+  }
+}

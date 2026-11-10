@@ -1,0 +1,251 @@
+{
+  "app": {
+    "name": "Fonetische Woordreplicator",
+    "phonetic": "/fəˈnɛtɪk wɜːd ɹɛplɪkeɪtə/",
+    "tagline": "Train je oor, beheers je spelling – één klank per keer.",
+    "v2": "v2"
+  },
+  "nav": {
+    "home": "Startpagina",
+    "play": "Spelen",
+    "stats": "Mijn statistieken",
+    "settings": "Instellingen"
+  },
+  "standard": {
+    "label": "Fonetische standaard",
+    "ipa": "IPA",
+    "ipaFull": "Internationaal Fonetisch Alfabet",
+    "xsampa": "X-SAMPA",
+    "xsampaFull": "X-SAMPA (ASCII-fonetisch alfabet)"
+  },
+  "language": {
+    "label": "Speltaal",
+    "wordsAvailable": "{count} woorden"
+  },
+  "home": {
+    "heroTitle": "Ken je fonetische klank.",
+    "heroIntro": "Bekijk (of beluister) een uitspraak en schrijf het woord waar die bij hoort. Drie pogingen per woord, kleurgecodeerde geschiedenis en beloningen die je steeds terug laten komen.",
+    "chooseMode": "Kies je uitdaging",
+    "chooseLanguage": "Oefentaal",
+    "continueLast": "Ga verder waar je gebleven was",
+    "start": "Begin met spelen",
+    "howToPlay": "Hoe het werkt",
+    "rule1": "Je krijgt de fonetische transcriptie van een woord te zien – schrijf het woord.",
+    "rule2": "Drie pogingen per woord: blauw voor de eerste poging, geel voor de tweede, rood voor de derde.",
+    "rule3": "Hints onthullen letters, maar elke 3 hints kosten evenveel als één fout.",
+    "rule4": "Goede antwoorden leveren XP op. Combo's, reeksen en 16 prestaties wachten op je.",
+    "yourProgress": "Jouw voortgang",
+    "wordsTotal": "woorden in dit pakket",
+    "notLoaded": "Pakketten laden…"
+  },
+  "modes": {
+    "classic": {
+      "name": "Klassieke spelling",
+      "tagline": "Lees de fonetische klank, typ het woord. De oorspronkelijke uitdaging."
+    },
+    "choice": {
+      "name": "Meerkeuze",
+      "tagline": "Vier opties, één past bij de klank. Warm rustig op."
+    },
+    "listen": {
+      "name": "Luister & schrijf",
+      "tagline": "Geen symbolen – alleen je oren. Het woord wordt hardop uitgesproken."
+    },
+    "speed": {
+      "name": "Snelheidsuitdaging",
+      "tagline": "60 seconden. Combo's tot x3. Jaag op je beste score."
+    },
+    "daily": {
+      "name": "Dagelijkse uitdaging",
+      "tagline": "10 vaste woorden – voor iedereen dezelfde puzzel, elke dag."
+    }
+  },
+  "play": {
+    "question": "Schrijf het woord",
+    "attemptsLeft": "{count} poging{en} over",
+    "typePlaceholder": "Typ het woord dat je hoort/ziet…",
+    "choicePrompt": "Welk woord past bij de klank?",
+    "submit": "Controleer",
+    "next": "Volgend woord",
+    "skip": "Overslaan",
+    "hint": "Hint",
+    "hintPenaltyNote": "Elke 3 hints kosten 15 XP",
+    "hintShortWord": "Eerste letter onthuld",
+    "noMoreHints": "Geen hints meer voor dit woord",
+    "correct": "Goed!",
+    "wrong": "Niet helemaal – probeer het opnieuw",
+    "failed": "Het antwoord was:",
+    "skipConfirmTitle": "Dit woord overslaan?",
+    "skipConfirmBody": "Overslaan telt als fout in je statistieken.",
+    "listenPrompt": "Luister goed en schrijf daarna het woord",
+    "replayAudio": "Speel het woord opnieuw af",
+    "speechUnavailable": "Spraakweergave is niet beschikbaar in deze browser. Probeer in plaats daarvan de klassieke modus.",
+    "timeLeft": "{seconds}s",
+    "speedOver": "De tijd is om!",
+    "score": "Score",
+    "combo": "Combo",
+    "multiplier": "x{value}",
+    "personalBest": "Beste: {score}",
+    "newPersonalBest": "Nieuw persoonlijk record!",
+    "endSession": "Sessie beëindigen",
+    "summaryTitle": "Sessieoverzicht",
+    "summaryQuestions": "Vragen",
+    "summaryCorrect": "Goed",
+    "summaryAccuracy": "Nauwkeurigheid",
+    "summaryXp": "XP verdiend",
+    "summaryHints": "Gebruikte hints",
+    "summaryCombo": "Beste combo",
+    "playAgain": "Speel opnieuw",
+    "backHome": "Terug naar de startpagina",
+    "attemptedWords": "Geprobeerde woorden",
+    "emptyInput": "Typ eerst een antwoord",
+    "loadError": "Het woordenboekpakket kon niet geladen worden. Controleer je verbinding en probeer het opnieuw.",
+    "retry": "Opnieuw proberen",
+    "dailyAlreadyDone": "De uitdaging van vandaag is afgerond – kom morgen terug of speel opnieuw om te oefenen.",
+    "sessionOf": "Woord {current} van {total}",
+    "standardSwitch": "Weergeven als {standard}",
+    "perfectSession": "Perfecte sessie! Elk woord goed bij de eerste poging!",
+    "achievementUnlocked": "Prestatie ontgrendeld: {name}"
+  },
+  "stats": {
+    "title": "Mijn statistieken",
+    "level": "Level {level}",
+    "xpTotal": "{xp} XP",
+    "xpToNext": "{remaining} XP tot level {next}",
+    "maxLevel": "Maximaal level bereikt!",
+    "streak": "Dagelijkse reeks",
+    "streakDays": "{count} dag{en}",
+    "longestStreak": "Langste: {count} dag{en}",
+    "winRates": "Winpercentages",
+    "outcomeFirst": "Goed bij de 1e poging",
+    "outcomeSecond": "Goed bij de 2e poging",
+    "outcomeThird": "Goed bij de 3e poging",
+    "outcomeWrong": "Fout bij alle pogingen",
+    "outcomeSkipped": "Overgeslagen",
+    "accuracy": "Algemene nauwkeurigheid",
+    "firstTryAccuracy": "Nauwkeurigheid bij de eerste poging",
+    "total": "Totaal aantal vragen",
+    "sessions": "Gespeelde sessies",
+    "hintsUsed": "Gebruikte hints",
+    "bestCombo": "Beste combo",
+    "speedBest": "Snelheidsrecord",
+    "perLanguage": "Per taal",
+    "achievements": "Prestaties",
+    "achievementsUnlocked": "{unlocked} van {total}",
+    "locked": "Vergrendeld",
+    "unlockedOn": "Ontgrendeld op {date}",
+    "dailyCalendar": "Kalender van de dagelijkse uitdaging",
+    "dailyEmpty": "Voltooi je eerste dagelijkse uitdaging om de kalender te vullen.",
+    "history": "Geschiedenis",
+    "historyEmpty": "Nog geen woorden geprobeerd. Speel een sessie om je geschiedenis te starten.",
+    "historyNote": "Klik op een woord om het op Wiktionary op te zoeken.",
+    "resetData": "Alle voortgang resetten",
+    "resetConfirmTitle": "Alles resetten?",
+    "resetConfirmBody": "XP, statistieken, geschiedenis en prestaties worden definitief verwijderd. Dit kan niet ongedaan worden gemaakt.",
+    "noData": "Speel je eerste sessie om hier statistieken te zien.",
+    "v1Import": "v1-voortgang gevonden en geïmporteerd.",
+    "v1ImportFound": "Importeer je v1-voortgang"
+  },
+  "settings": {
+    "title": "Instellingen",
+    "standard": "Fonetische standaard",
+    "ipaDesc": "Unicode-symbolen – /ˈdɪkʃ(ə)n(ə)ɹɪ/",
+    "xsampaDesc": "Notatie met alleen ASCII – /\"dIkS(@)n(@)r\\I/",
+    "matching": "Antwoordvergelijking",
+    "accentLenient": "Soepel (accenten negeren)",
+    "accentStrict": "Strikt (accenten vereist)",
+    "matchingHint": "De soepele modus accepteert 'cafe' voor 'café'. De strikte modus eist de accenten.",
+    "sound": "Geluidseffecten",
+    "autoPronounce": "Woorden automatisch uitspreken",
+    "uiLanguage": "Interfacetaal",
+    "auto": "Automatisch (browsertaal)",
+    "close": "Sluiten"
+  },
+  "achievements": {
+    "first-word": {
+      "name": "Eerste woord",
+      "description": "Beantwoord je eerste woord goed."
+    },
+    "words-50": {
+      "name": "Woordverzamelaar",
+      "description": "Beantwoord 50 woorden goed."
+    },
+    "words-250": {
+      "name": "Woordenschatbouwer",
+      "description": "Beantwoord 250 woorden goed."
+    },
+    "words-1000": {
+      "name": "Woordmeester",
+      "description": "Beantwoord 1.000 woorden goed."
+    },
+    "perfect-session": {
+      "name": "Foutloos",
+      "description": "Voltooi een sessie van 10+ woorden waarbij elk woord meteen goed is bij de eerste poging."
+    },
+    "combo-5": {
+      "name": "In vuur en vlam",
+      "description": "Antwoord 5 woorden op rij goed bij de eerste poging."
+    },
+    "combo-12": {
+      "name": "Onstuitbaar",
+      "description": "Antwoord 12 woorden op rij goed bij de eerste poging."
+    },
+    "speed-150": {
+      "name": "Snelle denker",
+      "description": "Behaal 150+ punten in een Snelheidsuitdaging."
+    },
+    "speed-300": {
+      "name": "Bliksemschrijver",
+      "description": "Behaal 300+ punten in een Snelheidsuitdaging."
+    },
+    "streak-3": {
+      "name": "Gewoontedier",
+      "description": "Voltooi de dagelijkse uitdaging 3 dagen op rij."
+    },
+    "streak-7": {
+      "name": "Weekheld",
+      "description": "Voltooi de dagelijkse uitdaging 7 dagen op rij."
+    },
+    "streak-30": {
+      "name": "Boekenwurm",
+      "description": "Voltooi de dagelijkse uitdaging 30 dagen op rij."
+    },
+    "polyglot": {
+      "name": "Polyglot",
+      "description": "Speel minstens één sessie in alle 8 talen."
+    },
+    "listener": {
+      "name": "Al oren",
+      "description": "Voltooi een volledige sessie in de modus Luister & schrijf."
+    },
+    "level-10": {
+      "name": "Ervaren",
+      "description": "Bereik level 10."
+    },
+    "sharpshooter": {
+      "name": "Scherpschutter",
+      "description": "Behoud bij 50+ beantwoorde woorden een nauwkeurigheid van 80%+ bij de eerste poging."
+    }
+  },
+  "credits": {
+    "title": "Over & credits",
+    "createdBy": "Gemaakt door",
+    "author": "Saheed Odulaja",
+    "data": "Woordenboekgegevens",
+    "dataDesc": "Samengesteld uit de uitspraakgegevens van Wiktionary (via wikt2pron). Woorden linken naar Wiktionary voor de definities.",
+    "v2Note": "Versie 2 – herbouwd vanaf het origineel uit 2019 in vanilla JS, met Next.js, TypeScript en React-Bootstrap.",
+    "license": "MIT-licentie. Broncode op GitHub.",
+    "i18nNote": "De interface is door de community vertaald – de vertalingen in het Yorùbá, Igbo en Hausa zijn eerste versies en verbeteringen zijn welkom."
+  },
+  "common": {
+    "loading": "Laden…",
+    "error": "Er ging iets mis",
+    "retry": "Opnieuw proberen",
+    "close": "Sluiten",
+    "words": "woorden",
+    "yes": "Ja",
+    "no": "Nee",
+    "ok": "OK",
+    "cancel": "Annuleren"
+  }
+}

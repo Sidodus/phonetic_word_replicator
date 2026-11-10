@@ -1,0 +1,251 @@
+{
+  "app": {
+    "name": "Phonetic Word Replicator",
+    "phonetic": "/fəˈnɛtɪk wɜːd ɹɛplɪkeɪtə/",
+    "tagline": "Train your ear, master your spelling — one sound at a time.",
+    "v2": "v2"
+  },
+  "nav": {
+    "home": "Home",
+    "play": "Play",
+    "stats": "My Stats",
+    "settings": "Settings"
+  },
+  "standard": {
+    "label": "Phonetic standard",
+    "ipa": "IPA",
+    "ipaFull": "International Phonetic Alphabet",
+    "xsampa": "X-SAMPA",
+    "xsampaFull": "X-SAMPA (ASCII phonetic alphabet)"
+  },
+  "language": {
+    "label": "Game language",
+    "wordsAvailable": "{count} words"
+  },
+  "home": {
+    "heroTitle": "Know your phonetic sound.",
+    "heroIntro": "See (or hear) a pronunciation, spell the word it belongs to. Three attempts per word, colour-coded history, and rewards that keep you coming back.",
+    "chooseMode": "Choose your challenge",
+    "chooseLanguage": "Practice language",
+    "continueLast": "Continue where you left off",
+    "start": "Start playing",
+    "howToPlay": "How it works",
+    "rule1": "You are shown a word's phonetic transcription — spell the word.",
+    "rule2": "Three attempts per word: blue for first-try, yellow for second, red for third.",
+    "rule3": "Hints reveal letters, but every 3 hints cost the same as one miss.",
+    "rule4": "Correct answers earn XP. Combos, streaks and 16 achievements await.",
+    "yourProgress": "Your progress",
+    "wordsTotal": "words in this pack",
+    "notLoaded": "Loading packs…"
+  },
+  "modes": {
+    "classic": {
+      "name": "Classic Spelling",
+      "tagline": "Read the phonetic sound, type the word. The original challenge."
+    },
+    "choice": {
+      "name": "Multiple Choice",
+      "tagline": "Four options, one right sound-match. Warm up gently."
+    },
+    "listen": {
+      "name": "Listen & Spell",
+      "tagline": "No symbols — just your ears. The word is spoken aloud."
+    },
+    "speed": {
+      "name": "Speed Challenge",
+      "tagline": "60 seconds. Combos up to x3. Chase your best score."
+    },
+    "daily": {
+      "name": "Daily Challenge",
+      "tagline": "10 seeded words — the same puzzle for everyone, every day."
+    }
+  },
+  "play": {
+    "question": "Spell the word",
+    "attemptsLeft": "{count} attempt{s} left",
+    "typePlaceholder": "Type the word you hear/see…",
+    "choicePrompt": "Which word matches the sound?",
+    "submit": "Check",
+    "next": "Next word",
+    "skip": "Skip",
+    "hint": "Hint",
+    "hintPenaltyNote": "Every 3 hints cost 15 XP",
+    "hintShortWord": "First letter revealed",
+    "noMoreHints": "No more hints for this word",
+    "correct": "Correct!",
+    "wrong": "Not quite — try again",
+    "failed": "The answer was:",
+    "skipConfirmTitle": "Skip this word?",
+    "skipConfirmBody": "Skipping counts as a miss in your stats.",
+    "listenPrompt": "Listen carefully, then spell the word",
+    "replayAudio": "Play word again",
+    "speechUnavailable": "Speech playback isn't available in this browser. Try Classic mode instead.",
+    "timeLeft": "{seconds}s",
+    "speedOver": "Time's up!",
+    "score": "Score",
+    "combo": "Combo",
+    "multiplier": "x{value}",
+    "personalBest": "Best: {score}",
+    "newPersonalBest": "New personal best!",
+    "endSession": "End session",
+    "summaryTitle": "Session summary",
+    "summaryQuestions": "Questions",
+    "summaryCorrect": "Correct",
+    "summaryAccuracy": "Accuracy",
+    "summaryXp": "XP earned",
+    "summaryHints": "Hints used",
+    "summaryCombo": "Best combo",
+    "playAgain": "Play again",
+    "backHome": "Back to home",
+    "attemptedWords": "Attempted words",
+    "emptyInput": "Type an answer first",
+    "loadError": "Couldn't load the dictionary pack. Check your connection and retry.",
+    "retry": "Retry",
+    "dailyAlreadyDone": "Today's challenge is complete — come back tomorrow, or replay for practice.",
+    "sessionOf": "Word {current} of {total}",
+    "standardSwitch": "Show as {standard}",
+    "perfectSession": "Perfect session! Every word on the first try!",
+    "achievementUnlocked": "Achievement unlocked: {name}"
+  },
+  "stats": {
+    "title": "My stats",
+    "level": "Level {level}",
+    "xpTotal": "{xp} XP",
+    "xpToNext": "{remaining} XP to level {next}",
+    "maxLevel": "Max level reached!",
+    "streak": "Daily streak",
+    "streakDays": "{count} day{s}",
+    "longestStreak": "Longest: {count} day{s}",
+    "winRates": "Win rates",
+    "outcomeFirst": "Correct on 1st attempt",
+    "outcomeSecond": "Correct on 2nd attempt",
+    "outcomeThird": "Correct on 3rd attempt",
+    "outcomeWrong": "Wrong through all attempts",
+    "outcomeSkipped": "Skipped",
+    "accuracy": "Overall accuracy",
+    "firstTryAccuracy": "First-try accuracy",
+    "total": "Total questions",
+    "sessions": "Sessions played",
+    "hintsUsed": "Hints used",
+    "bestCombo": "Best combo",
+    "speedBest": "Speed best",
+    "perLanguage": "By language",
+    "achievements": "Achievements",
+    "achievementsUnlocked": "{unlocked} of {total}",
+    "locked": "Locked",
+    "unlockedOn": "Unlocked {date}",
+    "dailyCalendar": "Daily challenge calendar",
+    "dailyEmpty": "Complete your first Daily Challenge to fill the calendar.",
+    "history": "History",
+    "historyEmpty": "No words attempted yet. Play a session to start your history.",
+    "historyNote": "Click a word to look it up on Wiktionary.",
+    "resetData": "Reset all progress",
+    "resetConfirmTitle": "Reset everything?",
+    "resetConfirmBody": "XP, stats, history and achievements will be permanently deleted. This cannot be undone.",
+    "noData": "Play your first session to see stats here.",
+    "v1Import": "v1 progress found and imported.",
+    "v1ImportFound": "Import your v1 progress"
+  },
+  "settings": {
+    "title": "Settings",
+    "standard": "Phonetic standard",
+    "ipaDesc": "Unicode symbols — /ˈdɪkʃ(ə)n(ə)ɹɪ/",
+    "xsampaDesc": "ASCII-only notation — /\"dIkS(@)n(@)r\\I/",
+    "matching": "Answer matching",
+    "accentLenient": "Lenient (ignore accents)",
+    "accentStrict": "Strict (accents required)",
+    "matchingHint": "Lenient mode accepts 'cafe' for 'café'. Strict mode demands the accent.",
+    "sound": "Sound effects",
+    "autoPronounce": "Pronounce words automatically",
+    "uiLanguage": "Interface language",
+    "auto": "Auto (browser language)",
+    "close": "Close"
+  },
+  "achievements": {
+    "first-word": {
+      "name": "First Word",
+      "description": "Answer your first word correctly."
+    },
+    "words-50": {
+      "name": "Word Collector",
+      "description": "Answer 50 words correctly."
+    },
+    "words-250": {
+      "name": "Vocabulary Builder",
+      "description": "Answer 250 words correctly."
+    },
+    "words-1000": {
+      "name": "Word Master",
+      "description": "Answer 1,000 words correctly."
+    },
+    "perfect-session": {
+      "name": "Flawless",
+      "description": "Finish a 10+ word session with every word correct on the first try."
+    },
+    "combo-5": {
+      "name": "On Fire",
+      "description": "Chain 5 first-try answers in a row."
+    },
+    "combo-12": {
+      "name": "Unstoppable",
+      "description": "Chain 12 first-try answers in a row."
+    },
+    "speed-150": {
+      "name": "Quick Thinker",
+      "description": "Score 150+ in a Speed Challenge."
+    },
+    "speed-300": {
+      "name": "Lightning Speller",
+      "description": "Score 300+ in a Speed Challenge."
+    },
+    "streak-3": {
+      "name": "Habit Forming",
+      "description": "Complete the Daily Challenge 3 days in a row."
+    },
+    "streak-7": {
+      "name": "Week Warrior",
+      "description": "Complete the Daily Challenge 7 days in a row."
+    },
+    "streak-30": {
+      "name": "Devoted Scholar",
+      "description": "Complete the Daily Challenge 30 days in a row."
+    },
+    "polyglot": {
+      "name": "Polyglot",
+      "description": "Play at least one session in all 8 languages."
+    },
+    "listener": {
+      "name": "All Ears",
+      "description": "Complete a full Listen & Spell session."
+    },
+    "level-10": {
+      "name": "Seasoned",
+      "description": "Reach level 10."
+    },
+    "sharpshooter": {
+      "name": "Sharpshooter",
+      "description": "Keep a first-try accuracy of 80%+ over 50+ answered words."
+    }
+  },
+  "credits": {
+    "title": "About & credits",
+    "createdBy": "Created by",
+    "author": "Saheed Odulaja",
+    "data": "Dictionary data",
+    "dataDesc": "Curated from Wiktionary pronunciation data (via wikt2pron). Words link to Wiktionary for definitions.",
+    "v2Note": "Version 2 — rebuilt from the 2019 vanilla-JS original with Next.js, TypeScript and React-Bootstrap.",
+    "license": "MIT licensed. Source on GitHub.",
+    "i18nNote": "Interface translated by the community — Yorùbá, Igbo and Hausa translations are first drafts and welcome improvements."
+  },
+  "common": {
+    "loading": "Loading…",
+    "error": "Something went wrong",
+    "retry": "Retry",
+    "close": "Close",
+    "words": "words",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK",
+    "cancel": "Cancel"
+  }
+}

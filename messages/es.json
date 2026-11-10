@@ -1,0 +1,251 @@
+{
+  "app": {
+    "name": "Replicador de palabras fonéticas",
+    "phonetic": "/fəˈnɛtɪk wɜːd ɹɛplɪkeɪtə/",
+    "tagline": "Entrena tu oído, domina tu ortografía — un sonido a la vez.",
+    "v2": "v2"
+  },
+  "nav": {
+    "home": "Inicio",
+    "play": "Jugar",
+    "stats": "Mis estadísticas",
+    "settings": "Ajustes"
+  },
+  "standard": {
+    "label": "Estándar fonético",
+    "ipa": "AFI",
+    "ipaFull": "Alfabeto Fonético Internacional",
+    "xsampa": "X-SAMPA",
+    "xsampaFull": "X-SAMPA (alfabeto fonético ASCII)"
+  },
+  "language": {
+    "label": "Idioma del juego",
+    "wordsAvailable": "{count} palabras"
+  },
+  "home": {
+    "heroTitle": "Conoce tu sonido fonético.",
+    "heroIntro": "Ve (o escucha) una pronunciación y escribe la palabra a la que pertenece. Tres intentos por palabra, un historial con código de colores y recompensas que te harán volver.",
+    "chooseMode": "Elige tu desafío",
+    "chooseLanguage": "Idioma de práctica",
+    "continueLast": "Continúa donde lo dejaste",
+    "start": "Empezar a jugar",
+    "howToPlay": "Cómo funciona",
+    "rule1": "Se te muestra la transcripción fonética de una palabra — escribe la palabra.",
+    "rule2": "Tres intentos por palabra: azul al primer intento, amarillo al segundo, rojo al tercero.",
+    "rule3": "Las pistas revelan letras, pero cada 3 pistas cuestan lo mismo que un fallo.",
+    "rule4": "Las respuestas correctas ganan XP. Combos, rachas y 16 logros te esperan.",
+    "yourProgress": "Tu progreso",
+    "wordsTotal": "palabras en este paquete",
+    "notLoaded": "Cargando paquetes…"
+  },
+  "modes": {
+    "classic": {
+      "name": "Ortografía clásica",
+      "tagline": "Lee el sonido fonético, escribe la palabra. El desafío original."
+    },
+    "choice": {
+      "name": "Opción múltiple",
+      "tagline": "Cuatro opciones, una sola coincide con el sonido. Calienta motores sin prisa."
+    },
+    "listen": {
+      "name": "Escuchar y escribir",
+      "tagline": "Sin símbolos — solo tus oídos. La palabra se pronuncia en voz alta."
+    },
+    "speed": {
+      "name": "Desafío de velocidad",
+      "tagline": "60 segundos. Combos de hasta x3. Persigue tu mejor puntuación."
+    },
+    "daily": {
+      "name": "Desafío diario",
+      "tagline": "10 palabras sorteadas — el mismo reto para todos, cada día."
+    }
+  },
+  "play": {
+    "question": "Escribe la palabra",
+    "attemptsLeft": "{count} intento{s} restante{s}",
+    "typePlaceholder": "Escribe la palabra que oyes/ves…",
+    "choicePrompt": "¿Qué palabra coincide con el sonido?",
+    "submit": "Comprobar",
+    "next": "Siguiente palabra",
+    "skip": "Saltar",
+    "hint": "Pista",
+    "hintPenaltyNote": "Cada 3 pistas cuestan 15 XP",
+    "hintShortWord": "Primera letra revelada",
+    "noMoreHints": "No hay más pistas para esta palabra",
+    "correct": "¡Correcto!",
+    "wrong": "No exactamente — inténtalo de nuevo",
+    "failed": "La respuesta era:",
+    "skipConfirmTitle": "¿Saltar esta palabra?",
+    "skipConfirmBody": "Saltar cuenta como un fallo en tus estadísticas.",
+    "listenPrompt": "Escucha con atención, luego escribe la palabra",
+    "replayAudio": "Reproducir la palabra de nuevo",
+    "speechUnavailable": "La reproducción de voz no está disponible en este navegador. Prueba el modo clásico.",
+    "timeLeft": "{seconds}s",
+    "speedOver": "¡Se acabó el tiempo!",
+    "score": "Puntuación",
+    "combo": "Combo",
+    "multiplier": "x{value}",
+    "personalBest": "Récord: {score}",
+    "newPersonalBest": "¡Nuevo récord personal!",
+    "endSession": "Terminar sesión",
+    "summaryTitle": "Resumen de la sesión",
+    "summaryQuestions": "Preguntas",
+    "summaryCorrect": "Correctas",
+    "summaryAccuracy": "Precisión",
+    "summaryXp": "XP ganados",
+    "summaryHints": "Pistas usadas",
+    "summaryCombo": "Mejor combo",
+    "playAgain": "Jugar de nuevo",
+    "backHome": "Volver al inicio",
+    "attemptedWords": "Palabras intentadas",
+    "emptyInput": "Escribe primero una respuesta",
+    "loadError": "No se pudo cargar el paquete de diccionario. Comprueba tu conexión y vuelve a intentarlo.",
+    "retry": "Reintentar",
+    "dailyAlreadyDone": "El desafío de hoy está completo — vuelve mañana, o repítelo para practicar.",
+    "sessionOf": "Palabra {current} de {total}",
+    "standardSwitch": "Mostrar como {standard}",
+    "perfectSession": "¡Sesión perfecta! ¡Todas las palabras al primer intento!",
+    "achievementUnlocked": "Logro desbloqueado: {name}"
+  },
+  "stats": {
+    "title": "Mis estadísticas",
+    "level": "Nivel {level}",
+    "xpTotal": "{xp} XP",
+    "xpToNext": "{remaining} XP para el nivel {next}",
+    "maxLevel": "¡Nivel máximo alcanzado!",
+    "streak": "Racha diaria",
+    "streakDays": "{count} día{s}",
+    "longestStreak": "Récord: {count} día{s}",
+    "winRates": "Tasas de acierto",
+    "outcomeFirst": "Acierto al primer intento",
+    "outcomeSecond": "Acierto al segundo intento",
+    "outcomeThird": "Acierto al tercer intento",
+    "outcomeWrong": "Fallo en todos los intentos",
+    "outcomeSkipped": "Saltadas",
+    "accuracy": "Precisión general",
+    "firstTryAccuracy": "Precisión al primer intento",
+    "total": "Total de preguntas",
+    "sessions": "Sesiones jugadas",
+    "hintsUsed": "Pistas usadas",
+    "bestCombo": "Mejor combo",
+    "speedBest": "Récord de velocidad",
+    "perLanguage": "Por idioma",
+    "achievements": "Logros",
+    "achievementsUnlocked": "{unlocked} de {total}",
+    "locked": "Bloqueado",
+    "unlockedOn": "Desbloqueado el {date}",
+    "dailyCalendar": "Calendario del desafío diario",
+    "dailyEmpty": "Completa tu primer desafío diario para llenar el calendario.",
+    "history": "Historial",
+    "historyEmpty": "Aún no hay palabras intentadas. Juega una sesión para empezar tu historial.",
+    "historyNote": "Haz clic en una palabra para consultarla en Wiktionary.",
+    "resetData": "Restablecer todo el progreso",
+    "resetConfirmTitle": "¿Restablecer todo?",
+    "resetConfirmBody": "XP, estadísticas, historial y logros se eliminarán de forma permanente. Esto no se puede deshacer.",
+    "noData": "Juega tu primera sesión para ver estadísticas aquí.",
+    "v1Import": "Progreso v1 encontrado e importado.",
+    "v1ImportFound": "Importa tu progreso v1"
+  },
+  "settings": {
+    "title": "Ajustes",
+    "standard": "Estándar fonético",
+    "ipaDesc": "Símbolos Unicode — /ˈdɪkʃ(ə)n(ə)ɹɪ/",
+    "xsampaDesc": "Notación solo ASCII — /\"dIkS(@)n(@)r\\I/",
+    "matching": "Coincidencia de respuestas",
+    "accentLenient": "Indulgente (ignorar acentos)",
+    "accentStrict": "Estricto (acentos obligatorios)",
+    "matchingHint": "El modo indulgente acepta 'cafe' en lugar de 'café'. El modo estricto exige el acento.",
+    "sound": "Efectos de sonido",
+    "autoPronounce": "Pronunciar palabras automáticamente",
+    "uiLanguage": "Idioma de la interfaz",
+    "auto": "Automático (idioma del navegador)",
+    "close": "Cerrar"
+  },
+  "achievements": {
+    "first-word": {
+      "name": "Primera palabra",
+      "description": "Responde correctamente tu primera palabra."
+    },
+    "words-50": {
+      "name": "Coleccionista de palabras",
+      "description": "Responde correctamente 50 palabras."
+    },
+    "words-250": {
+      "name": "Constructor de vocabulario",
+      "description": "Responde correctamente 250 palabras."
+    },
+    "words-1000": {
+      "name": "Maestro de las palabras",
+      "description": "Responde correctamente 1.000 palabras."
+    },
+    "perfect-session": {
+      "name": "Impecable",
+      "description": "Termina una sesión de 10+ palabras acertando todas al primer intento."
+    },
+    "combo-5": {
+      "name": "En llamas",
+      "description": "Encadena 5 aciertos al primer intento."
+    },
+    "combo-12": {
+      "name": "Imparable",
+      "description": "Encadena 12 aciertos al primer intento."
+    },
+    "speed-150": {
+      "name": "Mente rápida",
+      "description": "Consigue 150+ en un desafío de velocidad."
+    },
+    "speed-300": {
+      "name": "Relámpago ortográfico",
+      "description": "Consigue 300+ en un desafío de velocidad."
+    },
+    "streak-3": {
+      "name": "Hábito en formación",
+      "description": "Completa el desafío diario 3 días seguidos."
+    },
+    "streak-7": {
+      "name": "Guerrero de la semana",
+      "description": "Completa el desafío diario 7 días seguidos."
+    },
+    "streak-30": {
+      "name": "Erudito dedicado",
+      "description": "Completa el desafío diario 30 días seguidos."
+    },
+    "polyglot": {
+      "name": "Políglota",
+      "description": "Juega al menos una sesión en los 8 idiomas."
+    },
+    "listener": {
+      "name": "Todo oídos",
+      "description": "Completa una sesión entera de Escuchar y escribir."
+    },
+    "level-10": {
+      "name": "Experimentado",
+      "description": "Alcanza el nivel 10."
+    },
+    "sharpshooter": {
+      "name": "Tirador certero",
+      "description": "Mantén una precisión de 80%+ al primer intento en 50+ palabras respondidas."
+    }
+  },
+  "credits": {
+    "title": "Información y créditos",
+    "createdBy": "Creado por",
+    "author": "Saheed Odulaja",
+    "data": "Datos del diccionario",
+    "dataDesc": "Recopilados a partir de los datos de pronunciación de Wiktionary (mediante wikt2pron). Las palabras enlazan a Wiktionary para sus definiciones.",
+    "v2Note": "Versión 2 — reconstruida a partir del original en vanilla-JS de 2019 con Next.js, TypeScript y React-Bootstrap.",
+    "license": "Con licencia MIT. Código fuente en GitHub.",
+    "i18nNote": "Interfaz traducida por la comunidad — las traducciones a Yorùbá, Igbo y Hausa son primeros borradores; las mejoras son bienvenidas."
+  },
+  "common": {
+    "loading": "Cargando…",
+    "error": "Algo salió mal",
+    "retry": "Reintentar",
+    "close": "Cerrar",
+    "words": "palabras",
+    "yes": "Sí",
+    "no": "No",
+    "ok": "OK",
+    "cancel": "Cancelar"
+  }
+}
