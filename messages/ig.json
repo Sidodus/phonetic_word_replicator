@@ -1,0 +1,251 @@
+{
+  "app": {
+    "name": "Mmụghachi Okwu Fonetik",
+    "phonetic": "/fəˈnɛtɪk wɜːd ɹɛplɪkeɪtə/",
+    "tagline": "Zụọ ntị gị, jisike na mkpụrụokwu — otu ụda n'oge.",
+    "v2": "v2"
+  },
+  "nav": {
+    "home": "Ụlọ",
+    "play": "Gwuọ",
+    "stats": "Ndekọ m",
+    "settings": "Ntọala"
+  },
+  "standard": {
+    "label": "Usoro fonetik",
+    "ipa": "IPA",
+    "ipaFull": "Mkpụrụedemede Ụda Mba Nile",
+    "xsampa": "X-SAMPA",
+    "xsampaFull": "X-SAMPA (mkpụrụedemede ụda ASCII)"
+  },
+  "language": {
+    "label": "Asụsụ egwuregwu",
+    "wordsAvailable": "okwu {count}"
+  },
+  "home": {
+    "heroTitle": "Mara ụda fonetik gị.",
+    "heroIntro": "Hụ (ma ọ bụ nụ) otu okwuokwu, dee okwu ọ na-anọchite anya ya. Ohere atọ maka okwu ọ bụla, akụkọ ihe ọ gbara nkeji agba, na ihe nrite na-akpọ gị ka ọ laghachi.",
+    "chooseMode": "Họrọ ihe ịma aka gị",
+    "chooseLanguage": "Asụsụ ọmụmụ",
+    "continueLast": "Gaa n'ihu ebe ọ kwụsịrị",
+    "start": "Malite egwuregwu",
+    "howToPlay": "Otu esi agwu ya",
+    "rule1": "A ga-egosi gị otu mkpụrụokwu okwu — dee okwu ahụ.",
+    "rule2": "Ohere atọ maka okwu ọ bụla: anụnụ maka mbọ mbụ, edo edo maka nke abụọ, uhie maka nke atọ.",
+    "rule3": "Ndụmọdụ na-egosi mkpụrụedemede, mana ndụmọdụ atọ dị ka mmeri ọgụ otu okwu.",
+    "rule4": "Azịza ziri ezi na-enye XP. Njikọ, usoro ụbọchị, na ihe nrite 16 na-atụ gị anya.",
+    "yourProgress": "Ọganihu gị",
+    "wordsTotal": "okwu n'ime ngwugwu a",
+    "notLoaded": "Na-ebugo ngwugwu…"
+  },
+  "modes": {
+    "classic": {
+      "name": "Ide Okwu Ochie",
+      "tagline": "Gụọ ụda fonetik, pịnye okwu ahụ. Ihe ịma aka mbụ."
+    },
+    "choice": {
+      "name": "Ịhọrọ Otu",
+      "tagline": "Nhọrọ anọ, otu ụda ziri ezi. Mmalite dị nwayọọ."
+    },
+    "listen": {
+      "name": "Nụọ, Dee Ya",
+      "tagline": "Akara ọ dịghị — naanị ntị gị. A ga-ekwu okwu ahụ n'olu dara ụda."
+    },
+    "speed": {
+      "name": "Ịma aka Ọsọ",
+      "tagline": "Ọnụ ọgba ngwa ngwa 60. Njikọ rụọ x3. Gbalịa rute akara kacha mma gị."
+    },
+    "daily": {
+      "name": "Ịma aka Ụbọchị",
+      "tagline": "Okwu 10 e keputuru — otu ihe ịma aka maka onye ọ bụla, kwa ụbọchị."
+    }
+  },
+  "play": {
+    "question": "Dee okwu ahụ",
+    "attemptsLeft": "mbọ {count} fọdụrụ",
+    "typePlaceholder": "Pịnye okwu ị hụrụ/nụrụ…",
+    "choicePrompt": "Okwu ole dabara ụda ahụ?",
+    "submit": "Lelee",
+    "next": "Okwu na-esote",
+    "skip": "Fefe ya",
+    "hint": "Ndụmọdụ",
+    "hintPenaltyNote": "Ndụmọdụ atọ na-eri XP 15",
+    "hintShortWord": "E gosipụtara mkpụrụedemede mbụ",
+    "noMoreHints": "Ọ nweghị ndụmọdụ ọzọ maka okwu a",
+    "correct": "Ziri ezi!",
+    "wrong": "Ọ dịghị ahụ — nwalee ọzọ",
+    "failed": "Azịza ya bụ:",
+    "skipConfirmTitle": "Fefe okwu a?",
+    "skipConfirmBody": "Ịfefe ya na-agụ dị ka mmeri ọgụ na ndekọ gị.",
+    "listenPrompt": "Nụ ọfụma, mee ka ị dee okwu ahụ",
+    "replayAudio": "Nụ okwu ahụ ọzọ",
+    "speechUnavailable": "Okwu ọnụ adịghị na ihe nchọgharị a. Nwalee ụdị Ochie kama.",
+    "timeLeft": "{seconds}s",
+    "speedOver": "Oge gwụla!",
+    "score": "Akwụkwọ ntụ",
+    "combo": "Njikọ",
+    "multiplier": "x{value}",
+    "personalBest": "Kasị mma: {score}",
+    "newPersonalBest": "Akwụkwọ ntụ ọhụrụ kachasị!",
+    "endSession": "Mechie nnọkọ",
+    "summaryTitle": "Nchịkọta nnọkọ",
+    "summaryQuestions": "Ajụjụ",
+    "summaryCorrect": "Ziri ezi",
+    "summaryAccuracy": "Nkenke",
+    "summaryXp": "XP e nwetara",
+    "summaryHints": "Ndụmọdụ e ji",
+    "summaryCombo": "Njikọ kachasị",
+    "playAgain": "Gwuọ ọzọ",
+    "backHome": "Laghachi n'ụlọ",
+    "attemptedWords": "Okwu anwalewo",
+    "emptyInput": "Dee azịza mbụ",
+    "loadError": "Enweghị ibudo ngwugwu okwu. Lelee njikọ gị ma nwalee ọzọ.",
+    "retry": "Nwalee ọzọ",
+    "dailyAlreadyDone": "Ihe ịma aka taa emeela — bịa echi, ma ọ bụ gwuo ọzọ maka ọmụmụ.",
+    "sessionOf": "Okwu {current} n'ime {total}",
+    "standardSwitch": "Gosi dị ka {standard}",
+    "perfectSession": "Nnọkọ zuru oke! Okwu ọ bụla na mbọ mbụ!",
+    "achievementUnlocked": "Ihe nrite meghere: {name}"
+  },
+  "stats": {
+    "title": "Ndekọ m",
+    "level": "Ọkwa {level}",
+    "xpTotal": "XP {xp}",
+    "xpToNext": "XP {remaining} tupu ọkwa {next}",
+    "maxLevel": "Ọkwa kachasị elu ruru!",
+    "streak": "Usoro ụbọchị",
+    "streakDays": "ụbọchị {count}",
+    "longestStreak": "Kacha ogologo: ụbọchị {count}",
+    "winRates": "Ọnọdụ mmeri",
+    "outcomeFirst": "Ziri ezi na mbọ mbụ",
+    "outcomeSecond": "Ziri ezi na mbọ nke abụọ",
+    "outcomeThird": "Ziri ezi na mbọ nke atọ",
+    "outcomeWrong": "Nke na-adịghị mma mgbe niile",
+    "outcomeSkipped": "Ndị afefefe",
+    "accuracy": "Nkenke niile",
+    "firstTryAccuracy": "Nkenke mbọ mbụ",
+    "total": "Ajụjụ niile",
+    "sessions": "Nnọkọ agwuwo",
+    "hintsUsed": "Ndụmọdụ e ji",
+    "bestCombo": "Njikọ kachasị",
+    "speedBest": "Ọsọ kachasị mma",
+    "perLanguage": "Site na asụsụ",
+    "achievements": "Ihe nrite",
+    "achievementsUnlocked": "{unlocked} n'ime {total}",
+    "locked": "Emechiiri",
+    "unlockedOn": "Emeghere ya {date}",
+    "dailyCalendar": "Kalenda ihe ịma aka ụbọchị",
+    "dailyEmpty": "Mechaa ihe ịma aka ụbọchị mbụ gị ka kalenda jupụta.",
+    "history": "Akụkọ",
+    "historyEmpty": "Ọ nweghị okwu anwalewo. Gwuọ nnọkọ ka akụkọ gị bido.",
+    "historyNote": "Pịa okwu ka ị lele ya na Wiktionary.",
+    "resetData": "Hichapụ ọganihu niile",
+    "resetConfirmTitle": "Hichapụ ihe niile?",
+    "resetConfirmBody": "XP, ndekọ, akụkọ na ihe nrite ga-ehichapụ kpamkpam. Enweghị ike ịlaghachi azụ.",
+    "noData": "Gwuọ nnọkọ mbụ gị ka ị hụ ndekọ ebe a.",
+    "v1Import": "A hụrụ ọganihu v1 ma bulite ya.",
+    "v1ImportFound": "Bulite ọganihu v1 gị"
+  },
+  "settings": {
+    "title": "Ntọala",
+    "standard": "Usoro fonetik",
+    "ipaDesc": "Akara Unicode — /ˈdɪkʃ(ə)n(ə)ɹɪ/",
+    "xsampaDesc": "Edemede ASCII — /\"dIkS(@)n(@)r\\I/",
+    "matching": "Iji azịza tụnyere",
+    "accentLenient": "Obi uto (lelee ụda okwu)",
+    "accentStrict": "Siri ike (ụda okwu dị mkpa)",
+    "matchingHint": "Ụdị obi uto nabatara 'cafe' maka 'café'. Ụdị siri ike chọrọ ụda okwu ahụ.",
+    "sound": "Ọdịdị ụda",
+    "autoPronounce": "Kwuo okwu na-akpaghị aka",
+    "uiLanguage": "Asụsụ nhazi",
+    "auto": "Na-akpaghị aka (asụsụ ihe nchọgharị)",
+    "close": "Meechi"
+  },
+  "achievements": {
+    "first-word": {
+      "name": "Okwu Mbụ",
+      "description": "Zaa okwu mbụ gị nke ọma."
+    },
+    "words-50": {
+      "name": "Onye Nchịkọta Okwu",
+      "description": "Zaa okwu 50 nke ọma."
+    },
+    "words-250": {
+      "name": "Onye Nwulite Okwu",
+      "description": "Zaa okwu 250 nke ọma."
+    },
+    "words-1000": {
+      "name": "Onye Ozizi Okwu",
+      "description": "Zaa okwu 1,000 nke ọma."
+    },
+    "perfect-session": {
+      "name": "Enweghị Njọ",
+      "description": "Mechaa nnọkọ okwu 10+ niile ziri ezi na mbọ mbụ."
+    },
+    "combo-5": {
+      "name": "Ọkụ N'agbụ",
+      "description": "Jikọọ azịza ise nke mbọ mbụ n'usoro."
+    },
+    "combo-12": {
+      "name": "Ọ nweghị Ọkwọ",
+      "description": "Jikọọ azịza iri na abụọ nke mbọ mbụ n'usoro."
+    },
+    "speed-150": {
+      "name": "Onye Chọrọ Ihe Ngwa Ngwa",
+      "description": "Nweta akara 150+ na Ịma aka Ọsọ."
+    },
+    "speed-300": {
+      "name": "Onye Dete Ọkụ",
+      "description": "Nweta akara 300+ na Ịma aka Ọsọ."
+    },
+    "streak-3": {
+      "name": "Mmalite Omenala",
+      "description": "Mechaa ihe ịma aka ụbọchị ụbọchị atọ n'usoro."
+    },
+    "streak-7": {
+      "name": "Onye Agha Izugbe",
+      "description": "Mechaa ihe ịma aka ụbọchị ụbọchị asaa n'usoro."
+    },
+    "streak-30": {
+      "name": "Ọkammụta Nsọ",
+      "description": "Mechaa ihe ịma aka ụbọchị ụbọchị iri atọ n'usoro."
+    },
+    "polyglot": {
+      "name": "Onye Ma Asụsụ Niile",
+      "description": "Gwuọ nnọkọ opekata mpe otu n'asụsụ asatọ niile."
+    },
+    "listener": {
+      "name": "Ntị Nile",
+      "description": "Mechaa nnọkọ Nụọ, Dee Ya zuru oke."
+    },
+    "level-10": {
+      "name": "Onye Ntọrọ Ogo",
+      "description": "Rute ọkwa 10."
+    },
+    "sharpshooter": {
+      "name": "Onye Ngụ Ọgọ Gị",
+      "description": "Nọgide na nkenke mbọ mbụ nke 80%+ karịa okwu 50+ azịza."
+    }
+  },
+  "credits": {
+    "title": "Gbasara ya & ekele",
+    "createdBy": "Onye kere ya",
+    "author": "Saheed Odulaja",
+    "data": "Data okwuokwu",
+    "dataDesc": "E nwetara ya site na okwuokwu Wiktionary (site na wikt2pron). Okwu na-ejikọ na Wiktionary maka nkọwa.",
+    "v2Note": "Ọnụọgụgụ 2 — e wughachi ya site na ọrụ vanilla-JS nke afọ 2019 na Next.js, TypeScript na React-Bootstrap.",
+    "license": "Nọ n'okpuru ikike MIT. Koodu isi nọ na GitHub.",
+    "i18nNote": "Ndị otu sụgharịrị nzuko ahụ — asụsụ Yorùbá, Igbo na Hausa bụ ọgụgụ mbụ; nabata mmezigharị."
+  },
+  "common": {
+    "loading": "Na-ebugo…",
+    "error": "Ọ dịghị ihe ọma mere",
+    "retry": "Nwalee ọzọ",
+    "close": "Meechi",
+    "words": "okwu",
+    "yes": "Ee",
+    "no": "Mba",
+    "ok": "Ọ dị mma",
+    "cancel": "Kagbuo"
+  }
+}

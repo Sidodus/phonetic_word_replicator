@@ -1,0 +1,251 @@
+{
+  "app": {
+    "name": "語音詞複製器",
+    "phonetic": "/fəˈnɛtɪk wɜːd ɹɛplɪkeɪtə/",
+    "tagline": "訓練耳朵，精進拼字——一次一個音。",
+    "v2": "v2"
+  },
+  "nav": {
+    "home": "首頁",
+    "play": "遊戲",
+    "stats": "我的統計",
+    "settings": "設定"
+  },
+  "standard": {
+    "label": "音標標準",
+    "ipa": "IPA",
+    "ipaFull": "國際音標",
+    "xsampa": "X-SAMPA",
+    "xsampaFull": "X-SAMPA（ASCII 音標字母）"
+  },
+  "language": {
+    "label": "遊戲語言",
+    "wordsAvailable": "{count} 個單字"
+  },
+  "home": {
+    "heroTitle": "聽懂音，拼對字。",
+    "heroIntro": "看到（或聽到）一個發音，拼出它所屬的單字。每個單字三次機會、彩色標記的作答紀錄，還有讓你一再回來的獎勵。",
+    "chooseMode": "選擇你的挑戰",
+    "chooseLanguage": "練習語言",
+    "continueLast": "從上次進度繼續",
+    "start": "開始遊玩",
+    "howToPlay": "玩法說明",
+    "rule1": "畫面會顯示一個單字的音標——請拼出該單字。",
+    "rule2": "每個單字三次機會：第一次藍色、第二次黃色、第三次紅色。",
+    "rule3": "提示會揭曉字母，但每 3 個提示的代價等同一次答錯。",
+    "rule4": "答對可賺 XP。連擊、連續紀錄和 16 項成就等著你。",
+    "yourProgress": "你的進度",
+    "wordsTotal": "本題庫單字數",
+    "notLoaded": "題庫載入中…"
+  },
+  "modes": {
+    "classic": {
+      "name": "經典拼字",
+      "tagline": "看音標，打出單字。最原始的挑戰。"
+    },
+    "choice": {
+      "name": "選擇題",
+      "tagline": "四個選項，選出符合發音的那個。輕鬆暖身。"
+    },
+    "listen": {
+      "name": "聽音拼字",
+      "tagline": "沒有符號——只靠耳朵。單字會唸出來。"
+    },
+    "speed": {
+      "name": "極速挑戰",
+      "tagline": "60 秒。連擊最高 x3。挑戰你的最高分。"
+    },
+    "daily": {
+      "name": "每日挑戰",
+      "tagline": "10 個固定單字——每天，所有人都是同一份題目。"
+    }
+  },
+  "play": {
+    "question": "拼出這個單字",
+    "attemptsLeft": "{count} 次作答機會",
+    "typePlaceholder": "輸入你聽到／看到的單字…",
+    "choicePrompt": "哪個單字符合這個發音？",
+    "submit": "檢查",
+    "next": "下一個單字",
+    "skip": "跳過",
+    "hint": "提示",
+    "hintPenaltyNote": "每 3 個提示扣 15 XP",
+    "hintShortWord": "已揭曉第一個字母",
+    "noMoreHints": "這個單字沒有更多提示了",
+    "correct": "答對了！",
+    "wrong": "差一點——再試一次",
+    "failed": "正確答案是：",
+    "skipConfirmTitle": "要跳過這個單字嗎？",
+    "skipConfirmBody": "跳過會在統計中記為一次失誤。",
+    "listenPrompt": "仔細聽，然後拼出這個單字",
+    "replayAudio": "再聽一次",
+    "speechUnavailable": "此瀏覽器不支援語音播放。請改用經典模式。",
+    "timeLeft": "{seconds} 秒",
+    "speedOver": "時間到！",
+    "score": "分數",
+    "combo": "連擊",
+    "multiplier": "x{value}",
+    "personalBest": "最佳：{score}",
+    "newPersonalBest": "創下新紀錄！",
+    "endSession": "結束本場",
+    "summaryTitle": "本場成績",
+    "summaryQuestions": "題數",
+    "summaryCorrect": "答對",
+    "summaryAccuracy": "準確率",
+    "summaryXp": "獲得 XP",
+    "summaryHints": "使用提示",
+    "summaryCombo": "最佳連擊",
+    "playAgain": "再玩一次",
+    "backHome": "返回首頁",
+    "attemptedWords": "已作答單字",
+    "emptyInput": "請先輸入答案",
+    "loadError": "無法載入題庫。請檢查網路連線後再試一次。",
+    "retry": "重試",
+    "dailyAlreadyDone": "今日挑戰已完成——明天再來，或重玩一次當作練習。",
+    "sessionOf": "第 {current} / {total} 個單字",
+    "standardSwitch": "以 {standard} 顯示",
+    "perfectSession": "完美的一場！每個單字都一次答對！",
+    "achievementUnlocked": "成就解鎖：{name}"
+  },
+  "stats": {
+    "title": "我的統計",
+    "level": "等級 {level}",
+    "xpTotal": "{xp} XP",
+    "xpToNext": "距離等級 {next} 還差 {remaining} XP",
+    "maxLevel": "已達最高等級！",
+    "streak": "每日連續紀錄",
+    "streakDays": "{count} 天",
+    "longestStreak": "最長：{count} 天",
+    "winRates": "答題表現",
+    "outcomeFirst": "第 1 次就答對",
+    "outcomeSecond": "第 2 次才答對",
+    "outcomeThird": "第 3 次才答對",
+    "outcomeWrong": "三次皆未答對",
+    "outcomeSkipped": "跳過",
+    "accuracy": "整體準確率",
+    "firstTryAccuracy": "首次答對率",
+    "total": "總題數",
+    "sessions": "已玩場次",
+    "hintsUsed": "使用提示",
+    "bestCombo": "最佳連擊",
+    "speedBest": "極速最佳分",
+    "perLanguage": "依語言",
+    "achievements": "成就",
+    "achievementsUnlocked": "{unlocked} / {total}",
+    "locked": "未解鎖",
+    "unlockedOn": "於 {date} 解鎖",
+    "dailyCalendar": "每日挑戰行事曆",
+    "dailyEmpty": "完成你的第一次每日挑戰，行事曆就會亮起來。",
+    "history": "作答紀錄",
+    "historyEmpty": "還沒有作答紀錄。玩一場練習，開始累積你的紀錄。",
+    "historyNote": "點擊單字即可在 Wiktionary 查詢。",
+    "resetData": "重設所有進度",
+    "resetConfirmTitle": "要重設全部嗎？",
+    "resetConfirmBody": "XP、統計、紀錄與成就將永久刪除，且無法復原。",
+    "noData": "玩完第一場練習，這裡就會顯示你的統計。",
+    "v1Import": "已找到並匯入 v1 進度。",
+    "v1ImportFound": "匯入你的 v1 進度"
+  },
+  "settings": {
+    "title": "設定",
+    "standard": "音標標準",
+    "ipaDesc": "Unicode 符號——/ˈdɪkʃ(ə)n(ə)ɹɪ/",
+    "xsampaDesc": "純 ASCII 標記法——/\"dIkS(@)n(@)r\\I/",
+    "matching": "答案比對",
+    "accentLenient": "寬鬆（忽略變音符號）",
+    "accentStrict": "嚴格（變音符號必須相符）",
+    "matchingHint": "寬鬆模式接受以 'cafe' 代替 'café'；嚴格模式則要求變音符號完全相符。",
+    "sound": "音效",
+    "autoPronounce": "自動朗讀單字",
+    "uiLanguage": "介面語言",
+    "auto": "自動（跟隨瀏覽器語言）",
+    "close": "關閉"
+  },
+  "achievements": {
+    "first-word": {
+      "name": "第一個單字",
+      "description": "答對你的第一個單字。"
+    },
+    "words-50": {
+      "name": "單字收藏家",
+      "description": "累積答對 50 個單字。"
+    },
+    "words-250": {
+      "name": "字彙累積者",
+      "description": "累積答對 250 個單字。"
+    },
+    "words-1000": {
+      "name": "單字大師",
+      "description": "累積答對 1,000 個單字。"
+    },
+    "perfect-session": {
+      "name": "零失誤",
+      "description": "完成 10 個以上單字的練習，且每個單字都一次答對。"
+    },
+    "combo-5": {
+      "name": "手感發燙",
+      "description": "連續 5 題第一次就答對。"
+    },
+    "combo-12": {
+      "name": "勢不可擋",
+      "description": "連續 12 題第一次就答對。"
+    },
+    "speed-150": {
+      "name": "反應敏捷",
+      "description": "在極速挑戰中拿到 150 分以上。"
+    },
+    "speed-300": {
+      "name": "閃電拼字手",
+      "description": "在極速挑戰中拿到 300 分以上。"
+    },
+    "streak-3": {
+      "name": "漸成習慣",
+      "description": "連續 3 天完成每日挑戰。"
+    },
+    "streak-7": {
+      "name": "一週勇士",
+      "description": "連續 7 天完成每日挑戰。"
+    },
+    "streak-30": {
+      "name": "鐵桿學者",
+      "description": "連續 30 天完成每日挑戰。"
+    },
+    "polyglot": {
+      "name": "多語達人",
+      "description": "在全部 8 種語言中各玩至少一場。"
+    },
+    "listener": {
+      "name": "豎起耳朵",
+      "description": "完整完成一場「聽音拼字」練習。"
+    },
+    "level-10": {
+      "name": "身經百戰",
+      "description": "達到等級 10。"
+    },
+    "sharpshooter": {
+      "name": "神射手",
+      "description": "在答對 50 題以上後，仍維持 80% 以上的首次答對率。"
+    }
+  },
+  "credits": {
+    "title": "關於與致謝",
+    "createdBy": "作者",
+    "author": "Saheed Odulaja",
+    "data": "字典資料",
+    "dataDesc": "選自 Wiktionary 發音資料（透過 wikt2pron）。單字可連至 Wiktionary 查看釋義。",
+    "v2Note": "第 2 版——以 Next.js、TypeScript 與 React-Bootstrap 將 2019 年的 vanilla-JS 原版徹底重寫。",
+    "license": "採 MIT 授權，原始碼在 GitHub 上。",
+    "i18nNote": "介面由社群翻譯——Yorùbá、Igbo 與 Hausa 譯文仍屬初稿，歡迎協助改進。"
+  },
+  "common": {
+    "loading": "載入中…",
+    "error": "發生錯誤",
+    "retry": "重試",
+    "close": "關閉",
+    "words": "個單字",
+    "yes": "是",
+    "no": "否",
+    "ok": "確定",
+    "cancel": "取消"
+  }
+}

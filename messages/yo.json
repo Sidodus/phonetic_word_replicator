@@ -1,0 +1,251 @@
+{
+  "app": {
+    "name": "Àdàkọ Ọ̀rọ̀ Fonetíkì",
+    "phonetic": "/fəˈnɛtɪk wɜːd ɹɛplɪkeɪtə/",
+    "tagline": "Ṣisọ́ ẹtí rẹ, wọn ìṣẹ̀dàlẹ̀ rẹ — òhùn kan ní ìgbà.",
+    "v2": "v2"
+  },
+  "nav": {
+    "home": "Ilé",
+    "play": "Ṣeré",
+    "stats": "Àwọn ìṣirò mi",
+    "settings": "Àtúntṣe"
+  },
+  "standard": {
+    "label": "Àfihàn fonetíkì",
+    "ipa": "IPA",
+    "ipaFull": "Àláfọ̀rọ̀ Fonetíkì Kárí-ayé",
+    "xsampa": "X-SAMPA",
+    "xsampaFull": "X-SAMPA (àláfọ̀rọ̀ ASCII)"
+  },
+  "language": {
+    "label": "Èdè eré",
+    "wordsAvailable": "ọ̀rọ̀ {count}"
+  },
+  "home": {
+    "heroTitle": "Mọ òhùn fonetíkì rẹ.",
+    "heroIntro": "Wo (tàbí gbọ́) ìgbàláhùn kan, kọ ọ̀rọ̀ tí ó ń to sí i. Ìgbìyànjú mẹ́ta fún ọ̀rọ̀ kan, ìtàn tí àwọ̀ rẹ̀ ń sọ ọ́, ànwàní tí yóò fẹ́ràn ọ́ láti padà wá.",
+    "chooseMode": "Yan ìfipá rẹ",
+    "chooseLanguage": "Èdè ìṣẹ̀dàlẹ̀",
+    "continueLast": "Tẹ̀síwájú níbi tí o bá dúró",
+    "start": "Bẹ̀rẹ̀ eré",
+    "howToPlay": "Bí a ṣe ń ṣe é",
+    "rule1": "Ìgbàláhùn fonetíkì ọ̀rọ̀ kan yóò hàn — kọ ọ̀rọ̀ náà.",
+    "rule2": "Ìgbìyànjú mẹ́ta fún ọ̀rọ̀ kan: búláwó fún ìgbèrò àkọ́kọ́, páńpẹ́ fún kejì, púpà fún kẹ́ta.",
+    "rule3": "Ìmọ̀ràn fihàn àwọn létà, ṣùgbọ́n ìmọ̀ràn mẹ́ta dọ́gbà ìṣọ̀ní kan.",
+    "rule4": "Ẹ̀sún XP ni èsì tó tọ́ ń jẹ́. Àpapọ̀, àṣàyàn ọjọ́ àti àwọn àmì-ẹ̀yẹ 16 ń retí ọ́.",
+    "yourProgress": "Ìlọ̀sókè rẹ",
+    "wordsTotal": "ọ̀rọ̀ nínú àpótí yìí",
+    "notLoaded": "Ó ń ṣàkójọ àwọn àpótí…"
+  },
+  "modes": {
+    "classic": {
+      "name": "Ìṣẹ̀dàlẹ̀ Àbájọ",
+      "tagline": "Ka òhùn fonetíkì, tẹ ọ̀rọ̀ náà. Ìfipá àkọ́kọ́."
+    },
+    "choice": {
+      "name": "Ìyàn Ẹyọ̀kọ́kọ́",
+      "tagline": "Àwọn àṣàyàn mẹ́rin, òhùn kan ṣoṣo tí ó bá mu. Ìbẹ̀rẹ̀ fún ọ̀pọ̀lọ́pọ̀."
+    },
+    "listen": {
+      "name": "Gbọ́, Kọ́ Sílẹ̀",
+      "tagline": "Àmì kò sí — ẹtí nìkan. Wón yóò sọ ọ̀rọ̀ náà gedun gbọ́n."
+    },
+    "speed": {
+      "name": "Ìfipá Ìyára",
+      "tagline": "Ìṣẹ́jú àárín 60. Àpapọ̀ títí dé x3. Kója ìwọ̀n ìgbà rẹ."
+    },
+    "daily": {
+      "name": "Ìfipá Ọjọ́jẹ́",
+      "tagline": "Ọ̀rọ̀ 10 tí a yàn lápá ìkan — ìṣòro kan ṣoṣo fún gbogbo ènìyàn, ọjọ́ kọ̀ọ̀kan."
+    }
+  },
+  "play": {
+    "question": "Kọ ọ̀rọ̀ náà",
+    "attemptsLeft": "ìgbìyànjú {count} ṣi ṣẹ́lẹ̀",
+    "typePlaceholder": "Tẹ ọ̀rọ̀ tí o gbọ́/rí…",
+    "choicePrompt": "Ọ̀rọ̀ wo ni ó bá òhùn náà mu?",
+    "submit": "Ṣàyẹ̀wò",
+    "next": "Ọ̀rọ̀ tí ó kàn",
+    "skip": "Fò yìí kalẹ̀",
+    "hint": "Ìmọ̀ràn",
+    "hintPenaltyNote": "Ìmọ̀ràn mẹ́ta jẹ́ XP 15",
+    "hintShortWord": "Létà àkọ́kọ́ hàn",
+    "noMoreHints": "Kò sí ìmọ̀ràn mìíràn fún ọ̀rọ̀ yìí",
+    "correct": "Ó tọ́!",
+    "wrong": "Kò bá mu pátápátá — gbìyànjú lẹ́ẹ̀kan sí i",
+    "failed": "Èsì náà ni:",
+    "skipConfirmTitle": "Fò ọ̀rọ̀ yìí kalẹ̀?",
+    "skipConfirmBody": "Fò kalẹ̀ jẹ́ bí ìṣọ̀ní nínú àwọn ìṣirò rẹ.",
+    "listenPrompt": "Gbọ́ dáadáa, lẹ́yìn náà kọ ọ̀rọ̀ náà",
+    "replayAudio": "Tún ọ̀rọ̀ náà gbọ́",
+    "speechUnavailable": "Ìgbọ́rọ̀ ohùn kò wà nínú aṣàwákiri yìí. Gbìyànjú ìpìlẹ̀ Àbájọ.",
+    "timeLeft": "{seconds}s",
+    "speedOver": "Ìgbà ti tán!",
+    "score": "Ìwọ̀n",
+    "combo": "Àpapọ̀",
+    "multiplier": "x{value}",
+    "personalBest": "Ìwọ̀n gíga jù: {score}",
+    "newPersonalBest": "Ìwọ̀n gíga tuntun!",
+    "endSession": "Tan ìgbàkalẹ̀ náà",
+    "summaryTitle": "Àkótán ìgbàkalẹ̀",
+    "summaryQuestions": "Ìbéèrè",
+    "summaryCorrect": "Tó tọ́",
+    "summaryAccuracy": "Ìtọ́rọ̀",
+    "summaryXp": "XP tí a gba",
+    "summaryHints": "Ìmọ̀ràn tí a lo",
+    "summaryCombo": "Àpapọ̀ tí ó ga jù",
+    "playAgain": "Tún ṣeré",
+    "backHome": "Padà sí ilé",
+    "attemptedWords": "Àwọn ọ̀rọ̀ tí a fi ìgbìyànjú",
+    "emptyInput": "Kọ èsì kan kí o tó",
+    "loadError": "Kò ní ṣí àpótí ọ̀rọ̀. Ṣàyẹ̀wò asopọ rẹ kí o tún gbiyànjú.",
+    "retry": "Tún gbiyànjú",
+    "dailyAlreadyDone": "Ìfipá ọ̀wọ̀ ọ̀sẹ̀ yìí ti tán — padà wá lọ́la, tàbí tún ṣeré fún ìṣẹ̀dàlẹ̀.",
+    "sessionOf": "Ọ̀rọ̀ {current} nínú {total}",
+    "standardSwitch": "Fí hàn gẹ́gẹ́ bí {standard}",
+    "perfectSession": "Ìgbàkalẹ̀ péye! Gbogbo ọ̀rọ̀ lọ́wọ́ àkọ́kọ́!",
+    "achievementUnlocked": "Àmì-ẹ̀yẹ tí a ṣí: {name}"
+  },
+  "stats": {
+    "title": "Àwọn ìṣirò mi",
+    "level": "Ìpele {level}",
+    "xpTotal": "XP {xp}",
+    "xpToNext": "XP {remaining} kí o tó ìpele {next}",
+    "maxLevel": "Ìpele ti ó ga jùlọ ti dé!",
+    "streak": "Àṣàyàn ọjọ́jẹ́",
+    "streakDays": "ọjọ́ {count}",
+    "longestStreak": "Tí pípẹ́ jù: ọjọ́ {count}",
+    "winRates": "Ìwọ̀n ìṣẹ́gun",
+    "outcomeFirst": "Tó tọ́ lọ́wọ́ àkọ́kọ́",
+    "outcomeSecond": "Tó tọ́ lọ́wọ́ kejì",
+    "outcomeThird": "Tó tọ́ lọ́wọ́ kẹ́ta",
+    "outcomeWrong": "Ṣìṣìṣe nígbà gbogbo ìgbìyànjú",
+    "outcomeSkipped": "Àwọn tí a fò kalẹ̀",
+    "accuracy": "Ìtọ́rọ̀ gbogbo-gbogbo",
+    "firstTryAccuracy": "Ìtọ́rọ̀ ìgbèrò àkọ́kọ́",
+    "total": "Ìbéèrè papọ̀",
+    "sessions": "Ìgbàkalẹ̀ tí a ṣeré",
+    "hintsUsed": "Ìmọ̀ràn tí a lo",
+    "bestCombo": "Àpapọ̀ tí ó ga jù",
+    "speedBest": "Ìwọ̀n ìyára tí ó ga jù",
+    "perLanguage": "Lílo èdè",
+    "achievements": "Àwọn àmì-ẹ̀yẹ",
+    "achievementsUnlocked": "{unlocked} nínú {total}",
+    "locked": "Tí a tì mọ́",
+    "unlockedOn": "A ṣí ní {date}",
+    "dailyCalendar": "Ìwé-àṣẹ̀yìn ìfipá ọjọ́jẹ́",
+    "dailyEmpty": "Tán ìfipá ọjọ́jẹ́ àkọ́kọ́ rẹ kí ìwé-àṣẹ̀yìn ó kún.",
+    "history": "Ìtàn",
+    "historyEmpty": "Kò sí ọ̀rọ̀ tí a ti fi ìgbìyànjú. Ṣeré ìgbàkalẹ̀ kan kí ìtàn rẹ bẹ̀rẹ̀.",
+    "historyNote": "Tẹ ọ̀rọ̀ kan láti wá á lórí Wiktionary.",
+    "resetData": "Nu gbogbo ìlọ̀sókè kúrò",
+    "resetConfirmTitle": "Nu gbogbo rẹ̀ kúrò?",
+    "resetConfirmBody": "XP, ìṣirò, ìtàn àti àwọn àmì-ẹ̀yẹ yóò parun lásán. A kò le padà dá à padà.",
+    "noData": "Ṣeré ìgbàkalẹ̀ àkọ́kọ́ rẹ kí o lè rí ìṣirò níbí.",
+    "v1Import": "A rí ìlọ̀sókè v1, a sì tíò wọ́n wá.",
+    "v1ImportFound": "Wá ìlọ̀sókè v1 rẹ wá"
+  },
+  "settings": {
+    "title": "Àtúntṣe",
+    "standard": "Àfihàn fonetíkì",
+    "ipaDesc": "Àmì Unicode — /ˈdɪkʃ(ə)n(ə)ɹɪ/",
+    "xsampaDesc": "Ìṣèdú ASCII — /\"dIkS(@)n(@)r\\I/",
+    "matching": "Ìfi èsì wé",
+    "accentLenient": "Fọwọ́sowọ́pọ̀ (fo àmì-ohùn nù)",
+    "accentStrict": "Lile (àmì-ohùn ṣe pàtàkì)",
+    "matchingHint": "Ibamu ti o fo amì-ohùn nù gba 'cafe' fún 'café'. Ti lile gbé àmì-ohùn kàn.",
+    "sound": "Ìròhùn àmì",
+    "autoPronounce": "Sọ àwọn ọ̀rọ̀ láìlètíọ́",
+    "uiLanguage": "Èdè ohun-èlò ìbánisọ̀rọ̀",
+    "auto": "Àṣàyàn (èdè aṣàwákiri)",
+    "close": "Tì i mọ́"
+  },
+  "achievements": {
+    "first-word": {
+      "name": "Ọ̀rọ̀ Àkọ́kọ́",
+      "description": "Fèsì tó tọ́ fún ọ̀rọ̀ àkọ́kọ́ rẹ."
+    },
+    "words-50": {
+      "name": "Oníngba Ọ̀rọ̀",
+      "description": "Fèsì tó tọ́ fún ọ̀rọ̀ 50."
+    },
+    "words-250": {
+      "name": "Onílù Ọ̀rọ̀",
+      "description": "Fèsì tó tọ́ fún ọ̀rọ̀ 250."
+    },
+    "words-1000": {
+      "name": "Ọ̀gá Ọ̀rọ̀",
+      "description": "Fèsì tó tọ́ fún ọ̀rọ̀ 1,000."
+    },
+    "perfect-session": {
+      "name": "Aìṣedéè",
+      "description": "Tan ìgbàkalẹ̀ ti ọ̀rọ̀ 10+ pẹ̀lú gbogbo rẹ̀ tó tọ́ lọ́wọ́ àkọ́kọ́."
+    },
+    "combo-5": {
+      "name": "Iná N Yọ",
+      "description": "Sọ ẹsì tó tọ́ marùn-un lọ́wọ́ àkọ́kọ́ lẹ́ẹ̀kan kọjá."
+    },
+    "combo-12": {
+      "name": "Aìdẹ́kùn",
+      "description": "Sọ ẹsì tó tọ́ méjìlá lọ́wọ́ àkọ́kọ́ lẹ́ẹ̀kan kọjá."
+    },
+    "speed-150": {
+      "name": "Erọ́ Ìyára",
+      "description": "Gba ìwọ̀n 150+ nínú Ìfipá Ìyára."
+    },
+    "speed-300": {
+      "name": "Ìṣẹ̀dàlẹ̀ Ìmọ́lẹ̀",
+      "description": "Gba ìwọ̀n 300+ nínú Ìfipá Ìyára."
+    },
+    "streak-3": {
+      "name": "Ìbẹ̀rẹ̀ Àṣà",
+      "description": "Tan ìfipá ọjọ́jẹ́ fún ọjọ́ mẹ́ta lélọ́sẹ̀."
+    },
+    "streak-7": {
+      "name": "Ọ̀gá Ọ̀sẹ̀",
+      "description": "Tan ìfipá ọjọ́jẹ́ fún ọjọ́ 7 lélọ́sẹ̀."
+    },
+    "streak-30": {
+      "name": "Onímọ̀ Tí Ó Fìfẹ́",
+      "description": "Tan ìfipá ọjọ́jẹ́ fún ọjọ́ 30 lélọ́sẹ̀."
+    },
+    "polyglot": {
+      "name": "Onímọ̀ Èdè",
+      "description": "Ṣeré ìgbàkalẹ̀ kan ní ìwọ̀n gbogbo èdè 8."
+    },
+    "listener": {
+      "name": "Gbogbo Ẹtí",
+      "description": "Tan ìgbàkalẹ̀ Gbọ́, Kọ́ Sílẹ̀ kan pátápátá."
+    },
+    "level-10": {
+      "name": "Agbà Onímọ̀",
+      "description": "Dé ìpele 10."
+    },
+    "sharpshooter": {
+      "name": "Ọ̀gá Ìtọ́rọ̀",
+      "description": "Dùbúlá ìtọ́rọ̀ ìgbèrò àkọ́kọ́ ti 80%+ lórí ọ̀rọ̀ 50+ tí a fèsì."
+    }
+  },
+  "credits": {
+    "title": "Nípa rẹ̀ & ìmọ̀lẹ̀",
+    "createdBy": "Ẹnití ó dàá kalẹ̀",
+    "author": "Saheed Odulaja",
+    "data": "Àwọn ìwòye ìwé-ọ̀rọ̀",
+    "dataDesc": "Àwọn ìgbàláhùn Wiktionary ni a kọ́ wọ́n (nipasẹ wikt2pron). Àwọn ọ̀rọ̀ ń tọka sí Wiktionary fún ìtumọ̀.",
+    "v2Note": "Ìkẹwàá 2 — a tún kọ́ ọ́ láti ìpìlẹ̀ vanilla-JS ti ọdún 2019 pẹ̀lú Next.js, TypeScript àti React-Bootstrap.",
+    "license": "Wọ́n fún ní ìfọ̀wọ́sowọ́pọ̀ MIT. Orísun wà lórí GitHub.",
+    "i18nNote": "Àwọn èdè Yorùbá, Igbo àti Hausa jẹ́ ìkẹwàá àkọ́kọ́ — àwọn àtúnṣe ni a ń retí."
+  },
+  "common": {
+    "loading": "Ó ń ṣàkójọ…",
+    "error": "Ohun kan ṣẹlẹ̀ tí kò tọ́",
+    "retry": "Tún gbiyànjú",
+    "close": "Tì i mọ́",
+    "words": "ọ̀rọ̀",
+    "yes": "Bẹ́ẹ̀ni",
+    "no": "Rárá",
+    "ok": "Ó dára",
+    "cancel": "Fagilé"
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "app": {
+    "name": "Maimaita Kalmar Fonetik",
+    "phonetic": "/fəˈnɛtɪk wɜːd ɹɛplɪkeɪtə/",
+    "tagline": "Horar da kai game da sauti, ƙarfafa rubutun — sauti ɗaya lokaci ɗaya.",
+    "v2": "v2"
+  },
+  "nav": {
+    "home": "Gida",
+    "play": "Wasa",
+    "stats": "Ƙididdigata",
+    "settings": "Saituna"
+  },
+  "standard": {
+    "label": "Tsarin fonetik",
+    "ipa": "IPA",
+    "ipaFull": "Laifuffukan Sauti na Duniya",
+    "xsampa": "X-SAMPA",
+    "xsampaFull": "X-SAMPA (haruffan sauti na ASCII)"
+  },
+  "language": {
+    "label": "Harshe na wasa",
+    "wordsAvailable": "kalmomi {count}"
+  },
+  "home": {
+    "heroTitle": "Sanin sautin lafazin ka.",
+    "heroIntro": "Duba (ko ji) yadda ake karanta kalma, rubuta kalmar da take wakiltar. Gwaje-gwaje uku a kowace kalma, tarihin launi-keɓaɓɓu, da lada za su sa ka dawo.",
+    "chooseMode": "Zaɓi kalubalenka",
+    "chooseLanguage": "Harshe na koyarwa",
+    "continueLast": "Ci gaba daga inda ka ƙare",
+    "start": "Fara wasa",
+    "howToPlay": "Yadda ake taka",
+    "rule1": "Ana nuna maka rubutun lafazin kalma — rubuta kalmar.",
+    "rule2": "Gwaje uku a kowace kalma: shudi a farkon gwaji, rawaya na biyu, ja na uku.",
+    "rule3": "Shawarwari na bayyana haruffa, amma shawarwari uku sun yi da gazawa ɗaya.",
+    "rule4": "Amsoshin daidai suna ba XP. Haɗakarwa, jere da yini, da kuma tukwici 16 suna jiran ka.",
+    "yourProgress": "Ci gaban ka",
+    "wordsTotal": "kalmomi a cikin wannan fakiti",
+    "notLoaded": "Ana loda fakitoci…"
+  },
+  "modes": {
+    "classic": {
+      "name": "Rubutun Gargajiya",
+      "tagline": "Karanta sautin lafazi, rubuta kalmar. Kalubalen asali."
+    },
+    "choice": {
+      "name": "Zaɓi Ɗaya",
+      "tagline": "Zaɓuka huɗu, sauti ɗaya daidai. Sauƙaƙan farawa."
+    },
+    "listen": {
+      "name": "Saurara, Rubuta",
+      "tagline": "Babu alamomi — kai kaɗai. Ana furta kalma da iska."
+    },
+    "speed": {
+      "name": "Kalubalen Gaggawa",
+      "tagline": "Daƙiƙa 60. Haɗakarwa har zuwa x3. Nemi maki mafi kyau."
+    },
+    "daily": {
+      "name": "Kalubalen Yini",
+      "tagline": "Kalmomi 10 da aka ƙaddara — kalubale guda ga kowa, kowace yini."
+    }
+  },
+  "play": {
+    "question": "Rubuta kalmar",
+    "attemptsLeft": "gwaji {count} ya rage",
+    "typePlaceholder": "Rubuta kalmar da ka ji/ka gani…",
+    "choicePrompt": "Wace kalma ta dace da sautin?",
+    "submit": "Duba",
+    "next": "Kalma mai zuwa",
+    "skip": "Fasa",
+    "hint": "Shawara",
+    "hintPenaltyNote": "Shawarwari uku suna arha XP 15",
+    "hintShortWord": "An bayyana harafin farko",
+    "noMoreHints": "Babu ƙarin shawara don wannan kalma",
+    "correct": "Daidai!",
+    "wrong": "Ba aiko ba — gwada sake",
+    "failed": "Amsar ita ce:",
+    "skipConfirmTitle": "Fasa wannan kalma?",
+    "skipConfirmBody": "Fasa ana ƙidaya ta azamar gazawa a cikin ƙididdigarka.",
+    "listenPrompt": "Saurara da kyau, sannan rubuta kalmar",
+    "replayAudio": "Sake jin kalmar",
+    "speechUnavailable": "Magana da murya ba ta nan a wannan burauzar. Gwaji da yanayin Gargajiya.",
+    "timeLeft": "{seconds}s",
+    "speedOver": "Lokaci ya ƙare!",
+    "score": "Maki",
+    "combo": "Haɗakarwa",
+    "multiplier": "x{value}",
+    "personalBest": "Mafi kyau: {score}",
+    "newPersonalBest": "Sabon maki mafi kyau!",
+    "endSession": "Ƙare zaman",
+    "summaryTitle": "Taƙaitaccen zaman",
+    "summaryQuestions": "Tambayoyi",
+    "summaryCorrect": "Daidai",
+    "summaryAccuracy": "Daidaito",
+    "summaryXp": "XP da aka samu",
+    "summaryHints": "Shawarwari da aka yi amfani",
+    "summaryCombo": "Haɗakarwa mafi girma",
+    "playAgain": "Sake wasa",
+    "backHome": "Komawa gida",
+    "attemptedWords": "Kalmomin da aka gwada",
+    "emptyInput": "Rubuta amsa da farko",
+    "loadError": "Ba a iya loda fakin kalmomin ba. Duba haɗin yanar gizon ka ka sake gwadawa.",
+    "retry": "Sake gwadawa",
+    "dailyAlreadyDone": "Kalubalen yau ya ƙare — dawo gobe, ko kuwa sake wasa don horarwa.",
+    "sessionOf": "Kalma {current} daga cikin {total}",
+    "standardSwitch": "Nuna azaman {standard}",
+    "perfectSession": "Zaman cikakke! Dukkan kalmomi a farkon gwaji!",
+    "achievementUnlocked": "An buɗe tukwici: {name}"
+  },
+  "stats": {
+    "title": "Ƙididdigata",
+    "level": "Mataki {level}",
+    "xpTotal": "XP {xp}",
+    "xpToNext": "XP {remaining} kafin mataki {next}",
+    "maxLevel": "An kai matakin sama!",
+    "streak": "Jerin yau da kullum",
+    "streakDays": "kwana {count}",
+    "longestStreak": "Mafi tsayi: kwana {count}",
+    "winRates": "Yawan nasara",
+    "outcomeFirst": "Daidai a gwaji na 1",
+    "outcomeSecond": "Daidai a gwaji na 2",
+    "outcomeThird": "Daidai a gwaji na 3",
+    "outcomeWrong": "Kuskure a dukan gwaje-gwaje",
+    "outcomeSkipped": "Waɗanda aka fashe",
+    "accuracy": "Daidaiton gabaɗaya",
+    "firstTryAccuracy": "Daidaiton gwaji na farko",
+    "total": "Tambayoyi gabaɗaya",
+    "sessions": "Zamanin da aka buga",
+    "hintsUsed": "Shawarwari da aka yi amfani",
+    "bestCombo": "Haɗakarwa mafi girma",
+    "speedBest": "Maki gaggawa mafi kyau",
+    "perLanguage": "Ga kowace harshe",
+    "achievements": "Tukwici",
+    "achievementsUnlocked": "{unlocked} daga {total}",
+    "locked": "An rufe",
+    "unlockedOn": "An buɗe {date}",
+    "dailyCalendar": "Kalandar kalubalen yini",
+    "dailyEmpty": "Kammala kalubalen yini na farko don cika kalandar.",
+    "history": "Tarihi",
+    "historyEmpty": "Babu kalma da aka gwada tukuna. Buga zaman don fara tarihin ka.",
+    "historyNote": "Danna kalma don binciko ta a Wiktionary.",
+    "resetData": "Sake saitin dukan ci gaba",
+    "resetConfirmTitle": "Sake saitin komai?",
+    "resetConfirmBody": "XP, ƙididdiga, tarihi da tukwici za a gina su gaba ɗaya. Ba za a iya dawowa ba.",
+    "noData": "Buga zaman farko don ganin ƙididdiga a nan.",
+    "v1Import": "An sami ci gaban v1 an shigo da shi.",
+    "v1ImportFound": "Shigo da ci gaban v1 naka"
+  },
+  "settings": {
+    "title": "Saituna",
+    "standard": "Tsarin fonetik",
+    "ipaDesc": "Alamomin Unicode — /ˈdɪkʃ(ə)n(ə)ɹɪ/",
+    "xsampaDesc": "Rubutun ASCII — /\"dIkS(@)n(@)r\\I/",
+    "matching": "kwatanta amsoshi",
+    "accentLenient": "Mai haƙuri (yilwoda alamun sauti)",
+    "accentStrict": "Tsauri (alamun sauti dole)",
+    "matchingHint": "Yanayin haƙuri ya karɓi 'cafe' don 'café'. Yanayin tsauri yana buƙatar alamin sauti.",
+    "sound": "Sautunan alama",
+    "autoPronounce": "Furta kalmomi da kai",
+    "uiLanguage": "Harshe mahangar",
+    "auto": "Kai tsaye (harshe burauza)",
+    "close": "Rufe"
+  },
+  "achievements": {
+    "first-word": {
+      "name": "Kalma ta Farko",
+      "description": "Amsa kalmarka ta farko daidai."
+    },
+    "words-50": {
+      "name": "Mai Tarin Kalmomi",
+      "description": "Amsa kalmomi 50 daidai."
+    },
+    "words-250": {
+      "name": "Mai Gina Baitulmalin Kalmomi",
+      "description": "Amsa kalmomi 250 daidai."
+    },
+    "words-1000": {
+      "name": "Sarkin Kalmomi",
+      "description": "Amsa kalmomi 1,000 daidai."
+    },
+    "perfect-session": {
+      "name": "Marar Laifi",
+      "description": "Kammala zaman kalmomi 10+ duka daidai a farkon gwaji."
+    },
+    "combo-5": {
+      "name": "Wuta Tana Kone",
+      "description": "Haɗa amsoshi biyar na farkon gwaji a jere."
+    },
+    "combo-12": {
+      "name": "Marar Tsayi",
+      "description": "Haɗa amsoshi goma sha biyu na farkon gwaji a jere."
+    },
+    "speed-150": {
+      "name": "Mai Tunani Mai Gaggawa",
+      "description": "Samu maki 150+ a Kalubalen Gaggawa."
+    },
+    "speed-300": {
+      "name": "Mai Rubutun Walƙiya",
+      "description": "Samu maki 300+ a Kalubalen Gaggawa."
+    },
+    "streak-3": {
+      "name": "Farin Farkon Halayya",
+      "description": "Kammala kalubalen yini kwana uku a jere."
+    },
+    "streak-7": {
+      "name": "Jagoran Mako",
+      "description": "Kammala kalubalen yini kwana bakwai a jere."
+    },
+    "streak-30": {
+      "name": "Malamin Mai Himma",
+      "description": "Kammala kalubalen yini kwana talatin a jere."
+    },
+    "polyglot": {
+      "name": "Masanin Harsuna",
+      "description": "Buga zaman a kowane ɗaya daga cikin harsuna 8."
+    },
+    "listener": {
+      "name": "Kunnuwa Masu Sauraro",
+      "description": "Kammala cikakken zaman Saurara, Rubuta."
+    },
+    "level-10": {
+      "name": "Jagora Mai Gogewa",
+      "description": "Kai mataki 10."
+    },
+    "sharpshooter": {
+      "name": "Maharbin Daidaito",
+      "description": "Rike daidaiton farkon gwaji na 80%+ kan kalmomi 50+."
+    }
+  },
+  "credits": {
+    "title": "Game da & godiya",
+    "createdBy": "Wanda ya ƙirƙira",
+    "author": "Saheed Odulaja",
+    "data": "Bayanan ƙamus",
+    "dataDesc": "An tattara su daga bayanan lafazin Wiktionary (ta wikt2pron). Kalmomi suna haɗuwa zuwa Wiktionary don ma'anoni.",
+    "v2Note": "Sigar 2 — an sake ginawa daga na asalin vanilla-JS na shekarar 2019 da Next.js, TypeScript da React-Bootstrap.",
+    "license": "An ba da lasisin MIT. Lambar tushen tana GitHub.",
+    "i18nNote": "Mahangar ta fassara al'umma — fassarorin Yorùbá, Igbo da Hausa su ne farkon bayani; gyare-gyare ana maraba da su."
+  },
+  "common": {
+    "loading": "Ana loda…",
+    "error": "Wani abu ya faru ba daidai ba",
+    "retry": "Sake gwadawa",
+    "close": "Rufe",
+    "words": "kalmomi",
+    "yes": "Eh",
+    "no": "A'a",
+    "ok": "To",
+    "cancel": "Soke"
+  }
+}
