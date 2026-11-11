@@ -186,13 +186,40 @@ describe("classic mode", () => {
     });
     expect(result?.correct).toBe(true);
   });
+
+  it("honours an injected equivalence rule (pinyin for Chinese)", () => {
+    const pack: Question[] = [{ word: "馬", ipa: "ma", xsampa: "ma", tier: "core" }];
+    let s = startSession("classic", "zh", pack, NOW);
+    // Without the rule, pinyin does not match the characters.
+    let r = reduceSession(s, {
+      type: "answer",
+      input: "ma",
+      options: { accentInsensitive: true },
+      now: NOW,
+    });
+    expect(r.result?.correct).toBe(false);
+    s = r.state;
+    // With the equivalence rule (as wired for the pinyin setting), it counts.
+    r = reduceSession(s, {
+      type: "answer",
+      input: "ma",
+      options: {
+        accentInsensitive: true,
+        equivalence: (answer, target) => answer === "ma" && target === "馬",
+      },
+      now: NOW,
+    });
+    expect(r.result?.correct).toBe(true);
+    expect(r.state.records[0]).toMatchObject({ outcome: "correct-second", word: "馬" });
+  });
 });
 
 describe("hints", () => {
-  it("are allowed in classic/listen/daily but not choice/speed", () => {
+  it("are allowed in classic/listen/daily/review but not choice/speed", () => {
     expect(hintsAllowed(startSession("classic", "en", Q, NOW))).toBe(true);
     expect(hintsAllowed(startSession("listen", "en", Q, NOW))).toBe(true);
     expect(hintsAllowed(startSession("daily", "en", Q, NOW))).toBe(true);
+    expect(hintsAllowed(startSession("review", "en", Q, NOW))).toBe(true);
     expect(hintsAllowed(startSession("choice", "en", Q, NOW))).toBe(false);
     expect(hintsAllowed(startSession("speed", "en", Q, NOW))).toBe(false);
   });

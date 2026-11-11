@@ -98,8 +98,9 @@ describe("GamePage — classic mode", () => {
     vi.useFakeTimers();
     try {
       // Stub pack has 8 words; classic asks for 15 → topped up to 8.
+      // (Button role, not text: the aria-live mirror also says "Skip".)
       for (let i = 0; i < 8; i++) {
-        fireEvent.click(screen.getByText(/Skip/));
+        fireEvent.click(screen.getByRole("button", { name: /Skip/ }));
       }
       const state = useProfileStore.getState();
       expect(state.globalCounts.skipped).toBe(8);

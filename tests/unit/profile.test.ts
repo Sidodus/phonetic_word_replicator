@@ -308,6 +308,40 @@ describe("profile store", () => {
     const raw = window.localStorage.getItem(PROFILE_STORAGE_KEY);
     expect(raw).not.toBeNull();
     const parsed = JSON.parse(raw!) as { state?: { version?: number } };
-    expect(parsed.state?.version).toBe(2);
+    expect(parsed.state?.version).toBe(3);
+  });
+
+  describe("review bank", () => {
+    it("feeds the bank from every recorded attempt", () => {
+      useProfileStore.getState().recordAttempt("en", record({ word: "cat", outcome: "correct-first" }));
+      useProfileStore.getState().recordAttempt("en", record({ word: "dog", outcome: "failed", xpEarned: 0 }));
+      const bank = useProfileStore.getState().review.entries;
+      expect(bank["en:cat"]).toMatchObject({ word: "cat", box: 1 });
+      expect(bank["en:dog"]).toMatchObject({ word: "dog", box: 0 });
+    });
+
+    it("starts empty on a fresh profile", () => {
+      expect(useProfileStore.getState().review.entries).toEqual({});
+    });
+
+    it("survives migrate from a v2-shaped persisted state (adds bank + pinyin default)", () => {
+      // Simulate the persisted v2 document the migrate fn receives: the v2
+      // shape simply lacks the new keys (no explicit undefined values).
+      const v2Profile = createEmptyProfile() as unknown as Record<string, unknown>;
+      delete v2Profile.review;
+      const v2Settings = { ...(v2Profile.settings as Record<string, unknown>) };
+      delete v2Settings.pinyinTolerant;
+      v2Profile.settings = v2Settings;
+      v2Profile.version = 2;
+      const persisted = v2Profile as unknown;
+      const migrated = useProfileStore.persist.getOptions().migrate?.(persisted, 2) as {
+        version?: number;
+        review?: { entries: Record<string, unknown> };
+        settings?: { pinyinTolerant?: boolean };
+      };
+      expect(migrated.version).toBe(3);
+      expect(migrated.review!.entries).toEqual({});
+      expect(migrated.settings!.pinyinTolerant).toBe(false);
+    });
   });
 });

@@ -5,6 +5,7 @@ import {
   dailySeedFor,
   pickChoiceQuestions,
   pickQuestions,
+  pickReviewQuestions,
   QuestionGenerationError,
 } from "@/lib/game/question-generator";
 import { createRng } from "@/lib/game/rng";
@@ -157,5 +158,42 @@ describe("pickChoiceQuestions", () => {
       expect(q.options).toHaveLength(4);
       expect(q.options).toContain(q.word);
     }
+  });
+});
+
+describe("pickReviewQuestions", () => {
+  const pack = makePack([
+    makeEntry("apple", "starter"),
+    makeEntry("bread", "starter"),
+    makeEntry("cheese", "core"),
+    makeEntry("marmalade", "advanced"),
+  ]);
+
+  it("builds questions only from the due words", () => {
+    const due = [{ word: "apple" }, { word: "marmalade" }];
+    const questions = pickReviewQuestions(pack, due, createRng(3), 5);
+    expect(questions.map((q) => q.word).sort()).toEqual(["apple", "marmalade"]);
+  });
+
+  it("matches case-insensitively", () => {
+    const questions = pickReviewQuestions(pack, [{ word: "Apple" }], createRng(3), 5);
+    expect(questions).toHaveLength(1);
+    expect(questions[0].word).toBe("apple");
+  });
+
+  it("skips words missing from the pack instead of failing", () => {
+    const due = [{ word: "apple" }, { word: "deleted-word" }];
+    const questions = pickReviewQuestions(pack, due, createRng(3), 5);
+    expect(questions.map((q) => q.word)).toEqual(["apple"]);
+  });
+
+  it("returns nothing for an empty due list", () => {
+    expect(pickReviewQuestions(pack, [], createRng(3), 5)).toEqual([]);
+  });
+
+  it("rejects negative counts", () => {
+    expect(() => pickReviewQuestions(pack, [{ word: "apple" }], createRng(3), -1)).toThrow(
+      RangeError,
+    );
   });
 });
