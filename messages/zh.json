@@ -36,7 +36,12 @@
     "rule4": "答對可賺 XP。連擊、連續紀錄和 16 項成就等著你。",
     "yourProgress": "你的進度",
     "wordsTotal": "本題庫單字數",
-    "notLoaded": "題庫載入中…"
+    "notLoaded": "題庫載入中…",
+    "reviewTitle": "單字複習",
+    "reviewDueBody": "{count} 個單字待複習",
+    "reviewStart": "開始複習",
+    "ttsOk": "可播放發音",
+    "ttsNo": "此語言沒有可用的發音語音"
   },
   "modes": {
     "classic": {
@@ -58,6 +63,10 @@
     "daily": {
       "name": "每日挑戰",
       "tagline": "10 個固定單字——每天，所有人都是同一份題目。"
+    },
+    "review": {
+      "name": "複習",
+      "tagline": "待加強的單字會反覆出現，直到你記住為止。"
     }
   },
   "play": {
@@ -105,7 +114,8 @@
     "sessionOf": "第 {current} / {total} 個單字",
     "standardSwitch": "以 {standard} 顯示",
     "perfectSession": "完美的一場！每個單字都一次答對！",
-    "achievementUnlocked": "成就解鎖：{name}"
+    "achievementUnlocked": "成就解鎖：{name}",
+    "reviewNothingDue": "目前沒有需要複習的單字——先作答一些單字，困難的單字會再回來。"
   },
   "stats": {
     "title": "我的統計",
@@ -159,7 +169,9 @@
     "autoPronounce": "自動朗讀單字",
     "uiLanguage": "介面語言",
     "auto": "自動（跟隨瀏覽器語言）",
-    "close": "關閉"
+    "close": "關閉",
+    "pinyin": "接受中文的拼音答案（實驗性）",
+    "pinyinHint": "開啟後，輸入拼音（如「ma」）對中文單字即算正確。輸入漢字永遠有效——此設定絕不會懲罰母語拼寫。"
   },
   "achievements": {
     "first-word": {

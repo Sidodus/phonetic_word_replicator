@@ -99,6 +99,17 @@ export default function SettingsModal({
             <Form.Text muted>{t("settings.matchingHint")}</Form.Text>
           </Form.Group>
 
+          <Form.Group className="mb-3" controlId="settings-pinyin">
+            <Form.Check
+              type="switch"
+              id="pinyin-tolerant"
+              label={t("settings.pinyin")}
+              checked={settings.pinyinTolerant}
+              onChange={(e) => updateSettings({ pinyinTolerant: e.target.checked })}
+            />
+            <Form.Text muted>{t("settings.pinyinHint")}</Form.Text>
+          </Form.Group>
+
           <Row className="g-2 mb-3">
             <Col>
               <Form.Check

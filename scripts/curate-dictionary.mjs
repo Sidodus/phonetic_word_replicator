@@ -23,10 +23,33 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const RAW_DIR = path.join(ROOT, "data", "raw", "wiktionary-json");
+const FREQ_DIR = path.join(ROOT, "data", "frequency");
 const OUT_DIR = path.join(ROOT, "public", "dictionaries");
 
 const LANGUAGES = ["en", "zh", "nl", "fr", "de", "hi", "it", "es"];
 const TIER_CAPS = { starter: 700, core: 800, advanced: 500 };
+
+/**
+ * Load the vendored frequency list for a language (word → rank, 1 = most
+ * common). Sources: hermitdave/FrequencyWords (OpenSubtitles-derived), see
+ * docs/DATA_PIPELINE.md. Missing file → empty map (hash-order fallback).
+ */
+function loadFrequency(language) {
+  const file = path.join(FREQ_DIR, `${language}.txt`);
+  if (!fs.existsSync(file)) return new Map();
+  const map = new Map();
+  const lines = fs.readFileSync(file, "utf8").split("\n");
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed) continue;
+    const spaceAt = trimmed.indexOf(" ");
+    const word = trimmed.slice(0, spaceAt === -1 ? undefined : spaceAt);
+    // Single tokens only — multi-token subtitle phrases never match single words.
+    if (!word || /\s/.test(word)) continue;
+    if (!map.has(word)) map.set(word, map.size + 1);
+  }
+  return map;
+}
 
 // Language-specific word shape rules. Latin/Devanagari words must start and
 // end with a letter so punctuation-edged junk ("a-", "o'", bare matras) is
@@ -74,7 +97,7 @@ function hashKey(word) {
   return hash;
 }
 
-function curateLanguage(language) {
+function curateLanguage(language, frequency) {
   const rawPath = path.join(RAW_DIR, `${language}.dict.v0.json`);
   const raw = JSON.parse(fs.readFileSync(rawPath, "utf8"));
   const script = LANG_SCRIPT[language];
@@ -127,15 +150,20 @@ function curateLanguage(language) {
     kept.push({ w: title, ipa, xs, tier: tierFor(title, script) });
   }
 
-  // Deterministic cap: within a tier, prefer shorter words; break ties by a
-  // word-derived hash so the selection never biases alphabetically.
+  // Deterministic cap: within a tier, rank by corpus frequency (most common
+  // first) with a word-hash tiebreak for words missing from the list. This
+  // keeps builds reproducible while shipping learnable, commonly-met words.
   const byTier = { starter: [], core: [], advanced: [] };
   for (const entry of kept) byTier[entry.tier].push(entry);
+  const NO_RANK = Number.MAX_SAFE_INTEGER;
+  const rankOf = (word) => frequency.get(word.toLowerCase()) ?? NO_RANK;
+  let ranked = 0;
   for (const tier of Object.keys(byTier)) {
     byTier[tier].sort(
-      (a, b) => Array.from(a.w).length - Array.from(b.w).length || hashKey(a.w) - hashKey(b.w),
+      (a, b) => rankOf(a.w) - rankOf(b.w) || hashKey(a.w) - hashKey(b.w),
     );
     byTier[tier] = byTier[tier].slice(0, TIER_CAPS[tier]);
+    ranked += byTier[tier].filter((e) => rankOf(e.w) !== NO_RANK).length;
   }
 
   const entries = [...byTier.starter, ...byTier.core, ...byTier.advanced];
@@ -145,7 +173,12 @@ function curateLanguage(language) {
     advanced: byTier.advanced.length,
   };
 
-  return { language, entries, tiers, stats };
+  return {
+    language,
+    entries,
+    tiers,
+    stats: { ...stats, frequencyRanked: entries.length ? Math.round((ranked / entries.length) * 100) : 0 },
+  };
 }
 
 function writePacks() {
@@ -154,13 +187,14 @@ function writePacks() {
   const index = { version: 2, generatedAt, languages: {} };
 
   for (const language of LANGUAGES) {
-    const { entries, tiers, stats } = curateLanguage(language);
+    const frequency = loadFrequency(language);
+    const { entries, tiers, stats } = curateLanguage(language, frequency);
     const pack = {
       meta: {
         lang: language,
         version: 2,
         generatedAt,
-        source: "wiktionary v0 via wikt2pron (abuccts), curated",
+        source: "wiktionary v0 via wikt2pron (abuccts), curated; frequency-ranked (FrequencyWords/OpenSubtitles)",
         count: entries.length,
         tiers,
       },
@@ -177,7 +211,7 @@ function writePacks() {
     };
     console.log(
       `${language}: kept ${entries.length} / ${stats.total} raw ` +
-        `(tiers ${tiers.starter}/${tiers.core}/${tiers.advanced}) ` +
+        `(tiers ${tiers.starter}/${tiers.core}/${tiers.advanced}, freq-ranked ${stats.frequencyRanked}%) ` +
         `[dropped: shape=${stats.badShape} properNoun=${stats.properNoun} dup=${stats.duplicate} audio/none=${stats.noPron} empty=${stats.emptyAfterStrip}]`,
     );
   }

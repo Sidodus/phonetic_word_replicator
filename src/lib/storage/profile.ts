@@ -22,6 +22,7 @@ import { evaluateAchievements } from "@/lib/game/achievements";
 import { computeOutcomeStats } from "@/lib/game/scoring";
 import { applyDailyCompletion } from "@/lib/game/streaks";
 import type { SessionSummary } from "@/types/game";
+import { applyReviewResult, type ReviewBank } from "@/lib/game/review";
 import { importV1Storage } from "./v1-migration";
 
 // ---------------------------------------------------------------------------
@@ -37,6 +38,8 @@ export interface Settings {
   autoPronounce: boolean;
   /** "auto" follows the browser language. */
   uiLocale: string;
+  /** Experimental: accept pinyin answers for Chinese words (opt-in). */
+  pinyinTolerant: boolean;
 }
 
 export interface LanguageStats {
@@ -57,7 +60,8 @@ export interface DailyCalendarEntry {
 }
 
 export interface ProfileData {
-  version: 2;
+  /** Persisted-schema version (see persist config migrate + docs/MIGRATION.md). */
+  version: 3;
   settings: Settings;
   xpTotal: number;
   xpByLanguage: Record<LanguageCode, number>;
@@ -83,6 +87,8 @@ export interface ProfileData {
   /** dateKey → daily challenge result; capped at CALENDAR_CAP entries. */
   dailyCalendar: Record<string, DailyCalendarEntry>;
   bestSpeedScore: Partial<Record<LanguageCode, number>>;
+  /** Leitner-boxed "wobbly words" mistake bank (see lib/game/review.ts). */
+  review: { entries: ReviewBank };
   lastPlayed: { language: LanguageCode; mode: GameMode } | null;
   /** Set after a successful v1 localStorage import; prevents re-import. */
   v1ImportedAt: string | null;
@@ -101,6 +107,7 @@ export const DEFAULT_SETTINGS: Settings = {
   soundEnabled: true,
   autoPronounce: true,
   uiLocale: "auto",
+  pinyinTolerant: false,
 };
 
 export function emptyLanguageStats(): LanguageStats {
@@ -125,7 +132,7 @@ export function createEmptyProfile(): ProfileData {
     xpByLanguage[lang] = 0;
   }
   return {
-    version: 2,
+    version: 3,
     settings: { ...DEFAULT_SETTINGS },
     xpTotal: 0,
     xpByLanguage,
@@ -148,6 +155,7 @@ export function createEmptyProfile(): ProfileData {
     streak: { current: 0, longest: 0, lastDateKey: null },
     dailyCalendar: {},
     bestSpeedScore: {},
+    review: { entries: {} },
     lastPlayed: null,
     v1ImportedAt: null,
   };
@@ -258,11 +266,24 @@ export const useProfileStore = create<ProfileStore>()(
 
           const history = [record, ...state.history].slice(0, HISTORY_CAP);
 
+          // Every answered question feeds the review bank (first-try corrects
+          // promote; misses reset — see lib/game/review.ts).
+          const review = {
+            entries: applyReviewResult(
+              state.review.entries,
+              language,
+              record.word,
+              record.outcome,
+              record.answeredAt,
+            ),
+          };
+
           return {
             globalCounts,
             languageStats: { ...state.languageStats, [language]: stats },
             languagesPlayed,
             history,
+            review,
             xpTotal: state.xpTotal + record.xpEarned,
             xpByLanguage: {
               ...state.xpByLanguage,
@@ -436,7 +457,16 @@ export const useProfileStore = create<ProfileStore>()(
     }),
     {
       name: PROFILE_STORAGE_KEY,
-      version: 2,
+      version: 3,
+      // v2 → v3 (2.1.0): additive — adds the review bank and the pinyin setting.
+      // Merge-style defaults keep every pre-3.0 field intact.
+      migrate: (persisted) => ({
+        ...createEmptyProfile(),
+        ...(persisted as Partial<ProfileData>),
+        settings: { ...DEFAULT_SETTINGS, ...((persisted as Partial<ProfileData>)?.settings ?? {}) },
+        review: (persisted as Partial<ProfileData>)?.review ?? { entries: {} },
+        version: 3,
+      }) as unknown as ProfileData & ProfileActions,
       storage: createJSONStorage(() => {
         if (typeof window === "undefined") {
           // Prerender/SSR-safe no-op storage.

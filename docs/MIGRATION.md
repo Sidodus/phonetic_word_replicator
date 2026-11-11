@@ -72,6 +72,11 @@ corrupt v1 store must never block v2.
 
 - Changing the storage schema → bump `version` in the persist config and add a `migrate`
   function; document in this file.
-- Changing `dailySeedFor` invalidates historical daily calendars — major version.
+- **v2 → v3 (2.1.0, additive):** added `review.entries` (the wobbly-words bank) and
+  `settings.pinyinTolerant` (default false). The migrate fn spreads empty-profile defaults
+  under the persisted state, so v2 documents load unchanged and gain the new fields.
+- Changing `dailySeedFor` invalidates historical daily calendars — major version. Re-ranking
+  pack *content* (2.1.0's frequency change) also changes which words a given daily seed
+  yields; past completions stay recorded, new completions use the new packs.
 - The v1 app itself is frozen under `legacy/` (not built, not deployed) as a behavioural
   reference; do not "modernize" files there.

@@ -36,7 +36,12 @@
     "rule4": "Correct answers earn XP. Combos, streaks and 16 achievements await.",
     "yourProgress": "Your progress",
     "wordsTotal": "words in this pack",
-    "notLoaded": "Loading packs…"
+    "notLoaded": "Loading packs…",
+    "reviewTitle": "Wobbly words",
+    "reviewDueBody": "{count} word{s} due for review",
+    "reviewStart": "Start review",
+    "ttsOk": "Pronunciation playback available",
+    "ttsNo": "No pronunciation voice found for this language"
   },
   "modes": {
     "classic": {
@@ -58,6 +63,10 @@
     "daily": {
       "name": "Daily Challenge",
       "tagline": "10 seeded words — the same puzzle for everyone, every day."
+    },
+    "review": {
+      "name": "Review",
+      "tagline": "Your wobbly words come back until they stick."
     }
   },
   "play": {
@@ -105,7 +114,8 @@
     "sessionOf": "Word {current} of {total}",
     "standardSwitch": "Show as {standard}",
     "perfectSession": "Perfect session! Every word on the first try!",
-    "achievementUnlocked": "Achievement unlocked: {name}"
+    "achievementUnlocked": "Achievement unlocked: {name}",
+    "reviewNothingDue": "Nothing to review right now — answer some words first, and the tricky ones will come back."
   },
   "stats": {
     "title": "My stats",
@@ -159,7 +169,9 @@
     "autoPronounce": "Pronounce words automatically",
     "uiLanguage": "Interface language",
     "auto": "Auto (browser language)",
-    "close": "Close"
+    "close": "Close",
+    "pinyin": "Accept pinyin answers for Chinese (experimental)",
+    "pinyinHint": "When on, typing the pinyin (e.g. 'ma') counts as correct for Chinese words. Characters always count — this never penalizes native spelling."
   },
   "achievements": {
     "first-word": {

@@ -50,9 +50,39 @@ cap at level 100. No XP is ever lost; levels never decrease.
 |---|---|---|---|---|
 | **Classic Spelling** | 15 questions | — | — | The v1 experience, modernized. |
 | **Multiple Choice** | 15 | — | 4 options, same tier preferred, similarity-scored (length ±2 + shared IPA characters) | Gentle entry; hints disabled. |
-| **Listen & Spell** | 12 | — | — | Web Speech pronounces the word (replay button); no symbols shown. Graceful "unavailable" notice where TTS is missing. |
+| **Listen & Spell** | 12 | — | — | Web Speech pronounces the word (replay button); no symbols shown. Graceful "unavailable" notice where TTS is missing; the Home language buttons show per-language voice availability (🔊/🔇). |
 | **Speed Challenge** | up to 60 | 60 s | — | One attempt per word; correct → advance instantly; miss → streak resets, advance. Score = `10 × multiplier`, multiplier x1 → x2 at a 3-streak → x3 at a 6-streak (cap x3). Personal best stored per language. |
 | **Daily Challenge** | 10 | — | — | Seeded from the local date + language — identical for every player that day. First completion of the day credits the calendar + streak; replays are practice-only. |
+| **Review** | up to 12 (or all due) | — | — | Draws only from the due "wobbly words" bank (below). Classic rules otherwise. Empty bank → friendly "nothing to review" state. |
+
+## Wobbly words (mistake bank, v2.1.0)
+
+Every answered question feeds a Leitner-style review bank keyed `lang:word-lowercase`
+(display casing preserved inside the entry):
+
+| Result | Box effect |
+|---|---|
+| correct on 1st attempt | promote one box (cap box 4) |
+| correct on 2nd/3rd attempt | hold the box |
+| wrong through 3 / skipped | back to box 0 |
+
+- Spacing: box 0 → 1 hour, box 1 → 24 h, box 2 → 72 h, box 3 → 7 days, box 4 → 14 days.
+- The Home screen shows a "Wobbly words — N due" card when anything is due for the
+  selected language; Review mode serves the neediest words first (lowest box, oldest).
+- The bank is capped at 600 words globally; eviction keeps the neediest (lowest box, most
+  recent practice) and drops the healthiest/stalest first.
+- Words deleted from packs between versions are skipped gracefully by review mode.
+
+## Answer matching, accents and pinyin
+
+- **Lenient (default):** accents ignored — `cafe` = `café`. Strict mode is opt-in.
+- Always case-insensitive, whitespace-collapsed, Unicode-NFC.
+- **Pinyin for Chinese (experimental, opt-in, off by default):** when enabled and the game
+  language is zh, a typed pinyin (`ma`, `ma3`, `mǎ`) is accepted as correct for the target
+  word — both sides are converted through pinyin-pro (tone-less, letters only). Typed
+  characters always count; native spelling is never penalized. Implementation note: the
+  equivalence function is injected into the session machine's `answer` event, so exact
+  matching still happens first.
 
 ## Streaks
 
@@ -92,6 +122,17 @@ and stamped with the unlock date.
   notification MP3s; removed for licensing cleanliness).
 - TTS pronounces words (auto after reveal when enabled; always available via replay in
   Listen mode). Speech is a bonus: every call is feature-detected and fail-soft.
+- Home shows per-language voice availability so Listen & Spell expectations are set upfront.
+- Answer feedback is mirrored into an `aria-live` region for screen-reader users.
+
+## Offline (PWA, v2.1.0)
+
+A hand-rolled service worker (`public/sw.js`) makes the whole game work offline after the
+first visit: network-first for page navigations, cache-first for immutable `/_next/static`
+build assets, stale-while-revalidate for dictionary packs/images/manifest. Registered in
+production builds only; versioned caches (`pwr-sw-v1-*`) purge on upgrade. The web manifest
+points at the existing artwork (no square icons yet — installability is partial, offline
+play is the goal).
 
 ## Deliberate non-goals (v2)
 

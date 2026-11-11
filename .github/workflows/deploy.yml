@@ -1,0 +1,59 @@
+# Deploys the static export to GitHub Pages.
+#
+# ONE-TIME SETUP (easy to miss — the workflow fails until this is done):
+#   Repo Settings → Pages → Build and deployment → Source = "GitHub Actions"
+#
+# Builds with the sub-path base (NEXT_PUBLIC_BASE_PATH) via npm run build:pages,
+# exactly like the local runbook in AGENTS.md §10.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master, main]
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static export (with Pages base path)
+        run: npm run build:pages
+
+      - name: Verify the base path is baked into the output
+        run: grep -q 'src="/phonetic_word_replicator/_next/static' out/index.html
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

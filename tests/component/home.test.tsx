@@ -22,7 +22,7 @@ describe("Home", () => {
         "Know your phonetic sound.",
       );
     });
-    for (const mode of ["Classic Spelling", "Multiple Choice", "Listen & Spell", "Speed Challenge", "Daily Challenge"]) {
+    for (const mode of ["Classic Spelling", "Multiple Choice", "Listen & Spell", "Speed Challenge", "Daily Challenge", "Review"]) {
       expect(screen.getByText(new RegExp(mode))).toBeInTheDocument();
     }
     for (const endonym of ["English", "Français", "Deutsch", "Español", "Italiano", "Nederlands", "हिन्दी", "中文"]) {

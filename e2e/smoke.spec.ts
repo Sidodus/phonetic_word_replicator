@@ -48,6 +48,12 @@ test("stats page renders with empty state", async ({ page }) => {
   });
 });
 
+test("review mode with a fresh profile shows the friendly empty state", async ({ page }) => {
+  await page.goto("/play?mode=review&lang=en");
+  await expect(page.getByTestId("review-empty")).toBeVisible({ timeout: 15_000 });
+  await expect(page.getByTestId("review-empty")).toContainText("Nothing to review");
+});
+
 test("settings modal opens and toggles phonetic standard", async ({ page }) => {
   await page.goto("/");
   await page.getByRole("button", { name: /Settings/ }).click();

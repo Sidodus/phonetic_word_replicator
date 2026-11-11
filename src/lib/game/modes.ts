@@ -106,6 +106,15 @@ export const GAME_MODE_META: Record<GameMode, GameModeMeta> = {
     audioDriven: false,
     multipleChoice: false,
   },
+  review: {
+    id: "review",
+    icon: "🔁",
+    i18nKey: "review",
+    sessionLength: 12,
+    timeLimitSeconds: 0,
+    audioDriven: false,
+    multipleChoice: false,
+  },
 };
 
 export const GAME_MODE_IDS = Object.keys(GAME_MODE_META) as GameMode[];
