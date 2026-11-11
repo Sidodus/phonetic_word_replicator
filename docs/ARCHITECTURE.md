@@ -55,14 +55,22 @@ Per-mode behavior lives in the machine, keyed off `mode`:
 
 ## Persistence
 
-One namespaced localStorage key: `pwr.v2.profile` (Zustand persist, storage schema v2).
+One namespaced localStorage key: `pwr.v2.profile` (Zustand persist, storage schema v3).
 Contents: settings, XP (total + per language), per-language outcome counters, capped history
-(300), achievements, daily-calendar (120 entries), streaks, speed bests. Best-effort import
-of v1 keys runs once (flag `v1ImportedAt`) — see MIGRATION.md.
+(300), achievements, daily-calendar (120 entries), streaks, speed bests, and the wobbly-words
+review bank (capped 600 entries). Best-effort import of v1 keys runs once (flag
+`v1ImportedAt`) — see MIGRATION.md.
 
-Rationale for localStorage over IndexedDB: profile data is bounded by caps (~150 KB worst
+Rationale for localStorage over IndexedDB: profile data is bounded by caps (~200 KB worst
 case), synchronous access keeps the reducer flow simple, and it survives file://-adjacent
 static hosting. IndexedDB remains the escape hatch if caps ever grow (ADR-0003).
+
+## Offline (PWA)
+
+`public/sw.js` (registered production-only from AppShell) gives full offline play after the
+first visit: network-first navigations, cache-first `/_next/static` assets,
+stale-while-revalidate for packs/images/manifest, versioned caches purged on upgrade. The
+webmanifest uses the existing artwork (partial installability — no square icons yet).
 
 ## Rendering & hydration
 

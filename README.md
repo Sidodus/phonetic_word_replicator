@@ -26,19 +26,23 @@ you coming back.
 
 English (45k words curated to 2,000) · Français · Deutsch · Español · Italiano · Nederlands · हिन्दी · 中文
 
-**5 game modes:**
+**6 game modes:**
 
 | Mode | The hook |
 |---|---|
 | 🔤 **Classic Spelling** | The original challenge — read the sound, type the word. |
 | 🃏 **Multiple Choice** | Four options, one right sound-match. A gentle way in. |
-| 🎧 **Listen & Spell** | No symbols — the word is spoken aloud (browser TTS). |
+| 🎧 **Listen & Spell** | No symbols — the word is spoken aloud (browser TTS, with per-language voice badges). |
 | ⚡ **Speed Challenge** | 60 seconds, combo multipliers up to ×3, personal bests. |
 | 🗓️ **Daily Challenge** | 10 seeded words — the same puzzle for everyone, every day. |
+| 🔁 **Review** | Your wobbly words come back on a spaced schedule until they stick. |
 
 **Progression that sticks:** XP with combo bonuses, levels, daily streaks, 16 achievements,
-and a full stats dashboard (win rates per attempt, per-language breakdowns, daily calendar,
-clickable word history linked to Wiktionary).
+a spaced-repetition mistake bank, and a full stats dashboard (win rates per attempt,
+per-language breakdowns, daily calendar, clickable word history linked to Wiktionary).
+
+**Works offline:** after your first visit the game is a PWA — pages, packs and assets are
+cached, so classroom connections don't matter.
 
 **Interface localized to 11 languages:** English, Français, Deutsch, Español, Italiano,
 Nederlands, हिन्दी, 中文 — plus **Yorùbá, Igbo and Hausa** (community first drafts, in the
@@ -74,8 +78,8 @@ The live game: [sidodus.github.io/phonetic_word_replicator](https://sidodus.gith
 ## Quality
 
 - **TypeScript strict** end to end; the game rules live in a pure, React-free engine.
-- **294 tests**: unit (engine, storage, migration, i18n, data contract) + component (every
-  mode's play flow) + Playwright E2E smoke on the built site.
+- **342 tests**: unit (engine, review bank, storage, migration, i18n, PWA, data contract) +
+  component (every mode's play flow) + Playwright E2E smoke on the built site.
 - **Coverage gate** ≥ 90% on the engine (`src/lib/**`), enforced in CI.
 - **Deterministic data pipeline** — reproducible dictionary packs; CI re-validates them.
 - CI: lint · typecheck · pack validation · tests + coverage · static build · E2E.
@@ -105,7 +109,18 @@ coding exercise, rebuilt in 2026 as v2.
 - Dictionary data: [Wiktionary](https://wiktionary.org) — parsed pronunciation data via
   [wikt2pron](https://github.com/abuccts/wikt2pron). Attempted words link to Wiktionary for
   definitions.
+- Word selection ranked with corpus frequency lists from
+  [hermitdave/FrequencyWords](https://github.com/hermitdave/FrequencyWords)
+  (OpenSubtitles-derived).
 - Yorùbá/Igbo/Hausa interface drafts continue the locale work from the author's
   JS Number To Word Processor; native-speaker review is welcome.
 
 MIT licensed — see [LICENSE](LICENSE).
+
+---
+
+## 🎮 Play now
+
+**The game is live at: [https://sidodus.github.io/phonetic_word_replicator/](https://sidodus.github.io/phonetic_word_replicator/)**
+
+No account, no install — it runs entirely in your browser, and your progress stays on your device.

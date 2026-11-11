@@ -36,24 +36,38 @@ Run with `npm run data:curate`; validate shipped packs with `npm run data:valida
    | starter | ≤ 4 | 2 chars |
    | core | 5–8 | 3 chars |
    | advanced | 9–12 | 4 chars |
-6. **Caps** — starter 700, core 800, advanced 500. Within a tier: shorter words first,
-   ties broken by a word-derived FNV hash (never alphabetically — that would bias toward
-   a-words). Languages with fewer entries than the cap (hi, it) ship their full pool.
+6. **Caps** — starter 700, core 800, advanced 500. Within a tier: **corpus frequency ranks
+   words** (most common first), with a word-derived FNV hash as the tiebreak for words
+   missing from the list (never alphabetical — that biases toward a-words). Languages with
+   fewer entries than the cap (hi, it) ship their full pool.
 7. **Determinism** — no time-based seeds anywhere in selection; `generatedAt` is the only
    timestamp and only changes when curation re-runs.
 
-## Shipped pack statistics (v2.0.0 build)
+## Frequency ranking (v2.1.0)
 
-| Language | Raw | Kept | starter/core/advanced | Pack size |
+Each language ships a vendored frequency list in `data/frequency/{lang}.txt`
+(top ~30k tokens, `word rank` lines) sourced from
+[hermitdave/FrequencyWords](https://github.com/hermitdave/FrequencyWords)
+(OpenSubtitles-derived; zh comes from the 2016 set). The lists are committed, so curation
+stays deterministic and offline. Within a tier, words sort by corpus rank; unlisted words
+fall back to hash order.
+
+**Known limitation:** the zh subtitle corpus is simplified Chinese while the Wiktionary pack
+skews traditional, so zh coverage is partial (~68% of shipped entries ranked). A future
+improvement could add a minimal simplified↔traditional fold before matching.
+
+## Shipped pack statistics (v2.1.0 build)
+
+| Language | Raw | Kept | starter/core/advanced | Frequency-ranked |
 |---|---|---|---|---|
-| en | 45,675 | 2,000 | 700/800/500 | 127 KB |
-| zh | 68,261 | 2,000 | 700/800/500 | 203 KB |
-| nl | 8,646 | 2,000 | 700/800/500 | 129 KB |
-| fr | 41,819 | 2,000 | 700/800/500 | 119 KB |
-| de | 21,418 | 2,000 | 700/800/500 | 130 KB |
-| hi | 1,702 | 874 | 373/439/62 | ~110 KB |
-| it | 4,718 | 1,657 | 357/800/500 | ~113 KB |
-| es | 6,851 | 1,985 | 685/800/500 | 127 KB |
+| en | 45,675 | 2,000 | 700/800/500 | 100% |
+| zh | 68,261 | 2,000 | 700/800/500 | 68% |
+| nl | 8,646 | 2,000 | 700/800/500 | 100% |
+| fr | 41,819 | 2,000 | 700/800/500 | 100% |
+| de | 21,418 | 2,000 | 700/800/500 | 100% |
+| hi | 1,702 | 874 | 373/439/62 | 65% |
+| it | 4,718 | 1,657 | 357/800/500 | 82% |
+| es | 6,851 | 1,985 | 685/800/500 | 86% |
 
 Drops per language (shape / proper-noun / duplicates / audio-or-missing) are printed by the
 script on every run — see the console output for the current numbers.
