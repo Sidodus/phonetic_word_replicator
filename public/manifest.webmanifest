@@ -1,0 +1,25 @@
+{
+  "name": "Phonetic Word Replicator",
+  "short_name": "PWR",
+  "description": "Learn spelling through IPA / X-SAMPA phonetic sounds in 8 languages.",
+  "id": "/phonetic_word_replicator/",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#16181d",
+  "theme_color": "#16181d",
+  "icons": [
+    {
+      "src": "./img/Phonetic-Word-Replicator(1).png",
+      "sizes": "1347x889",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./img/Phonetic-Word-Replicator(9).png",
+      "sizes": "1349x1472",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
