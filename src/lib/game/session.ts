@@ -53,7 +53,18 @@ export interface SessionState {
 }
 
 export type SessionEvent =
-  | { type: "answer"; input: string; options: NormalizeOptions; now: number }
+  | {
+      type: "answer";
+      input: string;
+      options: NormalizeOptions & {
+        /**
+         * Optional extra acceptance rule (e.g. pinyin for Chinese). Receives
+         * the two NORMALIZED strings; exact equality has already been checked.
+         */
+        equivalence?: (answer: string, target: string) => boolean;
+      };
+      now: number;
+    }
   | { type: "skip"; now: number }
   | { type: "hint" }
   | { type: "continue" } // advance after a reveal
@@ -246,7 +257,12 @@ function recordMiss(state: SessionState, now: number): {
 
 /** True when the current mode allows hint usage. */
 export function hintsAllowed(state: SessionState): boolean {
-  return state.mode === "classic" || state.mode === "listen" || state.mode === "daily";
+  return (
+    state.mode === "classic" ||
+    state.mode === "listen" ||
+    state.mode === "daily" ||
+    state.mode === "review"
+  );
 }
 
 export function reduceSession(state: SessionState, event: SessionEvent): {
@@ -266,7 +282,9 @@ export function reduceSession(state: SessionState, event: SessionEvent): {
         // Empty answers are rejected by the UI before dispatch; treat as no-op.
         return { state };
       }
-      if (answer === target) {
+      const correct =
+        answer === target || (event.options.equivalence?.(answer, target) ?? false);
+      if (correct) {
         return recordCorrect(state, state.attemptNumber, event.now);
       }
       return recordMiss(state, event.now);

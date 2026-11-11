@@ -1,6 +1,6 @@
 {
   "name": "phonetic-word-replicator",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Phonetic Word Replicator — learn spelling through IPA / X-SAMPA phonetic sounds. Modern v2 rewrite: Next.js + TypeScript + React-Bootstrap.",
   "private": true,
   "author": "Saheed Odulaja <https://github.com/Sidodus>",
@@ -31,6 +31,7 @@
   "dependencies": {
     "bootstrap": "^5.3.8",
     "next": "^15.5.0",
+    "pinyin-pro": "^3.29.5",
     "react": "^19.1.0",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.0",

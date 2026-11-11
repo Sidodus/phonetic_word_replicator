@@ -13,6 +13,7 @@ import type {
   Question,
 } from "@/types/game";
 import { CHOICE_OPTION_COUNT } from "@/types/game";
+import type { ReviewEntry } from "./review";
 import type { Rng } from "./rng";
 
 /** Options for building a question set. */
@@ -161,5 +162,41 @@ export function pickChoiceQuestions(
     xsampa: entry.xs,
     tier: entry.tier,
     options: buildChoiceOptions(entry, pack, options.rng),
+  }));
+}
+
+/**
+ * Build questions from due review entries: the bank stores words; this looks
+ * each one up (case-insensitive) in the pack for its pronunciation/tier.
+ * Words missing from the pack (e.g. retired between versions) are skipped.
+ * Order follows the due list (neediest first), shuffled by the rng.
+ */
+export function pickReviewQuestions(
+  pack: DictionaryPack,
+  dueEntries: readonly Pick<ReviewEntry, "word">[],
+  rng: Rng,
+  count: number,
+): Question[] {
+  if (!Number.isInteger(count) || count < 0) {
+    throw new RangeError(`count must be a non-negative integer, received ${count}`);
+  }
+  const byWord = new Map<string, PackEntry>();
+  for (const entry of pack.entries) {
+    byWord.set(entry.w.toLowerCase(), entry);
+  }
+  const selected: PackEntry[] = [];
+  const seen = new Set<string>();
+  for (const due of dueEntries) {
+    if (selected.length >= count) break;
+    const entry = byWord.get(due.word.toLowerCase());
+    if (!entry || seen.has(entry.w.toLowerCase())) continue;
+    seen.add(entry.w.toLowerCase());
+    selected.push(entry);
+  }
+  return rng.shuffle(selected).map((entry) => ({
+    word: entry.w,
+    ipa: entry.ipa,
+    xsampa: entry.xs,
+    tier: entry.tier,
   }));
 }

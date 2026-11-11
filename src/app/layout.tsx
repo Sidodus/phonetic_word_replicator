@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   applicationName: "Phonetic Word Replicator",
   authors: [{ name: "Saheed Odulaja", url: "https://github.com/Sidodus" }],
   keywords: ["phonetics", "IPA", "X-SAMPA", "spelling", "pronunciation", "learning game"],
+  manifest: withBasePath("/manifest.webmanifest"),
   openGraph: {
     siteName: "Phonetic Word Replicator",
     title: "Phonetic Word Replicator",

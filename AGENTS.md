@@ -25,7 +25,7 @@ Non-negotiable product values:
 4. **Author & data attribution is part of the product.** Wiktionary/wikt2pron credits and the
    author byline stay visible (home footer + About section).
 
-Current version: **2.0.0** (package.json is the single source of truth). The rewrite from
+Current version: **2.1.0** (package.json is the single source of truth). The rewrite from
 v1 is a **breaking change** — see `docs/MIGRATION.md` before touching storage code.
 
 ## 2. Tech stack (do not swap without an ADR)
@@ -38,7 +38,8 @@ v1 is a **breaking change** — see `docs/MIGRATION.md` before touching storage 
 | State | Zustand 5 + persist middleware | Single store, key `pwr.v2.profile` (ADR-0003) |
 | Styling | Bootstrap dark theme + CSS custom properties | `data-bs-theme="dark"`; brand colors in globals.css |
 | i18n | Custom typed runtime (`src/lib/i18n`) | 11 locales; ADR-0004 explains why not next-intl |
-| Data | Curated JSON packs in `public/dictionaries` | Built by `scripts/curate-dictionary.mjs` (ADR-0002) |
+| Data | Curated JSON packs in `public/dictionaries` | Built by `scripts/curate-dictionary.mjs` (ADR-0002); frequency-ranked |
+| PWA | Hand-rolled `public/sw.js` + webmanifest | Runtime caching only; registered in production builds |
 | Speech | Web Speech API (feature-detected) | Never a hard dependency |
 | SFX | Web Audio API synthesis | No audio asset files (v1 MP3s removed deliberately) |
 | Tests | Vitest 3 + Testing Library + Playwright | see §7 |
@@ -47,7 +48,8 @@ v1 is a **breaking change** — see `docs/MIGRATION.md` before touching storage 
 
 ```bash
 npm run dev            # dev server (http://localhost:3000)
-npm run build          # static export → out/
+npm run build          # static export → out/ (domain-root URLs)
+npm run build:pages    # static export with /phonetic_word_replicator base path (GitHub Pages)
 npm start              # serve out/ on http://127.0.0.1:4173 (matches Playwright config)
 npm run lint           # ESLint (flat config)
 npm run typecheck      # tsc --noEmit
@@ -78,16 +80,22 @@ src/lib/game/                 PURE game engine (no React, no browser APIs)
   hint.ts                     Letter masks + hint penalty (v1 `[i]%2` bug regression-guarded)
   scoring.ts                  XP, levels, combo, speed multiplier, NaN-safe stats
   streaks.ts                  Daily-challenge streak (timezone-safe)
-  question-generator.ts       Word selection + multiple-choice distractors
+  review.ts                   Leitner "wobbly words" bank (boxes, due math, cap eviction)
+  question-generator.ts       Word selection, multiple-choice + review questions
   session.ts                  Session state machine (pure reducer) — ALL game rules
   achievements.ts             16 achievements, pure evaluation
   modes.ts                    Mode + language + phonetic-standard metadata
+  pinyin.ts                   Lazy pinyin equivalence for the zh setting (pinyin-pro)
   dictionary.ts               Pack fetching/validation/caching
+src/lib/base-path.ts          Sub-path hosting: BASE_PATH + idempotent withBasePath()
 src/lib/storage/              Zustand profile store + v1 localStorage migration
-src/lib/speech/ , src/lib/audio/   TTS + WebAudio SFX (feature-detected, fail-soft)
+src/lib/speech/               TTS + voice pre-flight (fail-soft, feature-detected)
+src/lib/audio/                WebAudio SFX synthesis
 src/lib/i18n/                 Runtime + provider
 src/app/                      Routes: / (home), /play, /stats
 src/components/               Client components (home/, game/, stats/)
+public/sw.js                  Offline service worker (runtime caching, versioned)
+public/manifest.webmanifest   PWA manifest
 docs/                         You are expected to keep docs/ current (see §9)
 ```
 

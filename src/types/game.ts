@@ -15,7 +15,7 @@ export const PHONETIC_STANDARDS = ["IPA", "X-SAMPA"] as const;
 export type PhoneticStandard = (typeof PHONETIC_STANDARDS)[number];
 
 /** Game modes. `classic` reproduces the v1 loop; the rest are v2 additions. */
-export const GAME_MODES = ["classic", "choice", "listen", "speed", "daily"] as const;
+export const GAME_MODES = ["classic", "choice", "listen", "speed", "daily", "review"] as const;
 export type GameMode = (typeof GAME_MODES)[number];
 
 /** Difficulty tiers assigned by the curation pipeline (see docs/DATA_PIPELINE.md). */

@@ -20,6 +20,13 @@ import { useHydrated } from "@/lib/storage/useHydrated";
 import { withBasePath } from "@/lib/base-path";
 import SettingsModal from "@/components/stats/SettingsModal";
 
+/** Register the offline service worker (production static builds only). */
+function registerServiceWorker(): void {
+  if (process.env.NODE_ENV !== "production") return;
+  if (typeof navigator === "undefined" || !("serviceWorker" in navigator)) return;
+  navigator.serviceWorker.register(withBasePath("/sw.js")).catch(() => undefined);
+}
+
 /** Read the stored UI locale preference without hydrating the whole store. */
 function readStoredLocale(): string | null {
   if (typeof window === "undefined") return null;
@@ -45,6 +52,11 @@ function Shell({ children }: { children: React.ReactNode }) {
       useProfileStore.getState().importV1();
     }
   }, [hydrated]);
+
+  // Offline support (PWA) — registration is a bonus, never a crash.
+  useEffect(() => {
+    registerServiceWorker();
+  }, []);
 
   const handleUiLocale = useCallback(
     async (next: UiLocale | "auto") => {

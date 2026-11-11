@@ -23,7 +23,10 @@ import {
   dailySeedFor,
   pickQuestions,
   pickChoiceQuestions,
+  pickReviewQuestions,
 } from "@/lib/game/question-generator";
+import { dueReviewEntries } from "@/lib/game/review";
+import { createPinyinEquivalence } from "@/lib/game/pinyin";
 import {
   currentQuestion,
   hintsAllowed,
@@ -83,6 +86,8 @@ export default function GamePage() {
   const [revealSeconds, setRevealSeconds] = useState(0);
   const [summary, setSummary] = useState<ReturnType<typeof summarize> | null>(null);
   const [unlockedNames, setUnlockedNames] = useState<string[]>([]);
+  const [reviewEmpty, setReviewEmpty] = useState(false);
+  const [feedback, setFeedback] = useState("");
   const [speedTimeLeft, setSpeedTimeLeft] = useState(
     GAME_MODE_META[mode].timeLimitSeconds || 0,
   );
@@ -114,10 +119,38 @@ export default function GamePage() {
     let cancelled = false;
     setPackStatus("loading");
     setSession(null);
+    setReviewEmpty(false);
     (async () => {
       try {
         const pack = await loadPack(language);
         const meta = GAME_MODE_META[mode];
+
+        // Review mode draws from the due "wobbly words" bank, not the pack.
+        if (mode === "review") {
+          const due = dueReviewEntries(
+            useProfileStore.getState().review.entries,
+            language,
+            Date.now(),
+          );
+          if (cancelled) return;
+          if (due.length === 0) {
+            setReviewEmpty(true);
+            setPackStatus("ready");
+            return;
+          }
+          const count = Math.min(meta.sessionLength, due.length);
+          const questions = pickReviewQuestions(
+            pack,
+            due,
+            createRng(`${Date.now()}`, "review"),
+            count,
+          );
+          if (cancelled) return;
+          setPackStatus("ready");
+          buildQuestions(questions);
+          return;
+        }
+
         const rng =
           mode === "daily"
             ? createRng(dailySeedFor(dateKey(new Date()), language))
@@ -240,7 +273,7 @@ export default function GamePage() {
   const question: Question | null =
     session && session.status === "active" ? currentQuestion(session) : null;
 
-  const submit = (value?: string) => {
+  const submit = async (value?: string) => {
     if (!session || session.status !== "active") return;
     const answer = value ?? input;
     if (!session.revealedAnswer && answer.trim().length === 0) {
@@ -248,19 +281,29 @@ export default function GamePage() {
       return;
     }
     setInputError(null);
+    // Experimental: accept pinyin for Chinese (opt-in setting; the equivalence
+    // fn is injected into the session machine — exact match is still checked).
+    const pinyinOn = settings.pinyinTolerant && language === "zh";
+    const equivalence = pinyinOn ? await createPinyinEquivalence() : undefined;
     const result = send({
       type: "answer",
       input: answer,
-      options: { accentInsensitive: settings.accentInsensitive },
+      options: { accentInsensitive: settings.accentInsensitive, equivalence },
       now: Date.now(),
     });
     if (result?.correct) {
       sfx.play(session.comboStreak >= 2 ? "correct-streak" : "correct");
+      setFeedback(t("play.correct"));
       if (settings.autoPronounce) {
         speak(currentQuestion(session).word, GAME_LANGUAGE_META[language].ttsLocale);
       }
     } else if (result) {
       sfx.play("wrong");
+      setFeedback(
+        result.revealed
+          ? `${t("play.failed")} ${session.revealedAnswer ?? ""}`.trim()
+          : t("play.wrong"),
+      );
     }
     setInput("");
     setHintMask(null);
@@ -275,6 +318,7 @@ export default function GamePage() {
 
   const skip = () => {
     send({ type: "skip", now: Date.now() });
+    setFeedback(t("play.skip"));
     setInput("");
     setHintMask(null);
   };
@@ -304,9 +348,25 @@ export default function GamePage() {
   const langMeta = GAME_LANGUAGE_META[language];
   const standard = settings.standard;
 
+  // Review mode with an empty bank: friendly no-op instead of a session.
+  if (reviewEmpty) {
+    return (
+      <Alert variant="info" className="text-center" data-testid="review-empty">
+        <p className="mb-3">🔁 {t("play.reviewNothingDue")}</p>
+        <Button variant="outline-gold" onClick={() => router.push("/")}>
+          {t("play.backHome")}
+        </Button>
+      </Alert>
+    );
+  }
+
   return (
     <Row className="g-3">
       <Col lg={8}>
+        {/* Screen-reader feedback (sounds alone are invisible to AT users). */}
+        <div aria-live="polite" role="status" className="visually-hidden">
+          {feedback}
+        </div>
         <Card className="mb-3">
           <Card.Header className="d-flex justify-content-between align-items-center">
             <span>

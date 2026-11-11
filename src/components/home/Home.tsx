@@ -19,9 +19,11 @@ import type { GameMode, LanguageCode, PackIndex, PhoneticStandard } from "@/type
 import { PHONETIC_STANDARDS } from "@/types/game";
 import { GAME_LANGUAGE_META, GAME_MODE_META, STANDARD_SAMPLE, standardI18nKey } from "@/lib/game/modes";
 import { levelForXp } from "@/lib/game/scoring";
+import { countDueReview } from "@/lib/game/review";
+import { subscribeToVoices, ttsSupportForLocale, type VoiceInfo } from "@/lib/speech/voices";
 import { useProfileStore } from "@/lib/storage/profile";
 import { useHydrated } from "@/lib/storage/useHydrated";
-import { useI18n } from "@/lib/i18n/provider";
+import { useI18n, pluralVars } from "@/lib/i18n/provider";
 import { loadPackIndex } from "@/lib/game/dictionary";
 import { withBasePath } from "@/lib/base-path";
 
@@ -31,7 +33,7 @@ export interface HomeProps {
 }
 
 export default function Home({ packIndex: injectedIndex }: HomeProps) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const router = useRouter();
   const hydrated = useHydrated();
 
@@ -43,6 +45,10 @@ export default function Home({ packIndex: injectedIndex }: HomeProps) {
   const [mode, setMode] = useState<GameMode>("classic");
   const [language, setLanguage] = useState<LanguageCode | null>(null);
   const [index, setIndex] = useState<PackIndex | null>(injectedIndex ?? null);
+  const [now, setNow] = useState(() => Date.now());
+  const [voiceSupport, setVoiceSupport] = useState<Record<string, boolean | null>>({});
+
+  const reviewEntries = useProfileStore((s) => s.review.entries);
 
   useEffect(() => {
     if (injectedIndex) {
@@ -60,8 +66,26 @@ export default function Home({ packIndex: injectedIndex }: HomeProps) {
     };
   }, [injectedIndex]);
 
+  // TTS pre-flight: which languages have a speech voice in this browser.
+  useEffect(() => {
+    return subscribeToVoices((voices: VoiceInfo[]) => {
+      const support: Record<string, boolean> = {};
+      for (const code of Object.keys(GAME_LANGUAGE_META) as LanguageCode[]) {
+        support[code] = ttsSupportForLocale(GAME_LANGUAGE_META[code].ttsLocale, voices);
+      }
+      setVoiceSupport(support);
+    });
+  }, []);
+
+  // Refresh the review-due count periodically (words become due over time).
+  useEffect(() => {
+    const interval = setInterval(() => setNow(Date.now()), 60_000);
+    return () => clearInterval(interval);
+  }, []);
+
   const selectedLanguage: LanguageCode = language ?? lastPlayed?.language ?? "en";
   const level = levelForXp(hydrated ? xpTotal : 0);
+  const dueCount = hydrated ? countDueReview(reviewEntries, selectedLanguage, now) : 0;
 
   const start = () => {
     router.push(`/play?mode=${mode}&lang=${selectedLanguage}`);
@@ -137,6 +161,30 @@ export default function Home({ packIndex: injectedIndex }: HomeProps) {
         </Card.Body>
       </Card>
 
+      {/* Wobbly-words review card (only when something is due) */}
+      {dueCount > 0 && (
+        <Card className="mb-4 border-warning-subtle">
+          <Card.Body className="d-flex flex-wrap align-items-center gap-3">
+            <div style={{ fontSize: "1.8rem" }}>🔁</div>
+            <div style={{ flex: 1 }}>
+              <div className="fw-semibold">{t("home.reviewTitle")}</div>
+              <div className="text-secondary small">
+                {t("home.reviewDueBody", {
+                  count: dueCount,
+                  ...pluralVars(locale, dueCount),
+                })}
+              </div>
+            </div>
+            <Button
+              variant="outline-gold"
+              onClick={() => router.push(`/play?mode=review&lang=${selectedLanguage}`)}
+            >
+              {t("home.reviewStart")}
+            </Button>
+          </Card.Body>
+        </Card>
+      )}
+
       {/* Mode picker */}
       <h2 className="h4 text-gold mb-3">{t("home.chooseMode")}</h2>
       <Row xs={1} md={2} lg={3} className="g-3 mb-4">
@@ -173,6 +221,7 @@ export default function Home({ packIndex: injectedIndex }: HomeProps) {
         {(Object.keys(GAME_LANGUAGE_META) as LanguageCode[]).map((code) => {
           const meta = GAME_LANGUAGE_META[code];
           const count = index?.languages[code]?.count;
+          const tts = voiceSupport[code] ?? null;
           return (
             <Button
               key={code}
@@ -183,6 +232,15 @@ export default function Home({ packIndex: injectedIndex }: HomeProps) {
               aria-pressed={selectedLanguage === code}
             >
               {meta.endonym}
+              {tts !== null && (
+                <span
+                  className="ms-1"
+                  title={tts ? t("home.ttsOk") : t("home.ttsNo")}
+                  aria-label={tts ? t("home.ttsOk") : t("home.ttsNo")}
+                >
+                  {tts ? "🔊" : "🔇"}
+                </span>
+              )}
               {count !== undefined ? (
                 <Badge bg="dark" className="ms-2">
                   {t("language.wordsAvailable", { count })}
