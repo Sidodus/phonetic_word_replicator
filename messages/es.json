@@ -36,7 +36,12 @@
     "rule4": "Las respuestas correctas ganan XP. Combos, rachas y 16 logros te esperan.",
     "yourProgress": "Tu progreso",
     "wordsTotal": "palabras en este paquete",
-    "notLoaded": "Cargando paquetes…"
+    "notLoaded": "Cargando paquetes…",
+    "reviewTitle": "Palabras tambaleantes",
+    "reviewDueBody": "{count} palabra{s} para repasar",
+    "reviewStart": "Comenzar repaso",
+    "ttsOk": "Pronunciación por voz disponible",
+    "ttsNo": "No hay voz de pronunciación para este idioma"
   },
   "modes": {
     "classic": {
@@ -58,6 +63,10 @@
     "daily": {
       "name": "Desafío diario",
       "tagline": "10 palabras sorteadas — el mismo reto para todos, cada día."
+    },
+    "review": {
+      "name": "Repaso",
+      "tagline": "Tus palabras tambaleantes regresan hasta que se quedan."
     }
   },
   "play": {
@@ -105,7 +114,8 @@
     "sessionOf": "Palabra {current} de {total}",
     "standardSwitch": "Mostrar como {standard}",
     "perfectSession": "¡Sesión perfecta! ¡Todas las palabras al primer intento!",
-    "achievementUnlocked": "Logro desbloqueado: {name}"
+    "achievementUnlocked": "Logro desbloqueado: {name}",
+    "reviewNothingDue": "Nada que repasar por ahora — responde primero algunas palabras y las difíciles volverán."
   },
   "stats": {
     "title": "Mis estadísticas",
@@ -159,7 +169,9 @@
     "autoPronounce": "Pronunciar palabras automáticamente",
     "uiLanguage": "Idioma de la interfaz",
     "auto": "Automático (idioma del navegador)",
-    "close": "Cerrar"
+    "close": "Cerrar",
+    "pinyin": "Aceptar respuestas en pinyin para chino (experimental)",
+    "pinyinHint": "Al activarlo, escribir el pinyin (p. ej. «ma») cuenta como correcto para las palabras chinas. Los caracteres siempre cuentan; nunca penaliza la ortografía nativa."
   },
   "achievements": {
     "first-word": {

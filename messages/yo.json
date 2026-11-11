@@ -36,7 +36,12 @@
     "rule4": "Ẹ̀sún XP ni èsì tó tọ́ ń jẹ́. Àpapọ̀, àṣàyàn ọjọ́ àti àwọn àmì-ẹ̀yẹ 16 ń retí ọ́.",
     "yourProgress": "Ìlọ̀sókè rẹ",
     "wordsTotal": "ọ̀rọ̀ nínú àpótí yìí",
-    "notLoaded": "Ó ń ṣàkójọ àwọn àpótí…"
+    "notLoaded": "Ó ń ṣàkójọ àwọn àpótí…",
+    "reviewTitle": "Àtúnṣe Ọ̀rọ̀",
+    "reviewDueBody": "Ọ̀rọ̀ {count} wà fún ìtúnmọ̀",
+    "reviewStart": "Bẹ̀rẹ̀ ìtúnmọ̀",
+    "ttsOk": "Ìgbọ́rọ̀ òhùn wà",
+    "ttsNo": "Kò sí ohùn ìgbọ́rọ̀ fún èdè yìí"
   },
   "modes": {
     "classic": {
@@ -58,6 +63,10 @@
     "daily": {
       "name": "Ìfipá Ọjọ́jẹ́",
       "tagline": "Ọ̀rọ̀ 10 tí a yàn lápá ìkan — ìṣòro kan ṣoṣo fún gbogbo ènìyàn, ọjọ́ kọ̀ọ̀kan."
+    },
+    "review": {
+      "name": "Ìtúnmọ̀",
+      "tagline": "Ọ̀rọ̀ tí o kò mọ̀ dáadáa yóò padà wá títí o fi máa mọ̀ wọn."
     }
   },
   "play": {
@@ -105,7 +114,8 @@
     "sessionOf": "Ọ̀rọ̀ {current} nínú {total}",
     "standardSwitch": "Fí hàn gẹ́gẹ́ bí {standard}",
     "perfectSession": "Ìgbàkalẹ̀ péye! Gbogbo ọ̀rọ̀ lọ́wọ́ àkọ́kọ́!",
-    "achievementUnlocked": "Àmì-ẹ̀yẹ tí a ṣí: {name}"
+    "achievementUnlocked": "Àmì-ẹ̀yẹ tí a ṣí: {name}",
+    "reviewNothingDue": "Kò sí ohun tí a yẹ kí a tún mọ̀ lílo báyìí — fèsì fún àwọn ọ̀rọ̀ kan kí àwọn tí wọ̀n ṣòro wá padà."
   },
   "stats": {
     "title": "Àwọn ìṣirò mi",
@@ -159,7 +169,9 @@
     "autoPronounce": "Sọ àwọn ọ̀rọ̀ láìlètíọ́",
     "uiLanguage": "Èdè ohun-èlò ìbánisọ̀rọ̀",
     "auto": "Àṣàyàn (èdè aṣàwákiri)",
-    "close": "Tì i mọ́"
+    "close": "Tì i mọ́",
+    "pinyin": "Gbà èsì pinyin fún èdè Sáínà (ìdànwò)",
+    "pinyinHint": "Nigbati o tan lọ, didi pinyin (àpẹẹrẹ 'ma') gbà gẹ́gẹ́ bí èsì tó tọ́ fún àwọn ọ̀rọ̀ Sáínà. Kíkọ àmì-ọ̀rọ̀ máa ń tọ́ nígbà gbogbo — kò ní fìgbà kan jẹ ẹ́bi èdè àbínibí."
   },
   "achievements": {
     "first-word": {

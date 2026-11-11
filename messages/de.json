@@ -36,7 +36,12 @@
     "rule4": "Richtige Antworten bringen XP. Combos, Serien und 16 Erfolge warten auf Sie.",
     "yourProgress": "Ihr Fortschritt",
     "wordsTotal": "Wörter in diesem Paket",
-    "notLoaded": "Pakete werden geladen…"
+    "notLoaded": "Pakete werden geladen…",
+    "reviewTitle": "Wackelige Wörter",
+    "reviewDueBody": "{count} Wort{e} zur Wiederholung fällig",
+    "reviewStart": "Wiederholung starten",
+    "ttsOk": "Aussprache-Wiedergabe verfügbar",
+    "ttsNo": "Keine Stimme für diese Sprache gefunden"
   },
   "modes": {
     "classic": {
@@ -58,6 +63,10 @@
     "daily": {
       "name": "Tages-Challenge",
       "tagline": "10 vorgegebene Wörter – dasselbe Rätsel für alle, jeden Tag."
+    },
+    "review": {
+      "name": "Wiederholung",
+      "tagline": "Deine wackeligen Wörter kommen wieder, bis sie sitzen."
     }
   },
   "play": {
@@ -105,7 +114,8 @@
     "sessionOf": "Wort {current} von {total}",
     "standardSwitch": "Als {standard} anzeigen",
     "perfectSession": "Perfekte Sitzung! Jedes Wort beim ersten Versuch!",
-    "achievementUnlocked": "Erfolg freigeschaltet: {name}"
+    "achievementUnlocked": "Erfolg freigeschaltet: {name}",
+    "reviewNothingDue": "Aktuell nichts zu wiederholen — beantworte zuerst einige Wörter, dann kommen die wackeligen zurück."
   },
   "stats": {
     "title": "Meine Statistiken",
@@ -159,7 +169,9 @@
     "autoPronounce": "Wörter automatisch aussprechen",
     "uiLanguage": "Sprache der Benutzeroberfläche",
     "auto": "Automatisch (Browsersprache)",
-    "close": "Schließen"
+    "close": "Schließen",
+    "pinyin": "Pinyin-Antworten für Chinesisch akzeptieren (experimentell)",
+    "pinyinHint": "Wenn aktiv, zählt getipptes Pinyin (z. B. „ma“) für chinesische Wörter als richtig. Schriftzeichen zählen immer — die ursprüngliche Schreibung wird nie bestraft."
   },
   "achievements": {
     "first-word": {

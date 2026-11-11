@@ -36,7 +36,12 @@
     "rule4": "Les bonnes réponses rapportent des XP. Combos, séries et 16 succès vous attendent.",
     "yourProgress": "Votre progression",
     "wordsTotal": "mots dans ce paquet",
-    "notLoaded": "Chargement des paquets…"
+    "notLoaded": "Chargement des paquets…",
+    "reviewTitle": "Mots fragiles",
+    "reviewDueBody": "{count} mot{s} à revoir",
+    "reviewStart": "Commencer la révision",
+    "ttsOk": "Prononciation audio disponible",
+    "ttsNo": "Aucune voix de prononciation pour cette langue"
   },
   "modes": {
     "classic": {
@@ -58,6 +63,10 @@
     "daily": {
       "name": "Défi quotidien",
       "tagline": "10 mots tirés au sort — la même énigme pour tous, chaque jour."
+    },
+    "review": {
+      "name": "Révision",
+      "tagline": "Vos mots fragiles reviennent jusqu'à ce qu'ils restent."
     }
   },
   "play": {
@@ -105,7 +114,8 @@
     "sessionOf": "Mot {current} sur {total}",
     "standardSwitch": "Afficher en {standard}",
     "perfectSession": "Session parfaite ! Tous les mots du premier coup !",
-    "achievementUnlocked": "Succès débloqué : {name}"
+    "achievementUnlocked": "Succès débloqué : {name}",
+    "reviewNothingDue": "Rien à réviser pour l'instant — répondez d'abord à quelques mots, les plus fragiles reviendront."
   },
   "stats": {
     "title": "Mes statistiques",
@@ -159,7 +169,9 @@
     "autoPronounce": "Prononcer les mots automatiquement",
     "uiLanguage": "Langue de l'interface",
     "auto": "Auto (langue du navigateur)",
-    "close": "Fermer"
+    "close": "Fermer",
+    "pinyin": "Accepter les réponses en pinyin pour le chinois (expérimental)",
+    "pinyinHint": "Une fois activé, taper le pinyin (ex. « ma ») compte comme correct pour les mots chinois. Les caractères comptent toujours — cela ne pénalise jamais l'orthographe native."
   },
   "achievements": {
     "first-word": {

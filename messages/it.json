@@ -36,7 +36,12 @@
     "rule4": "Le risposte corrette fanno guadagnare XP. Combo, serie e 16 obiettivi ti aspettano.",
     "yourProgress": "I tuoi progressi",
     "wordsTotal": "parole in questo pacchetto",
-    "notLoaded": "Caricamento dei pacchetti…"
+    "notLoaded": "Caricamento dei pacchetti…",
+    "reviewTitle": "Parole traballanti",
+    "reviewDueBody": "{count} parol{s} da ripassare",
+    "reviewStart": "Inizia il ripasso",
+    "ttsOk": "Riproduzione della pronuncia disponibile",
+    "ttsNo": "Nessuna voce di pronuncia per questa lingua"
   },
   "modes": {
     "classic": {
@@ -58,6 +63,10 @@
     "daily": {
       "name": "Sfida quotidiana",
       "tagline": "10 parole estratte — lo stesso enigma per tutti, ogni giorno."
+    },
+    "review": {
+      "name": "Ripasso",
+      "tagline": "Le parole traballanti tornano finché non restano."
     }
   },
   "play": {
@@ -105,7 +114,8 @@
     "sessionOf": "Parola {current} di {total}",
     "standardSwitch": "Mostra come {standard}",
     "perfectSession": "Sessione perfetta! Tutte le parole al primo tentativo!",
-    "achievementUnlocked": "Obiettivo sbloccato: {name}"
+    "achievementUnlocked": "Obiettivo sbloccato: {name}",
+    "reviewNothingDue": "Niente da ripassare al momento — rispondi prima ad alcune parole e le difficili torneranno."
   },
   "stats": {
     "title": "Le mie statistiche",
@@ -159,7 +169,9 @@
     "autoPronounce": "Pronuncia le parole automaticamente",
     "uiLanguage": "Lingua dell'interfaccia",
     "auto": "Automatico (lingua del browser)",
-    "close": "Chiudi"
+    "close": "Chiudi",
+    "pinyin": "Accetta risposte in pinyin per il cinese (sperimentale)",
+    "pinyinHint": "Quando attivo, digitare il pinyin (es. «ma») conta come corretto per le parole cinesi. I caratteri contano sempre: non penalizza mai la grafia nativa."
   },
   "achievements": {
     "first-word": {

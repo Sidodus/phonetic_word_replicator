@@ -36,7 +36,12 @@
     "rule4": "Amsoshin daidai suna ba XP. Haɗakarwa, jere da yini, da kuma tukwici 16 suna jiran ka.",
     "yourProgress": "Ci gaban ka",
     "wordsTotal": "kalmomi a cikin wannan fakiti",
-    "notLoaded": "Ana loda fakitoci…"
+    "notLoaded": "Ana loda fakitoci…",
+    "reviewTitle": "Maimaita Kalmomi",
+    "reviewDueBody": "Kalmomi {count} za a maimaita",
+    "reviewStart": "Fara maimaitawa",
+    "ttsOk": "Ana iya furta kalmar",
+    "ttsNo": "Babu muryar furta maka wannan harshe"
   },
   "modes": {
     "classic": {
@@ -58,6 +63,10 @@
     "daily": {
       "name": "Kalubalen Yini",
       "tagline": "Kalmomi 10 da aka ƙaddara — kalubale guda ga kowa, kowace yini."
+    },
+    "review": {
+      "name": "Maimaitawa",
+      "tagline": "Kalmomin da ba ka taɓa sanewa za su dawo har ka koya su."
     }
   },
   "play": {
@@ -105,7 +114,8 @@
     "sessionOf": "Kalma {current} daga cikin {total}",
     "standardSwitch": "Nuna azaman {standard}",
     "perfectSession": "Zaman cikakke! Dukkan kalmomi a farkon gwaji!",
-    "achievementUnlocked": "An buɗe tukwici: {name}"
+    "achievementUnlocked": "An buɗe tukwici: {name}",
+    "reviewNothingDue": "Babu abin da za a maimaita a yanzu — amsa wasu kalmomi farko, masu wahala za su dawo."
   },
   "stats": {
     "title": "Ƙididdigata",
@@ -159,7 +169,9 @@
     "autoPronounce": "Furta kalmomi da kai",
     "uiLanguage": "Harshe mahangar",
     "auto": "Kai tsaye (harshe burauza)",
-    "close": "Rufe"
+    "close": "Rufe",
+    "pinyin": "Amince da amsoshi pinyin na harshen Sinanci (taron gwaji)",
+    "pinyinHint": "Idan an kunsa, rubuta pinyin (kamar 'ma') za a ɗauka daidai ne ga kalmomin Sinanci. Rubuta haruffa koyaushe yana daidai — wannan ba ta hukunta rubutun asali ba."
   },
   "achievements": {
     "first-word": {

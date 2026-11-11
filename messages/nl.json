@@ -36,7 +36,12 @@
     "rule4": "Goede antwoorden leveren XP op. Combo's, reeksen en 16 prestaties wachten op je.",
     "yourProgress": "Jouw voortgang",
     "wordsTotal": "woorden in dit pakket",
-    "notLoaded": "Pakketten laden…"
+    "notLoaded": "Pakketten laden…",
+    "reviewTitle": "Wankelige woorden",
+    "reviewDueBody": "{count} te herhalen",
+    "reviewStart": "Herhalen starten",
+    "ttsOk": "Uitspraak beschikbaar",
+    "ttsNo": "Geen stem gevonden voor deze taal"
   },
   "modes": {
     "classic": {
@@ -58,6 +63,10 @@
     "daily": {
       "name": "Dagelijkse uitdaging",
       "tagline": "10 vaste woorden – voor iedereen dezelfde puzzel, elke dag."
+    },
+    "review": {
+      "name": "Herhaling",
+      "tagline": "Je wankelige woorden komen terug tot ze blijven plakken."
     }
   },
   "play": {
@@ -105,7 +114,8 @@
     "sessionOf": "Woord {current} van {total}",
     "standardSwitch": "Weergeven als {standard}",
     "perfectSession": "Perfecte sessie! Elk woord goed bij de eerste poging!",
-    "achievementUnlocked": "Prestatie ontgrendeld: {name}"
+    "achievementUnlocked": "Prestatie ontgrendeld: {name}",
+    "reviewNothingDue": "Niets te herhalen — beantwoord eerst wat woorden, dan komen de lastige terug."
   },
   "stats": {
     "title": "Mijn statistieken",
@@ -159,7 +169,9 @@
     "autoPronounce": "Woorden automatisch uitspreken",
     "uiLanguage": "Interfacetaal",
     "auto": "Automatisch (browsertaal)",
-    "close": "Sluiten"
+    "close": "Sluiten",
+    "pinyin": "Pinyin-antwoorden voor Chinees accepteren (experimenteel)",
+    "pinyinHint": "Bij inschakelen telt getypt pinyin (bijv. 'ma') als correct voor Chinese woorden. Karakters tellen altijd — dit bestraft native spelling nooit."
   },
   "achievements": {
     "first-word": {

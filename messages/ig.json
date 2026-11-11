@@ -36,7 +36,12 @@
     "rule4": "Azịza ziri ezi na-enye XP. Njikọ, usoro ụbọchị, na ihe nrite 16 na-atụ gị anya.",
     "yourProgress": "Ọganihu gị",
     "wordsTotal": "okwu n'ime ngwugwu a",
-    "notLoaded": "Na-ebugo ngwugwu…"
+    "notLoaded": "Na-ebugo ngwugwu…",
+    "reviewTitle": "Mmegharị Okwu",
+    "reviewDueBody": "Okwu {count} dị mkpa ịmegharị",
+    "reviewStart": "Malite mmegharị",
+    "ttsOk": "Okwu ọnụ dị",
+    "ttsNo": "Ọ nweghị olu okwu maka asụsụ a"
   },
   "modes": {
     "classic": {
@@ -58,6 +63,10 @@
     "daily": {
       "name": "Ịma aka Ụbọchị",
       "tagline": "Okwu 10 e keputuru — otu ihe ịma aka maka onye ọ bụla, kwa ụbọchị."
+    },
+    "review": {
+      "name": "Mmegharị",
+      "tagline": "Okwu ị na-enweghị ike ga-alaghachi ruo mgbe ị maara ha."
     }
   },
   "play": {
@@ -105,7 +114,8 @@
     "sessionOf": "Okwu {current} n'ime {total}",
     "standardSwitch": "Gosi dị ka {standard}",
     "perfectSession": "Nnọkọ zuru oke! Okwu ọ bụla na mbọ mbụ!",
-    "achievementUnlocked": "Ihe nrite meghere: {name}"
+    "achievementUnlocked": "Ihe nrite meghere: {name}",
+    "reviewNothingDue": "Ọ nweghị ihe ịmegharị ugbu a — zaa ụfọdụ okwu mbụ, ndị siri ike ga-alaghachi."
   },
   "stats": {
     "title": "Ndekọ m",
@@ -159,7 +169,9 @@
     "autoPronounce": "Kwuo okwu na-akpaghị aka",
     "uiLanguage": "Asụsụ nhazi",
     "auto": "Na-akpaghị aka (asụsụ ihe nchọgharị)",
-    "close": "Meechi"
+    "close": "Meechi",
+    "pinyin": "Nabata azịza pinyin maka asụsụ China (nnwale)",
+    "pinyinHint": "Mgbe ị tinyere ya, ịde pinyin (dịka 'ma') ga-agụ dịka ziri ezi maka okwu China. Ọpụpụ okwu na-agụ mgbe niile — nke a anapụchịghị asụsụ obodo iwu."
   },
   "achievements": {
     "first-word": {
