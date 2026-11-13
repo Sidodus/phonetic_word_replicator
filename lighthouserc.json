@@ -1,8 +1,14 @@
 {
   "ci": {
     "collect": {
-      "staticDistDir": "./out",
-      "numberOfRuns": 1,
+      "startServerCommand": "npm start",
+      "startServerReadyPattern": "Accepting connections",
+      "url": [
+        "http://127.0.0.1:4173/",
+        "http://127.0.0.1:4173/play/",
+        "http://127.0.0.1:4173/stats/"
+      ],
+      "numberOfRuns": 3,
       "settings": {
         "preset": "desktop"
       }
@@ -13,7 +19,7 @@
         "categories:accessibility": ["error", { "minScore": 0.95 }],
         "categories:best-practices": ["error", { "minScore": 0.9 }],
         "categories:seo": ["error", { "minScore": 0.85 }],
-        "resource-summary:script:size:document": ["warn", { "maxNumericValue": 250000 }],
+        "resource-summary:script:size": ["warn", { "maxNumericValue": 250000 }],
         "uses-long-cache-ttl": "off",
         "canonical": "off",
         "is-crawlable": "off"

@@ -1,0 +1,5 @@
+# Phonetic Word Replicator — all pages are publicly crawlable.
+User-agent: *
+Allow: /
+
+# No sitemap yet (static export, 5 pages). Add one if SEO depth grows.

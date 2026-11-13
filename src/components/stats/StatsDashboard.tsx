@@ -12,9 +12,9 @@ import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
 import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
-import ProgressBar from "react-bootstrap/ProgressBar";
 import Modal from "react-bootstrap/Modal";
 import Alert from "react-bootstrap/Alert";
+import NamedProgress from "@/components/ui/NamedProgress";
 import type { LanguageCode } from "@/types/game";
 import { GAME_LANGUAGE_META } from "@/lib/game/modes";
 import {
@@ -110,8 +110,9 @@ export default function StatsDashboard() {
                 <Card.Body>
                   <div className="text-secondary small">{t("stats.level", { level: level.level })}</div>
                   <div className="fs-4 fw-bold">{t("stats.xpTotal", { xp: profile.xpTotal })}</div>
-                  <ProgressBar
-                    now={Math.round(level.progress * 100)}
+                  <NamedProgress
+                    value={level.progress * 100}
+                    label={`${t("stats.level", { level: level.level })} progress`}
                     variant="warning"
                     className="mt-2"
                   />
@@ -159,6 +160,7 @@ export default function StatsDashboard() {
               <Card className="h-100">
                 <Card.Header className="text-gold fw-semibold">{t("stats.winRates")}</Card.Header>
                 <Table striped hover className="mb-0" data-testid="win-rates">
+                  <caption className="visually-hidden">{t("stats.winRates")}</caption>
                   <tbody>
                     <WinRateRow label={t("stats.outcomeFirst")} count={globalStats.correctFirst} pct={globalStats.correctFirstPct} variant="primary" />
                     <WinRateRow label={t("stats.outcomeSecond")} count={globalStats.correctSecond} pct={globalStats.correctSecondPct} variant="warning" />
@@ -166,7 +168,9 @@ export default function StatsDashboard() {
                     <WinRateRow label={t("stats.outcomeWrong")} count={globalStats.wrong} pct={globalStats.wrongPct} variant="secondary" />
                     <WinRateRow label={t("stats.outcomeSkipped")} count={globalStats.skipped} pct={globalStats.skippedPct} variant="secondary" />
                     <tr>
-                      <td className="fw-bold">{t("stats.accuracy")}</td>
+                      <th scope="row" className="fw-bold">
+                        {t("stats.accuracy")}
+                      </th>
                       <td className="fw-bold">{globalStats.accuracyPct}%</td>
                       <td />
                     </tr>
@@ -355,15 +359,15 @@ function WinRateRow({
 }) {
   return (
     <tr>
-      <td>
+      <th scope="row">
         <span className={`badge text-bg-${variant} ${variant === "warning" ? "text-dark" : ""}`}>
           {count}
         </span>{" "}
         {label}
-      </td>
+      </th>
       <td className="text-end fw-semibold">{pct}%</td>
       <td style={{ width: "30%" }}>
-        <ProgressBar now={pct} variant={variant === "secondary" ? "secondary" : variant} style={{ height: 6 }} />
+        <NamedProgress value={pct} label={label} variant={variant} style={{ height: 6 }} />
       </td>
     </tr>
   );

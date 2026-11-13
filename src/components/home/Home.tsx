@@ -13,7 +13,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
-import ProgressBar from "react-bootstrap/ProgressBar";
 import Image from "react-bootstrap/Image";
 import type { GameMode, LanguageCode, PackIndex, PhoneticStandard } from "@/types/game";
 import { PHONETIC_STANDARDS } from "@/types/game";
@@ -26,6 +25,7 @@ import { useHydrated } from "@/lib/storage/useHydrated";
 import { useI18n, pluralVars } from "@/lib/i18n/provider";
 import { loadPackIndex } from "@/lib/game/dictionary";
 import { withBasePath } from "@/lib/base-path";
+import NamedProgress from "@/components/ui/NamedProgress";
 
 export interface HomeProps {
   /** Injected in tests; production loads the real index. */
@@ -140,10 +140,10 @@ export default function Home({ packIndex: injectedIndex }: HomeProps) {
             </div>
           </div>
           <div style={{ minWidth: "12rem", flex: 1 }}>
-            <ProgressBar
-              now={Math.round(level.progress * 100)}
+            <NamedProgress
+              value={level.progress * 100}
+              label={`${t("stats.level", { level: level.level })} progress`}
               variant="warning"
-              aria-label={`${Math.round(level.progress * 100)}%`}
             />
             <div className="text-secondary small mt-1">
               {level.level >= 100
