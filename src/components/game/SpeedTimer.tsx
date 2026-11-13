@@ -4,9 +4,9 @@
  * Speed-mode countdown bar with urgency styling.
  */
 
-import ProgressBar from "react-bootstrap/ProgressBar";
 import Badge from "react-bootstrap/Badge";
 import Card from "react-bootstrap/Card";
+import NamedProgress from "@/components/ui/NamedProgress";
 
 export default function SpeedTimer({
   secondsLeft,
@@ -27,10 +27,10 @@ export default function SpeedTimer({
           </Badge>
           <span className="text-secondary small">{bestLabel}</span>
         </div>
-        <ProgressBar
-          now={Math.max(0, Math.round((secondsLeft / total) * 100))}
+        <NamedProgress
+          value={(secondsLeft / total) * 100}
+          label={`${secondsLeft} seconds remaining`}
           variant={urgent ? "danger" : "warning"}
-          aria-label={`${secondsLeft} seconds remaining`}
         />
       </Card.Body>
     </Card>

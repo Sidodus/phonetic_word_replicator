@@ -26,7 +26,8 @@ describe("StatsDashboard", () => {
     useProfileStore.setState(state);
 
     renderWithI18n(<StatsDashboard />);
-    await screen.findByText("Win rates");
+    // The sr-only table caption shares the header text — allow multiple.
+    await screen.findAllByText("Win rates");
     expect(screen.getByTestId("win-rates").textContent).toContain("60"); // 1st-attempt 60%
     expect(screen.getByTestId("win-rates").textContent).toContain("30%"); // accuracy 100%? no — accuracy = 100%
     expect(screen.getByTestId("per-language").textContent).toContain("240");

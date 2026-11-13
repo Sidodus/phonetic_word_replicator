@@ -20,13 +20,38 @@ describe("Lighthouse CI config (lighthouserc.json)", () => {
     fs.readFileSync(path.join(ROOT, "lighthouserc.json"), "utf8"),
   ) as {
     ci: {
-      collect: { staticDistDir: string; settings?: { preset?: string } };
+      collect: {
+        startServerCommand: string;
+        startServerReadyPattern?: string;
+        url: string[];
+        settings?: { preset?: string };
+      };
       assert: { assertions: Record<string, unknown> };
     };
   };
 
-  it("collects from the static export directory", () => {
-    expect(config.ci.collect.staticDistDir).toBe("./out");
+  it("starts its own server and audits the three real pages", () => {
+    // LHCI owns the `npm start` child (starts, waits for the ready pattern,
+    // kills it) — agents must never manage that process themselves.
+    expect(config.ci.collect.startServerCommand).toBe("npm start");
+    expect(config.ci.collect.startServerReadyPattern).toContain("Accepting connections");
+    expect(config.ci.collect.url).toEqual([
+      "http://127.0.0.1:4173/",
+      "http://127.0.0.1:4173/play/",
+      "http://127.0.0.1:4173/stats/",
+    ]);
+  });
+
+  it("never gates on the 404 pages", () => {
+    // Next deliberately emits <meta name="robots" content="noindex"> on 404 —
+    // correct behavior that the SEO category then fails. The 404 pages are out
+    // of LHCI scope by design (2026-11-13 incident: seo 0.63 on /404.html).
+    for (const url of config.ci.collect.url) {
+      expect(url, `404 pages must stay out of the LHCI gate: ${url}`).not.toContain("404");
+    }
+  });
+
+  it("uses the desktop preset", () => {
     expect(config.ci.collect.settings?.preset).toBe("desktop");
   });
 
@@ -39,14 +64,17 @@ describe("Lighthouse CI config (lighthouserc.json)", () => {
     }
   });
 
-  it("keeps resource-summary budgets in a sane KiB range", () => {
-    // resource-summary sizes are reported in KiB. A budget like 250000 would
-    // silently mean 250 MB — the exact unit mistake this guards against.
+  it("keeps resource-summary budgets in a sane byte range", () => {
+    // resource-summary size budgets are BYTES (proven 2026-11-13: actual script
+    // size reported as 166365 ≈ 163 KiB). A "300" budget meant 300 bytes, and a
+    // "250000" interpreted as KiB would have meant 250 MB — both guarded here.
     for (const [key, value] of Object.entries(config.ci.assert.assertions)) {
       if (!key.startsWith("resource-summary:")) continue;
       const [, options] = value as [string, { maxNumericValue?: number }];
-      expect(options.maxNumericValue).toBeGreaterThan(0);
-      expect(options.maxNumericValue, `${key} budget should be KiB-scale`).toBeLessThan(2000);
+      expect(options.maxNumericValue).toBeGreaterThan(10_000);
+      expect(options.maxNumericValue, `${key} budget should be byte-scale`).toBeLessThan(
+        2_000_000,
+      );
     }
   });
 
@@ -80,6 +108,14 @@ describe("workflow configs", () => {
   it("CI Lighthouse job uses the committed config file", () => {
     expect(ci).toContain("@lhci/cli");
     expect(ci).toContain("--config=./lighthouserc.json");
+  });
+
+  it("CI builds the static export before the Lighthouse job", () => {
+    const lighthouseJob = ci.slice(ci.indexOf("lighthouse:"));
+    expect(lighthouseJob).toContain("npm run build");
+    expect(lighthouseJob.indexOf("npm run build")).toBeLessThan(
+      lighthouseJob.indexOf("@lhci/cli"),
+    );
   });
 
   it("deploy workflow asserts the GitHub Pages base path is baked in", () => {

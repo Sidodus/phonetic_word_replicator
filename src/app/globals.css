@@ -23,6 +23,46 @@ body {
   --bs-body-color: #e8eaed;
   --bs-card-bg: var(--pwr-surface);
   --bs-border-color: var(--pwr-border);
+  /* AA contrast fix: BS dark-mode secondary text (#6c757d) measures 3.78:1 on
+     our background — Lighthouse color-contrast fails it site-wide. Lift the
+     token so every .text-secondary / muted usage reads at ~9:1. */
+  --bs-secondary-rgb: 180, 186, 195;
+  --bs-secondary-color: #b4bac3;
+}
+
+/* outline-danger's #dc3545 measures 3.92:1 on the dark background — lift it. */
+.btn-outline-danger {
+  --bs-btn-color: #ff6b77;
+  --bs-btn-border-color: #e25561;
+  --bs-btn-hover-color: #1a1a1a;
+  --bs-btn-hover-bg: #ff6b77;
+  --bs-btn-hover-border-color: #ff6b77;
+  --bs-btn-active-color: #1a1a1a;
+  --bs-btn-active-bg: #ff6b77;
+  --bs-btn-active-border-color: #ff6b77;
+}
+
+/* Bootstrap hardcodes #6c757d into .btn-outline-secondary (3.78:1 on dark) —
+   override the button vars directly; a --bs-secondary-rgb change can't win. */
+.btn-outline-secondary {
+  --bs-btn-color: #b4bac3;
+  --bs-btn-border-color: #565b64;
+  --bs-btn-hover-color: #16181d;
+  --bs-btn-hover-bg: #b4bac3;
+  --bs-btn-hover-border-color: #b4bac3;
+  --bs-btn-active-color: #16181d;
+  --bs-btn-active-bg: #b4bac3;
+  --bs-btn-active-border-color: #b4bac3;
+  --bs-btn-disabled-color: #8b93a5;
+  --bs-btn-disabled-border-color: #494f59;
+}
+
+/* text-bg-secondary pairs #fff with the light-gray secondary background
+   (1.95:1 in dark mode) — use a dark chip that passes AA. */
+[data-bs-theme="dark"] .text-bg-secondary,
+[data-bs-theme="dark"] .bg-secondary {
+  color: #e8eaed !important;
+  background-color: #495057 !important;
 }
 
 .text-gold {
@@ -196,7 +236,9 @@ body {
 }
 
 .achievement-tile.locked {
-  opacity: 0.45;
+  /* 0.45 dropped locked-tile text to 1.6:1 contrast (Lighthouse a11y fail).
+     0.75 keeps the grayscale "locked" cue while muted text stays ≥4.5:1. */
+  opacity: 0.75;
   filter: grayscale(0.9);
 }
 
